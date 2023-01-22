@@ -1,0 +1,44 @@
+#blog-session{
+    background-color: #edf1ff91;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+#blog-session h1{
+    position: relative;
+    line-height: 1;
+}
+#blog-session .blog-card{
+    box-shadow: 0 1px 13px -5px grey;
+}
+.visit-blog{
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    line-height: 1.8;
+}
+
+.visit-blog::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -0.5rem;
+    transform: translate(-100%,65%);
+    height: 100%;
+    width: 40rem;
+    border-top: 1px dashed var(--main);
+    border-top-style: dotted;
+}
+
+.visit-blog:hover{
+    color: var(--main);
+    cursor: pointer;
+    
+}
+@media only screen and (max-width: 600px) {
+    #blog-session span{
+        font-size: 20px;
+    }    
+}

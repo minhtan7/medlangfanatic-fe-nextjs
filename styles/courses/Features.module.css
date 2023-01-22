@@ -1,0 +1,54 @@
+.about-slide{
+    background-color: white;
+    margin-top: 1rem ;
+  }
+.about-slides{
+  box-shadow: 0px 0px 10px 2px #00000042;
+}
+.about-slides ul{
+  padding-top: 1.5rem;
+  padding-right: 2rem;
+  font-size: 1rem;
+}
+.about-bar-normal{
+    background-color: white;
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+    color: var(--main-dark);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    border: 1px solid var(--main);
+    border-left: none;
+    border-right: none;
+
+}
+.about-bar-normal.active {
+    background-color: var(--main);
+    color: var(--contrast);
+    transition-duration: 0.3s;
+    font-weight: 600;
+}
+.about-bar-normal.active:hover{
+  background-color: var(--main)!important;
+  color: var(--main-text)!important;
+}
+
+.row{
+  margin:0
+}
+
+.about-bar-normal:hover {
+    background-color: var(--contrast-light);
+    color: var(--main);
+}
+.carousel-btn-wrapper{
+    position: absolute;
+}
+
+.carousel-btn-wrapper{
+    right: 3.5rem;
+    bottom: 0.3rem;
+}
+
+
+

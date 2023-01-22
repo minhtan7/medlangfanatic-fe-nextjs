@@ -1,0 +1,120 @@
+#hero{
+    color: white;
+    padding: 3rem 0 29px 
+}
+.hidden-logo{
+    position: absolute;
+    opacity: 0.1;
+    /* width: 100vw; */
+    height: 350px;
+    /* overflow: hidden; */
+    left:-7%;
+    bottom:0
+}
+.hidden-logo img{
+    position: absolute;
+    left: 0;
+    width: 71rem;
+}
+
+.hero-image{
+    position: relative;
+    border: 10px solid var(--contrast);
+    border-radius: 50%;
+    overflow: hidden;
+    width: 27rem;
+    height: 27rem;
+    margin: auto;
+    z-index: 1;
+}
+.hero-image:hover img{
+    transform: scale(1.3);
+    transition-duration: 0.3s;
+}
+
+.hero-image img{
+    border-radius: 50%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.3s;
+}
+.hero-image-wrapper{
+    position: relative;
+}
+.hero-image-wrapper::after{
+    content: "";
+    position: absolute;
+    height: 32rem;
+    width: 32rem;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--main-dark);
+}
+.hero-image-wrapper::before{
+    content: "";
+    position: absolute;
+    height: 32rem;
+    width: 24.3rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(0,-50%);
+    background-color: var(--main-dark);
+}
+
+
+.sub-title{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.sub-title li{
+    margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  
+    .sub-title{
+        font-size: 0.9rem;
+    }
+    .hidden-logo img{
+        width: 71rem;
+    }
+    .anim-typewriter-first, .anim-typewriter-second{
+        font-size: 1.6rem!important;
+    }
+}
+
+.title-animation{
+    position: relative;
+    /* text-align: start!important; */
+    top: 50%;  
+    width: 15em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%); 
+    font-size: 3.5rem;
+    margin-bottom: 0!important;
+}
+.anim-typewriter-first{
+  animation: typewriter 2s steps(44) 0s 1 normal both,
+             blinkTextCursor 500ms steps(44) 4 normal forwards;
+}
+.anim-typewriter-second{
+  animation: typewriter 2s steps(44) 0s 1 normal both,
+             blinkTextCursor 500ms steps(44) 4 normal forwards;
+    animation-delay: 1.8s;
+}
+
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 100%;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}

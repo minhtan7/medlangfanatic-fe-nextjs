@@ -1,0 +1,7 @@
+.brands-group a {
+    color: white;
+}
+
+.brands-group a:hover{
+    color: var(--contrast)
+}

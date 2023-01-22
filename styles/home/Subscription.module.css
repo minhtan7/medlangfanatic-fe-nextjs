@@ -1,0 +1,52 @@
+#subscription-session h2{
+    font-size: 25px;
+    line-height: 1.3;
+}
+#subscription-session .container{
+    position: relative;
+    padding: 2rem 4rem;
+    background-color: var(--main);
+    color: white;
+    border-radius: 80px;
+    width: 70%;
+    background-image: url("/images/topography.svg") ;
+}
+
+#subscription-session input{
+    border-radius: 80px;
+    padding: 1rem 2rem;
+    border: none;
+    width: 100%;
+}
+#subscription-session .subscription-span{
+    top: 50%;
+    right: 1rem;
+    z-index: 1;
+    background-color: var(--contrast)!important;
+    transform: translateY(-50%);
+    padding: 0.5rem 2rem;
+    border-radius: 80px;
+    color: var(--main);
+    font-weight: bold;
+}
+#subscription-session .container .hidden-logo{
+    width: 40rem;
+    top: 33%;
+    left: 50%;
+    opacity: 0.2;
+    transform: translateX(-5%) scale(1.5);
+}
+@media only screen and (max-width: 600px) {
+    #subscription-session .container{
+        width: 100%;
+        padding: 2.5rem 2rem;
+        border-radius: 0;
+    }
+    #subscription-session .subscription-span {
+        transform: none;
+        margin-top: 0.5rem;
+    }
+    #subscription-session input{
+        padding: 0.6rem 2rem;
+    }
+}

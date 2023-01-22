@@ -1,0 +1,20 @@
+.btn-sign-up,.btn-sign-up-contrast{
+    width: 12rem!important;
+}
+
+.cta-hung img{
+    border: 1px solid var(--main);
+    border-radius: 50%;
+}
+.cta-hung{
+    margin: auto;
+    transform: translateY(-30px);
+    background-color: #f1f3fd;
+    padding: 0.9rem 2rem;
+    border-radius: 5rem;
+    width: 24rem;
+    box-shadow: 11px 12px 17px -3px #acb1cf;
+}
+.text-main {
+    font-weight: 900;
+}

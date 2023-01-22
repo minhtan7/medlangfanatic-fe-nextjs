@@ -1,0 +1,76 @@
+ .circle-list{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+    transform: translateX(-70%);
+    position: relative;
+}
+ .student-icon{
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 70%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+}
+ .student-icon img{
+    vertical-align: top;
+    border-radius: 50%;
+    width: 40px;
+    border: 1px solid var(--main-dark);
+}
+
+
+.circle-list li.last::after{
+    content: "+50 Feedback";
+    position: absolute;
+    font-size: 12px;
+    width: 7rem;
+    right: 0;
+    bottom: 0;
+    top: 50%;
+    transform: translate(110%, -50%);
+    height: fit-content;
+    color: var(--main);
+}
+ .container-style{
+    position: relative;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center
+}
+
+ .card-style{
+    height: fit-content;
+    width: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background: white;
+    color: var(--main);
+    font-size: 16px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+@media only screen and (max-width: 600px) {
+     .card-style{
+        width: 220px;
+        font-size: 10px;
+    }
+     .container-style{
+        height: 300px;
+    }
+     .student-icon img{
+        width: 30px;
+    }
+     .student-icon{
+        width: 30px;
+        height: 30px;
+    }
+}

@@ -1,0 +1,20 @@
+.signUp{
+    background-color: var(--contrast);
+    color: var(--main)!important;
+    border-radius: 40px;
+    padding: 10px 15px;
+    font-weight: 600;
+    transition: transform 0.3s;
+}
+
+.signUp:hover{
+    transform: translateY(-3px);
+    transition: transform 0.3s;
+}
+
+.signIpMavl:hover{
+    background-color: #7dfdd6;
+}
+.signUpMt:hover{
+    background-color: #fffa8e;
+}
