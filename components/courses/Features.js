@@ -86,9 +86,14 @@ export const Features = ({ course }) => {
             {Object.keys(feature).map((a, index) => (
                 <div className={`slideshow-container ${styles["about-slide"]}`} key={index}>
                     <div className={` ${styles["about-slides"]} faded ${slide === index ? "d-flex flex-column  flex-lg-row" : ""}`}>
-                        <Col sm={12} lg={6} className="flex-shrink-0" >
+                        <Col sm={12} lg={6} className="flex-shrink-0 position-relative"
+                            style={{ height: "263px" }}
+                        >
                             {/* <Image src={slug.toLowerCase() === "mavl" ? MAVLFeatureImage(a) : MTFeatureImage(a)} width="100%" /> */}
-                            <Image src={featureObj[slug.toLowerCase()][a]} width="392" height={263} alt="feature" />
+                            <Image src={featureObj[slug.toLowerCase()][a]}
+                                fill
+                                sizes="(max-width: 600px) 60vw , (max-width: 1200px) 40vw, 30vw"
+                                alt="feature" />
                         </Col>
                         <Col sm={12} lg={6} className="flex-grow-1">
                             {a.content}
@@ -104,7 +109,7 @@ export const Features = ({ course }) => {
                 </div>
             ))
             }
-            <div className={styles['carousel-btn-wrapper']}>
+            <div className='carousel-btn-wrapper'>
                 <button className={`prev ${slide === 0 ? "stop-slide" : ""}`}
                     onClick={() => handleChangeSlide(-1, slide, setSlide, Object.keys(feature))}>
                     &#10094;

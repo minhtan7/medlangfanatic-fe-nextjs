@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import CarouselML from "../Carousel/CarouselML"
-import { ShowMore } from "../ShowMore"
+import CarouselML from "../carousel/CarouselML"
+import { ShowMore } from "../utils/ShowMore"
 import styles from "@/styles/home/FeedbackList.module.css"
 import { isMobile } from "react-device-detect"
 

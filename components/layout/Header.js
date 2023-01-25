@@ -57,10 +57,18 @@ function MainHeader() {
 
                         <Link href="/#course-list-session"><Nav.Link as="div" active={currentPath === "/#course-list-session"} className='me-3'>Khóa học</Nav.Link></Link>
 
-                        {/* <Nav.Link className='me-3' onClick={() => navigate("/blogs")} >Blogs</Nav.Link> */}
-                        {/* <Nav.Link className='me-3' onClick={() => navigate("/documentation")} >Tài liệu</Nav.Link> */}
-                        {/* <Nav.Link className='me-3' onClick={() => navigate("/game")} >Game</Nav.Link> */}
-                        {/* <Nav.Link className='sign-up' onClick={() => navigate("/register-form")} >Đăng ký ngay</Nav.Link> */}
+                        <Link className='me-3' href="/blogs" >
+                            <Nav.Link as="div" active={currentPath === "/#course-list-session"} className='me-3'>Blogs</Nav.Link>
+                        </Link>
+                        <Link className='me-3' href="/documentation" >
+                            <Nav.Link as="div" active={currentPath === "/#course-list-session"} className='me-3'>Tài liệu</Nav.Link>
+                        </Link>
+                        <Link className='me-3' href="/game" >
+                            <Nav.Link as="div" active={currentPath === "/#course-list-session"} className='me-3'>Game</Nav.Link>
+                        </Link>
+                        <Link className='sign-up' href="/register-form" >
+                            <Nav.Link as="div" active={currentPath === "/#course-list-session"} className='me-3'>Đăng ký ngay</Nav.Link>
+                        </Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

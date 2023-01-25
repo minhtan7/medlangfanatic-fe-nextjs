@@ -41,14 +41,9 @@
     background-color: var(--contrast-light);
     color: var(--main);
 }
-.carousel-btn-wrapper{
-    position: absolute;
-}
 
-.carousel-btn-wrapper{
-    right: 3.5rem;
-    bottom: 0.3rem;
-}
+
+
 
 
 

@@ -16,7 +16,7 @@ export const ShowMore = ({ defaultHeight, text, index, slide }) => {
         const element = document.querySelector(`.text-display-${index}`)
         const heightClient = element?.clientHeight || defaultHeight;
         const scrollClient = element?.scrollHeight || defaultHeight;
-        // console.log(first)
+
         if (heightClient !== scrollClient) {
             setIsOverflow(true);
             setHeightMax(scrollClient);

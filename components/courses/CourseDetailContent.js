@@ -232,7 +232,7 @@ export const CourseDetailContent = ({ chapters, slug }) => {
 
 const Content = ({ content }) => {
     return (
-        <li className={`${content.contentable_type === "Lesson" ? styles["video"] : ""}`}>
+        <li className={`${content.contentable_type === "Lesson" ? styles["video"] : styles["normal"]}`}>
             <span className={`fa-li ${styles["video-fa-li"]}`}  >{contentIcon[content.contentable_type]}</span>
             {content.name}
         </li>

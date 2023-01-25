@@ -1,6 +1,7 @@
 const { Card, Button } = require("react-bootstrap")
 
 export const CourseThumbnailVertical = ({ course }) => {
+
     return (
         <Card id={course.idEl} className='box-shadow-card'>
             < Card.Img variant="top" src={course.image} style={{ borderRadius: 0 }} />

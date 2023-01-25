@@ -375,6 +375,12 @@ body{
   opacity: 0.2;
 }
 
+.carousel-btn-wrapper{
+    right: 3.5rem;
+    position: absolute;
+    bottom: 0.3rem;
+}
+
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -389,6 +395,10 @@ body{
   border: none;
   /* border-radius: 0 3px 3px 0; */
   user-select: none;
+}
+.stop-slide{
+  background-color: var(--contrast-light)!important;
+    color: var(--main)!important;
 }
 
 .slide-active{

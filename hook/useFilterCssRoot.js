@@ -9,7 +9,7 @@ export const useFilterCssRoot = ({ main, mainDark, contrast, slug, contrastLight
         r.style.setProperty('--contrast', contrast);
         r.style.setProperty('--contrast-light', contrastLight);
 
-        console.log("here, change")
+
         return () => {
             r.style.setProperty('--main', "#011c7e");
             r.style.setProperty('--primary', "#011c7e");

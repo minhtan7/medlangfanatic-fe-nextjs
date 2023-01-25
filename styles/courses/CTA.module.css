@@ -1,0 +1,8 @@
+#cta{
+  background-image: url("https://res.cloudinary.com/tanvo/image/upload/v1674602052/medlangfanatic/courses/cta_zp0uao.png");
+  background-size: cover;
+  height: 514px;
+}
+.cta-btn-sign-up{
+  width: 15rem;
+}

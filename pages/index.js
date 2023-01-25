@@ -18,7 +18,7 @@ import { Subscription } from '@/components/home/Subscription';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function HomePage({ instructors, courseListContent, fbs, blogs }) {
-  console.log(instructors)
+
   return (
     <>
       <Layout >
@@ -36,8 +36,6 @@ export default function HomePage({ instructors, courseListContent, fbs, blogs })
     </>
   )
 }
-
-// const files = fs.readdirSync(path.join('mockData'))
 
 export async function getStaticProps() {
   const res = await apiService.get(`/posts`)

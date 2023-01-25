@@ -1,0 +1,15 @@
+.faq-tab-pane {
+    border: none;
+    color: black!important;
+    background-color: white !important;
+    transition-duration: 0.3s !important;
+    font-weight: 400 !important;
+}
+.faq-tab-pane:hover{
+    background-color: white!important;
+    color: black!important
+}
+.faq-nav-item .nav-link{
+  color: black;
+  border: none
+}

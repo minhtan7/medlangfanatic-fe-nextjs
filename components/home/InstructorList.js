@@ -10,7 +10,7 @@ import { useEffect, useState } from "react"
 const { Container, Row, Col } = require("react-bootstrap")
 
 export const InstructorList = ({ instructors }) => {
-    console.log(instructors, "list")
+
     return (
         <div id="hp-instructor-card" className='mb-5 mt-5 text-justify mx-md-7'>
             <Container>

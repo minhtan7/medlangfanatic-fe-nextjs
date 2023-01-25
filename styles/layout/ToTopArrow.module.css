@@ -1,0 +1,91 @@
+.arrow-up{
+    right: 5%;
+    bottom: 30%;
+}
+.arrow-up a {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-color: var(--main-dark)!important;
+    transition-duration: 0.3s;
+    color: var(--main-dark);
+}
+.arrow-up span {
+    height: 2.5rem;
+    width: 2.5rem;
+    transition-duration: 0.3s;
+    background-color: var(--main);
+    color: var(--contrast);
+    border: 1px solid var(--contrast)!important;
+}
+.arrow-up:hover a, .arrow-up:hover span{
+    color: (--main);
+    transition-duration: 0.3s;
+}
+.heartbeat { 
+    animation: heartbeat 8s infinite;
+    position: relative;
+}
+
+.arrow-up span::after{
+    content: "";
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 2px solid var(--contrast)!important;
+    border-radius: 50%;
+    color: var(--main-dark);
+    animation: lightening 8s infinite;
+}
+
+@keyframes lightening {
+    0% {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    2%{
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    10%{
+        height: 3.5rem;
+        width: 3.5rem;
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  2% {
+    transform: scale(1.9625) rotate(5deg);
+  }
+  3% {
+    transform: scale(1.125) rotate(-5deg);
+  }
+  4% {
+    transform: scale(1.1575) rotate(4deg);
+  }
+  5% {
+    transform: scale(1.25) rotate(-4deg);
+  }
+  7% {
+    transform: scale(1.125) rotate(2deg);
+  }
+  10% {
+    transform: scale(1) rotate(-4deg);
+  }
+  14% {
+    transform: scale(1.25);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

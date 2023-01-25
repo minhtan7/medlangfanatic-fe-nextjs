@@ -3,12 +3,11 @@ import Link from "next/link"
 import styles from "@/styles/buttons/RecruitBtn.module.css"
 
 export const RecruitBtn = ({ cursor, course }) => {
-
     return (
         <div className="text-center">
-            <Link href={course && `/register-form/${course.slug.toLowerCase()}`}>
+            <Link href={course && `/form/${course.slug.toLowerCase()}`}>
                 <button
-                    className={styles["recruit-btn-card"]} style={{ cursor: cursor ? "pointer" : "unset" }}
+                    className={styles["recruit-btn-card"]} style={{ cursor: cursor ? "pointer" : "auto" }}
                 >
                     <div className={styles["left"]}></div>
                     Đang mở đăng ký

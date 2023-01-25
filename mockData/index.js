@@ -86,7 +86,7 @@ const courseListContent = {
         title: "Giao Tiếp Với Bệnh Nhân",
         image: "https://res.cloudinary.com/tanvo/image/upload/v1672313340/medlangfanatic/courses/cwp/communications_ycbuwr.jpg",
         content: "Khóa học hướng đến các bạn sinh viên y đã đi lâm sàng, hoặc các bác sĩ đã ra trường. Các bạn sẽ được trang bị những câu giao tiếp cơ bản nhất để có thể tự tin hỏi bệnh, khám, và tư vấn cho các bệnh nhân người nước ngoài.",
-        path: "/communication-with-patients-101",
+        path: "courses/communication-with-patients-101",
         idEl: "cwp-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-cwp-main',
         recruit: true
@@ -95,7 +95,7 @@ const courseListContent = {
         title: "Trình Ca Lâm Sàng",
         image: "https://res.cloudinary.com/tanvo/image/upload/v1671965829/medlangfanatic/courses/presenting-clinical-case-from-scratch/pccs-thumbnail_nei3t5.jpg",
         content: "Khóa học cho bạn trải nghiệm ngắm nghía cách trình bệnh án hiệu quả bằng tiếng Anh dưới góc độ ngôn ngữ học, và tự chuẩn bị cho mình một hành trang 'cao cấp' để đạt những bước tiến xa hơn trong sự nghiệp.",
-        path: "/clinical-case-presentation",
+        path: "courses/clinical-case-presentation",
         idEl: "pccs-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-pccs-main',
         recruit: true
@@ -104,7 +104,7 @@ const courseListContent = {
         title: "Thuật Ngữ Y Khoa",
         image: "https://res.cloudinary.com/tanvo/image/upload/v1674322583/medlangfanatic/courses/mt/mt-thumbnail_uhsldz.jpg",
         content: "Medical Terminology: An essential course for healthcare professional: xây dựng vững chắc căn bản thuật ngữ y khoa tiếng Anh sau 60 giờ học đúng lộ trình.",
-        path: "/medical-terminology",
+        path: "courses/medical-terminology",
         idEl: "mt-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-mt-secondary',
         recruit: true
@@ -113,7 +113,7 @@ const courseListContent = {
         title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
         image: "https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg",
         content: "Khóa học MAVL hướng dẫn bạn phân nhóm từ vựng giúp liên tưởng, và bài tập tương tác đa dạng giúp hiểu sâu hàm nghĩa các từ vựng.",
-        path: "/MAVL",
+        path: "courses/mavl",
         idEl: "mavl-thumbnail-vertical",
         btnClass: "btn-sign-up",
         recruit: true
