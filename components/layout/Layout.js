@@ -18,21 +18,40 @@ export default function Layout({ title, description, children }) {
         <div>
             <Head>
                 <title>{title}</title>
-                <meta name="description" content={description} />
+                {/* <meta name="description" content={description} />
                 <meta property="og:type" content="website" />
-                <link rel='canonical' href="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app" key="canonical" />
+                <link rel='canonical' href="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app" key="canonical" /> */}
                 {/* <link rel='canonical' href={metaDecorator.hostname + window.location.pathname + window.location.search} /> */}
                 {/* <meta
                     property="og:url"
                     content={metaDecorator.hostname + window.location.pathname + window.location.search}
                 /> */}
-                <meta
+                {/* <meta
                     property="og:url"
                     content="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app"
                 />
                 <meta property="og:title" content={title} />
                 <meta property="og:image" content="https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg" />
-                <meta property="og:description" content={description} />
+                <meta property="og:description" content={description} /> */}
+                <meta property="og:title" content={title} key="ogtitle" />
+                <meta property="og:description" content="a description" key="ogdesc" />
+                <meta
+                    property="og:image"
+                    content="https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg"
+                    key="ogimage"
+                />
+                <meta
+                    property="og:site_name"
+                    content="Med Lang Fanatic"
+                    key="ogsitename"
+                />
+                <meta
+                    property="og:url"
+                    content="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app"
+                    key="ogurl"
+                />
+                <meta property="og:type" content="article" key="ogtype" />
+
             </Head>
             <MainHeader />
             {children}
