@@ -13,7 +13,7 @@ import { RecruitBtn } from '../buttons/RecruitBtn'
 export const CourseCard = ({ course }) => {
     // const { hours, minutes, seconds } = formatTime(course?.duration || 0)
 
-    console.log(course)
+    // console.log(course)
     // useScript(process.env.REACT_APP_LUCKY_ORANGE)
     // useScript(process.env.REACT_APP_GG_TAG_MNG)
     return course &&

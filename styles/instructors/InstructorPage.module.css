@@ -1,0 +1,6 @@
+.instructor-hr{
+    border-top: 3px solid var(--main);
+    opacity: 1;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}

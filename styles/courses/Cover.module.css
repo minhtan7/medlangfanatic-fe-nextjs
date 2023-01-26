@@ -4,6 +4,6 @@
 #cover-session h2{
     text-shadow: 2px 2px var(--contrast);;
 }
-#cover-session .border{
+.border{
     border-color: var(--main)!important;
 }

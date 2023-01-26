@@ -2,39 +2,44 @@ import { useEffect, useState } from 'react'
 import { Col, Container, Row, Spinner } from 'react-bootstrap'
 import { useRouter } from 'next/router'
 // import "./style.css"
+import Script from 'next/script'
 import Image from 'next/image'
 import { useScript } from 'hook/useScript'
 import { useFilterCssRoot } from 'hook/useFilterCssRoot'
 import Layout from '@/components/layout/Layout'
+import { PIPE_DRIVE } from '@/config/index'
+import { filterCss } from '@/lib/filterCss'
 
 
-// const slugs = {
-//     "medical-terminology": "https://webforms.pipedrive.com/f/ckweFskLyr2V5zNB3vMuVsB0jgaEbAHXcuRFz8YBHN5O4Bsdk3od9WJ8rD19uCnL0f",
-//     "mavl": "https://webforms.pipedrive.com/f/6Na7FxACrR9AIRnhT8dm44I4RAqCPurExWfMOooL85t0s1JxH2m9WyyqEEW9kzCo5t",
-//     "medical-terminology-trial": "https://webforms.pipedrive.com/f/6N37cxIUxaxGnALsAiEAT4LSo6G8xjanTmsByGJEUj3zBfhJlgYRYBsJN6DhbKxWyn",
-//     "mavl-trial": "https://webforms.pipedrive.com/f/5XdP3bJX5SfOZmrSFx0Fg41UHirDkKLIr3Sm8hafZ2DOHU1HJK8Osq1efouFK9wmVZ",
-//     "clinical-case-presentation": "https://webforms.pipedrive.com/f/6FCJQ2wrJH8q1JR8NoyJCeF6vDA2GVbfYVh7DtgOjGkeqHjg3o2Vz8YsFpp2euHWUP",
-//     "communication-with-patients-101": "https://webforms.pipedrive.com/f/6jZHCqSSCU9dyeZNUMyqnLlrTYi9jR0xgoaCnmtUYHvmJDLwZfhQCsc3rCD9AvMo1B"
-// }
+const slugs = {
+    "medical-terminology": "https://webforms.pipedrive.com/f/ckweFskLyr2V5zNB3vMuVsB0jgaEbAHXcuRFz8YBHN5O4Bsdk3od9WJ8rD19uCnL0f",
+    "mavl": "https://webforms.pipedrive.com/f/6Na7FxACrR9AIRnhT8dm44I4RAqCPurExWfMOooL85t0s1JxH2m9WyyqEEW9kzCo5t",
+    "medical-terminology-trial": "https://webforms.pipedrive.com/f/6N37cxIUxaxGnALsAiEAT4LSo6G8xjanTmsByGJEUj3zBfhJlgYRYBsJN6DhbKxWyn",
+    "mavl-trial": "https://webforms.pipedrive.com/f/5XdP3bJX5SfOZmrSFx0Fg41UHirDkKLIr3Sm8hafZ2DOHU1HJK8Osq1efouFK9wmVZ",
+    "clinical-case-presentation": "https://webforms.pipedrive.com/f/6FCJQ2wrJH8q1JR8NoyJCeF6vDA2GVbfYVh7DtgOjGkeqHjg3o2Vz8YsFpp2euHWUP",
+    "communication-with-patients-101": "https://webforms.pipedrive.com/f/6jZHCqSSCU9dyeZNUMyqnLlrTYi9jR0xgoaCnmtUYHvmJDLwZfhQCsc3rCD9AvMo1B"
+}
 
-export default function FormPage() {
+export default function FormPage({ pipedrive }) {
     const [show, setShow] = useState(false)
     const [link, setLink] = useState("")
-    // const { slug } = useParams()
-    // useScript(process.env.REACT_APP_PIPEDRIVE_LOADER)
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setShow(true)
-    //     }, 1000);
-    //     if (slugs[slug]) {
-    //         setLink(slugs[slug])
-    //     }
-    // }, [slug])
 
-    // useFilterCssRoot({ slug, ...filterCss(slug) })
+    const router = useRouter()
+    const { slug } = router.query
+    useEffect(() => {
+        setTimeout(() => {
+            setShow(true)
+        }, 1000);
+        if (slugs[slug]) {
+            setLink(slugs[slug])
+        }
+    }, [slug])
+
+    useFilterCssRoot({ slug, ...filterCss(slug) })
 
     return (
         <Layout>
+            <Script src={pipedrive} />
             <Container className='py-5' id="form-page">
                 <Row>
                     <Col xs={0} md={6} >
@@ -83,7 +88,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
     return {
         props: {
-
+            pipedrive: PIPE_DRIVE
         }
     }
 }

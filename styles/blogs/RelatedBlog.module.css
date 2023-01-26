@@ -1,0 +1,23 @@
+.related-border{
+    position: relative;
+    width: 90%;
+}
+.related-border::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    top: -1rem;
+    left: 0;
+}
+.related-link{
+    color: black;
+    /* font-weight: bold; */
+    text-decoration: none;
+    display: block;
+}
+
+.related-link:hover{
+    color: var(--main)
+}

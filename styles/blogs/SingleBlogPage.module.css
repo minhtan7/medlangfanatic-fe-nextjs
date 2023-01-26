@@ -1,0 +1,38 @@
+
+
+.wrapper-fb-share-btn{
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+.share-btn .btn-facebook {
+    width: 2rem;
+    top: 0;
+    left: 0;
+    color: black;
+    cursor: pointer;
+}
+.share-btn .btn-facebook:hover svg{
+    position: relative;
+    top: -2px;
+    box-shadow: 0 7px 14px 0 rgb(0 0 0 / 20%);
+    display: inline-block;
+    border-radius: 50%;
+    color: var(--primary);
+    transition-duration:0.3s
+}
+.blog-title{
+    font-size: 3.5rem;
+    font-family: 'Gentium Book Plus', serif;
+    /* font-style: italic; */
+}
+@media only screen and (max-width: 600px) {
+  .blog-title{
+    font-size: 2.2rem;
+    font-weight: 500;
+  }
+  .related-border{
+    margin-top: 2rem;
+  }
+}

@@ -1,12 +1,19 @@
-import { slugTranslate } from "@/lib/slugTranslate"
+import { Card } from "react-bootstrap"
 import dayjs from "dayjs"
 import Image from "next/image"
 import Link from "next/link"
-import { Card } from "react-bootstrap"
+import { useEffect, useState } from "react"
 
-export const BlogCard = ({ blog, length = 200 }) => {
-    return blog && (
-        <Card className='blog-card' >
+import { slugTranslate } from "@/lib/slugTranslate"
+import styles from "@/styles/blogs/BlogCard.module.css"
+
+export default function BlogCard({ blog, length = 200 }) {
+    const [mount, setMount] = useState(false)
+    useEffect(() => {
+        setMount(true)
+    }, [])
+    return mount && (
+        <Card className={styles['blog-card']} >
             <Link href={`/blogs/${blog.slug}`}>
                 <Image variant="top" style={{ borderRadius: 0, cursor: "pointer" }} src={blog.image} alt={blog.title} width={350} height={195} />
             </Link>
@@ -14,10 +21,10 @@ export const BlogCard = ({ blog, length = 200 }) => {
                 <Link href={`/blogs/${blog.slug}`}>
                     <Card.Title style={{ cursor: "pointer" }} >{blog.title}</Card.Title>
                 </Link>
-                <Card.Text>
+                <div>
                     <small className="text-muted">{dayjs(blog.createdAt).format("DD/MM/YYYY")}</small>
-                    <span dangerouslySetInnerHTML={{ __html: blog.content.slice(0, length) + "..." }}></span>
-                </Card.Text>
+                    <p dangerouslySetInnerHTML={{ __html: blog.content.slice(0, length) + "..." }}></p>
+                </div>
                 <Card.Text>
                     {blog.topic.length && blog.topic.map((t, index) => {
                         return <span key={index} style={{ fontSize: "0.8rem" }}>
@@ -29,4 +36,3 @@ export const BlogCard = ({ blog, length = 200 }) => {
         </Card >
     )
 }
-export default BlogCard

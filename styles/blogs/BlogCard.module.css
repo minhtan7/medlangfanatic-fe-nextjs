@@ -1,0 +1,30 @@
+.blog-card{
+    border: none;
+    border-radius: 0;
+    /* box-shadow: ; */
+    background-color: white;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+    animation: 0.4s appear 0.4s ease-in-out forwards;
+}
+.blog-card:hover{
+    /* animation-delay: 50ms; */
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 0 24px 0 rgb(0 0 0 / 30%);
+}
+@keyframes appear{
+    from{
+        opacity:0;
+        -webkit-transform:translateY(30px);
+        transform:translateY(30px)
+    }
+    to{
+        opacity:1;
+        -webkit-transform:translateY(0);
+        transform:translateY(0)
+    }
+}
+#blog-page .title{
+    font-size: 3rem;
+    padding: 1rem 0 5rem 0
+}
