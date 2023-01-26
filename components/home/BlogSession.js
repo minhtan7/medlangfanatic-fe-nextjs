@@ -28,7 +28,7 @@ const responsive = {
 };
 
 export const BlogSession = ({ blogs }) => {
-
+    console.log("here")
     return (
         <div id={styles["blog-session"]} className='mb-4 mb-md-5'>
             <div className='mx-md-7'>

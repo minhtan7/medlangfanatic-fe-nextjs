@@ -30,6 +30,7 @@ export const ShowMore = ({ defaultHeight, text, index, slide }) => {
         }
     }, [text])
 
+
     const handleClickBtn = () => {
         setHeightCurrent(isExpanded ? heightMin : heightMax);
         setIsExpanded((prev) => !prev);
