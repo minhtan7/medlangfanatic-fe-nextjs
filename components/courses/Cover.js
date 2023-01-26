@@ -21,7 +21,7 @@ export const Cover = () => {
                     </span>
                 </div>
                 <p className='text-center fst-italic'>
-                    <small>(Đoạn văn trích từ cuốn Harrison's principles of internal medicine, 21st ed, trang 481)</small>
+                    <small>(Đoạn văn trích từ cuốn Harrison&apos;s principles of internal medicine, 21st ed, trang 481)</small>
                 </p>
                 <small style={{ fontSize: "10px", display: "inline-table" }}>
                     * Các từ được tô màu <span className='covered-text'>highlight</span> là các từ khóa trong bộ Medical Academic Vocabulary List
@@ -59,7 +59,7 @@ export const CoverPCCS = () => {
                 <div className='position-relative'>
                     <p className='text-justify lh-md'>
                         Khóa học hướng đến các bạn sinh viên y đã đi lâm sàng, hoặc các bác sĩ đã ra trường. <br />
-                        Các bạn sẽ được ngắm nghía cách trình bệnh án hiệu quả bằng tiếng Anh dưới góc độ ngôn ngữ học, và tự chuẩn bị cho mình một hành trang "cao cấp" để đạt những bước tiến xa hơn trong sự nghiệp.<br />
+                        Các bạn sẽ được ngắm nghía cách trình bệnh án hiệu quả bằng tiếng Anh dưới góc độ ngôn ngữ học, và tự chuẩn bị cho mình một hành trang &quot;cao cấp&quot; để đạt những bước tiến xa hơn trong sự nghiệp.<br />
                         Khóa học giới thiệu cho các bạn cấu trúc của một ca lâm sàng được trình miệng bằng tiếng Anh, và đi sâu vào phân tích cách trình bày hiệu quả cho từng phần riêng biệt. Các bạn sẽ lần lượt làm quen với nhiều loại công thức và từ vựng khác nhau, với những cấu trúc dễ học dễ áp dụng, để đạt mục tiêu đầu ra là có thể tự tin trình bày một ca lâm sàng bằng tiếng Anh. <strong>Khóa học gồm 2 phần:</strong>
                     </p>
                 </div>

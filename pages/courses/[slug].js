@@ -19,23 +19,24 @@ import { CourseCard } from '@/components/courseCard/CourseCard';
 import { CTA } from '@/components/courses/CTA';
 import { useFilterCssRoot } from 'hook/useFilterCssRoot';
 import { Cover, CoverCWP, CoverMedicalTerminology, CoverPCCS } from '@/components/courses/Cover';
+import { filterCss } from '@/lib/filterCss';
 
 const defaultHeight = 72;
 
-const filterCss = (slug) => {
-    switch (slug.toLowerCase()) {
-        case "mavl":
-            return { main: "#011c7e", mainDark: "#131653", contrast: "#05feb1", contrastLight: "#05feb12e" }
-        case "medical-terminology":
-            return { main: "#82008f", mainDark: "#64006e", contrast: "#fff400", contrastLight: "#fac5ff" }
-        case "clinical-case-presentation":
-            return { main: "#0C3B2E", mainDark: "#6d9773", contrast: "#ffba00", contrastLight: "#bb8a52" }
-        case "communication-with-patients-101":
-            return { main: "#5F021F", mainDark: "#440217", contrast: "#ff8906", contrastLight: "#ffc6c7" }
-        default:
-            break;
-    }
-}
+// const filterCss = (slug) => {
+//     switch (slug.toLowerCase()) {
+//         case "mavl":
+//             return { main: "#011c7e", mainDark: "#131653", contrast: "#05feb1", contrastLight: "#05feb12e" }
+//         case "medical-terminology":
+//             return { main: "#82008f", mainDark: "#64006e", contrast: "#fff400", contrastLight: "#fac5ff" }
+//         case "clinical-case-presentation":
+//             return { main: "#0C3B2E", mainDark: "#6d9773", contrast: "#ffba00", contrastLight: "#bb8a52" }
+//         case "communication-with-patients-101":
+//             return { main: "#5F021F", mainDark: "#440217", contrast: "#ff8906", contrastLight: "#ffc6c7" }
+//         default:
+//             break;
+//     }
+// }
 const filterCover = (slug) => {
     switch (slug) {
         case "mavl":
@@ -53,7 +54,7 @@ const filterCover = (slug) => {
 
 export default function CoursePage({ course }) {
 
-    useFilterCssRoot({ slug: course.slug, ...filterCss(course.slug) })
+    useFilterCssRoot({ slug: course && course.slug, ...filterCss(course && course.slug) })
 
     return course && (
         <Layout title={course.title}>

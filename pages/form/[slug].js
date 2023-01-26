@@ -20,12 +20,10 @@ const slugs = {
     "communication-with-patients-101": "https://webforms.pipedrive.com/f/6jZHCqSSCU9dyeZNUMyqnLlrTYi9jR0xgoaCnmtUYHvmJDLwZfhQCsc3rCD9AvMo1B"
 }
 
-export default function FormPage({ pipedrive }) {
+export default function FormPage({ pipedrive, slug }) {
     const [show, setShow] = useState(false)
     const [link, setLink] = useState("")
 
-    const router = useRouter()
-    const { slug } = router.query
     useEffect(() => {
         setTimeout(() => {
             setShow(true)
@@ -34,8 +32,11 @@ export default function FormPage({ pipedrive }) {
             setLink(slugs[slug])
         }
     }, [slug])
+    if (slug) {
 
+    }
     useFilterCssRoot({ slug, ...filterCss(slug) })
+
 
     return (
         <Layout>
@@ -88,7 +89,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
     return {
         props: {
-            pipedrive: PIPE_DRIVE
+            pipedrive: PIPE_DRIVE,
+            slug
         }
     }
 }

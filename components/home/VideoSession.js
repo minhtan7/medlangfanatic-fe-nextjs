@@ -9,7 +9,7 @@ export const VideoSession = () => {
     const [mobile, setMobile] = useState(false)
     useEffect(() => {
         setMobile(isMobile)
-    }, [isMobile])
+    }, [])
     return (
         <div id={styles["video-session"]} className='mb-4 mb-md-5 mx-md-7'>
             <Container className='h-100'>

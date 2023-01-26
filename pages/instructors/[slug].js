@@ -18,7 +18,7 @@ export default function InstructorPage({ slug }) {
         setMobile(isMobile)
     }, [isMobile])
 
-    const instructor = slugTranslate({ slug, target: "instructors" })
+    const instructor = slugTranslate({ slug: slug ? slug : "bac-si-tran-quang-hung", target: "instructors" })
     return (
         <section id='instructor-page' >
             <div className='mb-md-7 mx-md-7 mt-md-5'>
@@ -99,7 +99,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-    console.log(slug)
     return {
         props: { slug }
     }
