@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 
 
 const metaDecorator = {
-    hostname: "https://medlangfanatic.com"
+    hostname: "https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app"
 }
 
 export default function Layout({ title, description, children }) {
