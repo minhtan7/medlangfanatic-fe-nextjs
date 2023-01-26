@@ -21,28 +21,7 @@ export default function HomePage({ instructors, courseListContent, fbs, blogs })
 
   return (
     <>
-      <Layout >
-        <Head>
-          <meta property="og:title" content="medlangfanatic" key="ogtitle" />
-          <link rel='canonical' href="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app" key="canonical" /> */
-          <meta property="og:description" content="a description" key="ogdesc" />
-          <meta
-            property="og:image"
-            content="https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg"
-            key="ogimage"
-          />
-          <meta
-            property="og:site_name"
-            content="Med Lang Fanatic"
-            key="ogsitename"
-          />
-          <meta
-            property="og:url"
-            content="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app"
-            key="ogurl"
-          />
-          <meta property="og:type" content="article" key="ogtype" />
-        </Head>
+      <Layout description={""}>
         <main >
           <CTA />
           <InstructorList instructors={instructors} />
