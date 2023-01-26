@@ -14,7 +14,7 @@ export default function Layout({ title, description, children }) {
     useEffect(() => {
         setLoaded(true)
     }, [])
-    return loaded && (
+    return (
         <div>
             <Head>
                 <title>{title}</title>
