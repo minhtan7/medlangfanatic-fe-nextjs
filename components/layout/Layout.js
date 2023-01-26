@@ -33,7 +33,7 @@ export default function Layout({ title, description, children }) {
                 <meta property="og:title" content={title} />
                 <meta property="og:image" content="https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg" />
                 <meta property="og:description" content={description} /> */}
-                <link rel='canonical' href="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app" key="canonical" /> */}
+                <link rel='canonical' href="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app" key="canonical" />
                 <meta property="og:title" content={title} key="ogtitle" />
                 <meta property="og:description" content="a description" key="ogdesc" />
                 <meta
