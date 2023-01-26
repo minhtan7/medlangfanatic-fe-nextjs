@@ -20,13 +20,18 @@ export default function Layout({ title, description, children }) {
                 <title>{title}</title>
                 <meta name="description" content={description} />
                 <meta property="og:type" content="website" />
-                <link rel='canonical' href={metaDecorator.hostname + window.location.pathname + window.location.search} />
-                <meta
+                <link rel='canonical' href="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app" />
+                {/* <link rel='canonical' href={metaDecorator.hostname + window.location.pathname + window.location.search} /> */}
+                {/* <meta
                     property="og:url"
                     content={metaDecorator.hostname + window.location.pathname + window.location.search}
+                /> */}
+                <meta
+                    property="og:url"
+                    content="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app"
                 />
                 <meta property="og:title" content={title} />
-                <meta property="og:image" content={"https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg"} />
+                <meta property="og:image" content="https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg" />
                 <meta property="og:description" content={description} />
             </Head>
             <MainHeader />
