@@ -58,7 +58,7 @@ export default function SingleBlogPage({ blog }) {
 
 
 const randomRelatedBlog = (blog) => {
-    if (blog.relatedPost.length === 1) return
+    if (blog.relatedPost.length === 1 | blog.relatedPost.length === 0) return
     if (blog.relatedPost[blog.relatedPost.length - 1].slug === blog.slug) {
         return blog.relatedPost[0]
     }
