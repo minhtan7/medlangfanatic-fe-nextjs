@@ -1,0 +1,7 @@
+.pagination-btn{
+    border-radius: 0;
+}
+.pagination-btn:disabled{
+    background-color: var(--contrast-light)!important;
+    color: var(--main) !important;   
+}

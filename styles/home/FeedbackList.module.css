@@ -67,7 +67,7 @@
         height: 300px;
     }
      .student-icon img{
-        width: 30px;
+        width: 30px!important;
     }
      .student-icon{
         width: 30px;

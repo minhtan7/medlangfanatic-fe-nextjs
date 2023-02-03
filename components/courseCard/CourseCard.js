@@ -9,6 +9,7 @@ import { Timer } from '../utils/Timer'
 import styles from "@/styles/courseCard/CourseCard.module.css"
 import Link from 'next/link'
 import { RecruitBtn } from '../buttons/RecruitBtn'
+import Image from 'next/image'
 
 export const CourseCard = ({ course }) => {
     // const { hours, minutes, seconds } = formatTime(course?.duration || 0)
@@ -17,25 +18,36 @@ export const CourseCard = ({ course }) => {
     // useScript(process.env.REACT_APP_LUCKY_ORANGE)
     // useScript(process.env.REACT_APP_GG_TAG_MNG)
     return course &&
-        <Card className={styles['course-card']}>
-            < Card.Img variant="top" src={slugTranslate({ slug: course.slug, target: "thumbnail" })} style={{ borderRadius: 0 }
-            } />
+        <Card className={styles["course-card"]}>
+            < Image
+                src={slugTranslate({ slug: course.slug, target: "thumbnail" })} style={{ borderRadius: 0 }}
+                alt={course.slug} fill object-fit='contain'
+            />
             < Card.Body style={{ color: "black" }}>
                 <Card.Title style={{ textAlign: "center" }}>Chi phí khóa học:
-                    <h2 style={{ color: "red", margin: "0 0 0.8rem" }}>{course.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}K</h2>
+                    <h2 style={{ color: "#011c7e", margin: "0 0 0.8rem" }}>{course.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}K</h2>
                 </Card.Title>
                 {/* <Button
                     onClick={() => navigate(`/register-form/${course.slug.toLowerCase()}-trial`)}
                     className='btn-sign-up-contrast mb-2' >
                     <span>Học thử!</span>
                 </Button> */}
-                <Link href={`/form/${course.slug.toLowerCase()}`}>
+
+
+                {slugTranslate({ target: "recruitStatus", slug: course.slug }) ?
+                    <Link href={`/form/${course.slug.toLowerCase()}`}>
+                        <Button
+                            variant="primary" className='btn-sign-up mb-3' >
+                            <span>Đăng ký ngay</span>
+                        </Button>
+                    </Link> :
                     <Button
                         variant="primary" className='btn-sign-up mb-3' >
-                        <span>Đăng ký ngay</span>
+                        <span>Đã đủ học viên</span>
                     </Button>
-                </Link>
-                <RecruitBtn course={course} />
+                }
+
+                {slugTranslate({ target: "recruitStatus", slug: course.slug }) && <RecruitBtn cursor={true} course={course} />}
             </Card.Body >
             {course.slug === "clinical-case-presentation" |
                 course.slug === "communication-with-patients-101"
@@ -53,7 +65,7 @@ export const CourseCard = ({ course }) => {
             ) :
                 course.slug === "communication-with-patients-101" ? (
                     <Card.Body>
-                        < Card.Img variant="top" id="card-coupon"
+                        < Card.Img variant="top" id={styles["card-coupon"]}
                             src="https://res.cloudinary.com/tanvo/image/upload/v1672311931/medlangfanatic/courses/cwp/coupon-cwp_zzbcqe.jpg"
                             style={{ borderRadius: 0 }} />
                     </Card.Body>

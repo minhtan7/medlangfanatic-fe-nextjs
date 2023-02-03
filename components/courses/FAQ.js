@@ -15,9 +15,9 @@ export const FAQ = ({ faq }) => {
                     <Nav variant="tabs" className="flex-column">
                         {faq.map((item, index) => (
                             <Nav.Item className={styles['faq-nav-item']} key={index}>
-                                <Nav.Link eventKey={index}>
+                                <Nav.Link eventKey={index} style={{ borderRadius: "0" }}>
                                     <FontAwesomeIcon icon={faQuestion} />
-                                    <span className='ms-1'> {item.question}</span>
+                                    <span className='ms-1 '> {item.question}</span>
                                 </Nav.Link>
                             </Nav.Item>
                         ))}

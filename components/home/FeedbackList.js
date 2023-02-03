@@ -19,11 +19,16 @@ export const FeedbackList = ({ fbs }) => {
     const circleListFn = (arr, index) => {
         if (index === -1) {
             return (<ul><li className={`${styles["student-icon"]} ${styles.last}`} >
-                <Image src="https://res.cloudinary.com/tanvo/image/upload/v1674323557/medlangfanatic/HomePage/plus-icon_faxapn.jpg" alt="student icon" width={40} height={40} />
+                <Image
+                    src="https://res.cloudinary.com/tanvo/image/upload/v1674323557/medlangfanatic/HomePage/plus-icon_faxapn.jpg" alt="student icon"
+                    fill object-fit="contain"
+                />
             </li></ul>)
         }
         return (<ul><li className={styles['student-icon']}>
-            <Image src={arr[index]} alt="student icon" width={40} height={40} />
+            <Image src={arr[index]} alt="student icon"
+                fill object-fit="contain"
+            />
             {circleListFn(arr, index - 1)}
         </li></ul>)
     }

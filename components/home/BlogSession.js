@@ -28,15 +28,12 @@ const responsive = {
 };
 
 export const BlogSession = ({ blogs }) => {
-    console.log("here")
     return (
         <div id={styles["blog-session"]} className='mb-4 mb-md-5'>
             <div className='mx-md-7'>
                 <Container className='h-100'>
                     <h1 className='mb-4 text-main fw-bold'>
-                        <Link href={"/blogs"}>
-                            Blogs
-                        </Link>
+                        Blogs
                         <br />
                         <span className='text-30 fw-normal' style={{ color: "#000" }}>
                             Chia sẻ kinh nghiệm

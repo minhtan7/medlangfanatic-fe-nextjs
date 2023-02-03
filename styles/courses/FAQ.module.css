@@ -9,7 +9,15 @@
     background-color: white!important;
     color: black!important
 }
-.faq-nav-item .nav-link{
+.faq-nav-item > a{
   color: black;
   border: none
 }
+
+/* .faq-nav-item > a:hover{
+  color:var(--main)
+}
+
+.faq-nav-item > a.active:hover{
+  color:var(--contrast)!important
+} */

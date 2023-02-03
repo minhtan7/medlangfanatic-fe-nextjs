@@ -3,6 +3,7 @@ import { CourseHeader, MainHeader } from "./Header"
 
 import Footer from "./Footer"
 import { useEffect, useState } from "react"
+import { useRouter } from "next/router"
 
 
 const metaDecorator = {
@@ -14,6 +15,8 @@ export default function Layout({ title, description, children }) {
     useEffect(() => {
         setLoaded(true)
     }, [])
+    const router = useRouter()
+    const path = router.pathname.split("/")[1]
     return (
         <div>
             <Head>
@@ -54,7 +57,7 @@ export default function Layout({ title, description, children }) {
                 <meta property="og:type" content="article" key="ogtype" />
 
             </Head>
-            <MainHeader />
+            {path === "courses" ? <CourseHeader /> : <MainHeader />}
             {children}
             <Footer />
         </div>

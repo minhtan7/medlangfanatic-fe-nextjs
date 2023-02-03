@@ -89,7 +89,7 @@ const courseListContent = {
         path: "courses/communication-with-patients-101",
         idEl: "cwp-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-cwp-main',
-        recruit: true
+        recruit: false
     },
     "clinical-case-presentation": {
         title: "Trình Ca Lâm Sàng",
@@ -98,7 +98,7 @@ const courseListContent = {
         path: "courses/clinical-case-presentation",
         idEl: "pccs-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-pccs-main',
-        recruit: true
+        recruit: false
     },
     "medical-terminology": {
         title: "Thuật Ngữ Y Khoa",

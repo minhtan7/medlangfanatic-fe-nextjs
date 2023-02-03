@@ -25,7 +25,7 @@ export const Hero = ({ course }) => {
                             </li>
                         ))}
                     </ul>
-                    <RecruitBtn cursor={true} course={course} />
+                    {slugTranslate({ target: "recruitStatus", slug: course.slug }) && <RecruitBtn cursor={true} course={course} />}
 
                 </Col>
                 <Col md={6} className="d-none d-md-block">

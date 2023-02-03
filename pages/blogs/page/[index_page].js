@@ -4,26 +4,54 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-import { POST_PER_PAGE } from '@/config/index'
+import { BASE_URL, POST_PER_PAGE } from '@/config/index'
 import apiService from '@/lib/apiService'
 import LoadingSpinner from '@/components/utils/LoadingSpinner'
 import BlogCard from '@/components/blog/BlogCard'
 import PaginationBar from '@/components/utils/PaginationBar'
 import Layout from '@/components/layout/Layout'
+import { useEffect, useState } from 'react'
+import { SearchBlock, SearchResult } from '@/components/utils/Search'
 
 
 export default function BlogPage({ blogs, totalPage, page }) {
+    const [search, setSearch] = useState("")
+    const [results, setResults] = useState([])
+    const handleChange = (e) => {
+        setSearch(e.target.value)
+    }
+    useEffect(() => {
+        const fetchSearch = async () => {
+            const res = await apiService.get(`/posts/search/${search}`)
+            setResults(res.data.posts)
+        }
+        fetchSearch()
+    }, [search])
+    const handleOnBlur = () => {
+        setResults([])
+    }
     return (
         <Layout>
             <div id="blog-page" style={{ backgroundColor: "#edf1ff91" }}>
                 <Container>
-                    <div className=' pt-5'>
-                        <Link href="/" className='text-secondary text-decoration-none'>
-                            <FontAwesomeIcon icon={faAngleLeft} className="me-3" />
-                            Về trang chủ
-                        </Link>
-                        <h1 className='title' >Blogs</h1>
-                    </div>
+                    <Row>
+                        <Col>
+                            <div className=' pt-5'>
+                                <Link href="/" className='text-secondary text-decoration-none'>
+                                    <FontAwesomeIcon icon={faAngleLeft} className="me-3" />
+                                    Về trang chủ
+                                </Link>
+                                <h1 className='title' >Blogs</h1>
+                            </div>
+                        </Col>
+                        <Col md={3} >
+                            <div className='position-relative pt-5'>
+                                <SearchBlock search={search} handleChange={handleChange} handleOnBlur={handleOnBlur} />
+                                <SearchResult results={results} />
+                            </div>
+
+                        </Col>
+                    </Row>
                     <Row>
                         <hr />
                         {!blogs ? <LoadingSpinner /> : blogs.map((blog) => (

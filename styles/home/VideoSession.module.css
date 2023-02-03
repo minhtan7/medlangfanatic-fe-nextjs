@@ -60,6 +60,32 @@
 .img-wrapper{
     height: 315px!important;
 }
+.visit-document{
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    line-height: 1.8;
+}
+.visit-document::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -0.5rem;
+    transform: translate(-100%,65%);
+    height: 100%;
+    width: 40rem;
+    border-top: 1px dashed var(--main);
+    border-top-style: dotted;
+}
+
+.visit-document:hover{
+    color: var(--main);
+    cursor: pointer;
+    
+}
 
 @media only screen and (max-width: 600px) {
     #video-session .video-thumbnail.left div{

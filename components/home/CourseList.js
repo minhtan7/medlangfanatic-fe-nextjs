@@ -62,16 +62,6 @@ export const CourseList = ({ courseListContent }) => {
                         )
                         )
                     }
-                    {/* <Col xs={12} md={4}>
-                        <CourseThumbnailVertical />
-                    </Col>
-                    <Col xs={12} md={4}>
-                        <CourseThumbnailVerticalMT />
-                    </Col>
-
-                    <Col xs={12} md={4}>
-                        <CourseThumbnailVerticalMT />
-                    </Col> */}
                 </Row>
             </Container>
         </div >

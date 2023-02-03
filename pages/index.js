@@ -15,10 +15,9 @@ import { VideoSession } from '@/components/home/VideoSession';
 import { Podcast } from '@/components/home/Podcast';
 import { Subscription } from '@/components/home/Subscription';
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export default function HomePage({ instructors, courseListContent, fbs, blogs }) {
-
   return (
     <>
       <Layout description={""}>

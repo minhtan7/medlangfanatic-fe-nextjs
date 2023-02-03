@@ -7,16 +7,18 @@ import { useEffect, useState } from "react"
 import { slugTranslate } from "@/lib/slugTranslate"
 import styles from "@/styles/blogs/BlogCard.module.css"
 
-export default function BlogCard({ blog, length = 200 }) {
+export default function BlogCard({ blog, length = 200, compact }) {
     const [mount, setMount] = useState(false)
     useEffect(() => {
         setMount(true)
     }, [])
     return mount && (
         <Card className={styles['blog-card']} >
-            <Link href={`/blogs/${blog.slug}`}>
-                <Image variant="top" style={{ borderRadius: 0, cursor: "pointer" }} src={blog.image} alt={blog.title} width={350} height={195} />
-            </Link>
+            {!compact &&
+                <Link href={`/blogs/${blog.slug}`}>
+                    <Image variant="top" style={{ borderRadius: 0, cursor: "pointer" }} src={blog.image} alt={blog.title} width={350} height={195} />
+                </Link>
+            }
             <Card.Body >
                 <Link href={`/blogs/${blog.slug}`}>
                     <Card.Title style={{ cursor: "pointer" }} >{blog.title}</Card.Title>

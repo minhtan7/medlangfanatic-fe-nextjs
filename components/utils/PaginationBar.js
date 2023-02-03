@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { Button } from "react-bootstrap";
 
+import styles from "@/styles/utils/PaginationBar.module.css"
+
 export default function PaginationBar({ page, totalPage }) {
 
     return (
@@ -13,7 +15,7 @@ export default function PaginationBar({ page, totalPage }) {
             </span>
             <Link href={`/blogs/page/${parseInt(page) - 1}`}>
                 <Button variant="primary"
-                    className={"pagination-btn"}
+                    className={styles["pagination-btn"]}
                     disabled={page === 1 ? true : false}
                 >
                     <FontAwesomeIcon icon={faChevronLeft} />
@@ -21,7 +23,7 @@ export default function PaginationBar({ page, totalPage }) {
             </Link>
             <Link href={`/blogs/page/${parseInt(page) + 1}`}>
                 <Button variant="primary"
-                    className="pagination-btn"
+                    className={styles["pagination-btn"]}
                     disabled={page === totalPage ? true : false}
                 >
                     <FontAwesomeIcon icon={faChevronRight} />

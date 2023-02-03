@@ -65,8 +65,9 @@ const InstructorCardLeft = ({ instructor }) => {
                                 </li>
                             ))}
                         </ul>
-                        {instructor.link && !mobile &&
-                            <div className='d-flex justify-content-end align-items-end h-100 w-100'>
+                        {instructor.link
+                            // && !mobile
+                            && <div className='d-flex justify-content-end align-items-end h-100 w-100'>
                                 <Link href={instructor.link}>
                                     <button className={`${styles["custom-btn"]} ${styles["btn-read-more"]}`}>
                                         <span>Đọc thêm</span>
@@ -128,8 +129,9 @@ const InstructorCardRight = ({ instructor }) => {
                                 </li>
                             ))}
                         </ul>
-                        {instructor.link && !mobile &&
-                            <div className='d-flex justify-content-end align-items-end w-100' style={{ height: "3rem" }}>
+                        {instructor.link
+                            // && !mobile
+                            && <div className='d-flex justify-content-end align-items-end w-100' style={{ height: "3rem" }}>
                                 <Link href={instructor.link}>
                                     <button className={`${styles["custom-btn"]} ${styles["btn-read-more"]}`}><span>Đọc thêm</span></button>
                                 </Link>

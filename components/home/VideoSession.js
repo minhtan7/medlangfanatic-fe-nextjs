@@ -4,6 +4,7 @@ import { isMobile } from "react-device-detect"
 const { Container, Row, Col } = require("react-bootstrap")
 
 import styles from "@/styles/home/VideoSession.module.css"
+import Link from "next/link"
 
 export const VideoSession = () => {
     const [mobile, setMobile] = useState(false)
@@ -17,7 +18,8 @@ export const VideoSession = () => {
                     Tài liệu
                     <br />
                     <span className='text-30 fw-normal' style={{ color: "black" }}>Tiếng Anh Y khoa chọn lọc</span>
-                    {/* <Link to="/documentation" className='visit-blog d-none d-md-block'><i>Xem thêm Tài Liệu</i></Link> */}
+                    <Link href="/documents" className={`${styles["visit-document"]} d-none d-md-block`}><i>Xem thêm Tài liệu</i></Link>
+
                 </h1>
                 <Row>
                     <Col xs={12} md={6} className="mb-4 mb-md-0">

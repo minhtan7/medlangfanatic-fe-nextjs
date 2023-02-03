@@ -11,7 +11,7 @@ export const CourseThumbnailVertical = ({ course }) => {
                     {course.content}
                 </Card.Text>
                 <div
-                // className='d-md-flex'
+                    className='d-flex d-md-block text-center justify-content-center'
                 >
                     {/* <Button className="mb-2 mb-md-0 btn-primary-contrast btn-sign-up-contrast me-2"
                         onClick={() => navigate("/register-form/mavl-trial")} variant="primary">

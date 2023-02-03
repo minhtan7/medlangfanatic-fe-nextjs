@@ -14,6 +14,8 @@ import Script from 'next/script'
 import { sideBarItemsDoc } from 'mockData'
 import SideBar from '@/components/document/SideBar'
 import Layout from '@/components/layout/Layout'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 
 const getRender = (frame) => {
@@ -35,6 +37,7 @@ const getRender = (frame) => {
     return <WelcomeDoc />
 }
 export default function DocumentPage({ category, slug }) {
+    const [showPop, setShowPop] = useState(false)
     // const [frame, setFrame] = useState(null)
     // useScript("https://medlangfanatic.h5p.com/js/h5p-resizer.js")
     // const location = useLocation()
@@ -47,9 +50,11 @@ export default function DocumentPage({ category, slug }) {
     //     }
     // }, [location.search, slug, type])
 
+
     const frame = slugTranslate({ target: category, slug })
     return (
         <Layout>
+
             <div id="blog-page" >
                 <Container>
                     <div className=' pt-5'>
@@ -74,6 +79,7 @@ export default function DocumentPage({ category, slug }) {
                 <Subscription />
             </div>
             <ToTopArrowNormalUse />
+
         </Layout>
     )
 }
