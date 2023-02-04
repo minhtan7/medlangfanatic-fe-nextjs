@@ -102,4 +102,7 @@
     #video-session span{
         font-size: 20px;
     }   
+    .visit-document::after{
+        width: 0;
+    }
 }

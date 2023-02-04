@@ -38,7 +38,7 @@ export const BlogSession = ({ blogs }) => {
                         <span className='text-30 fw-normal' style={{ color: "#000" }}>
                             Chia sẻ kinh nghiệm
                         </span>
-                        <Link href="/blogs" className={`${styles["visit-blog"]} d-none d-md-block`}><i>Xem thêm blogs</i></Link>
+                        <Link href="/blogs" className={`${styles["visit-blog"]} d-md-block`}><i>Xem thêm Blogs</i></Link>
                     </h1>
                     {blogs && <Carousel responsive={responsive}>
                         {blogs.map(blog => (

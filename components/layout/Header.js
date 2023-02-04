@@ -24,7 +24,9 @@ function CourseHeader() {
 
                     </Nav>
                     <Nav>
-                        <Nav.Link className='me-3' onClick={() => navigate("/")} >Trang chủ</Nav.Link>
+                        <Link href="/" className='text-decoration-none'>
+                            <Nav.Link as="span" className='me-3'  >Trang chủ</Nav.Link>
+                        </Link>
                         <Nav.Link className='me-3' href="/#course-list-session"  >Khóa học</Nav.Link>
                         <Nav.Link className='me-3' href="#course-detail-content">Chương trình học</Nav.Link>
                         <Nav.Link className='me-3' href="#instructors">Giảng viên</Nav.Link>

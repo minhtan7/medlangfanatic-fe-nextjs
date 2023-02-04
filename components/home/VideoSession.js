@@ -18,8 +18,9 @@ export const VideoSession = () => {
                     Tài liệu
                     <br />
                     <span className='text-30 fw-normal' style={{ color: "black" }}>Tiếng Anh Y khoa chọn lọc</span>
-                    <Link href="/documents" className={`${styles["visit-document"]} d-none d-md-block`}><i>Xem thêm Tài liệu</i></Link>
-
+                    <Link href="/documents" className={`${styles["visit-document"]} d-md-block`}>
+                        {mobile ? <i>Xem thêm</i> : <i>Xem thêm Tài liệu</i>}
+                    </Link>
                 </h1>
                 <Row>
                     <Col xs={12} md={6} className="mb-4 mb-md-0">
