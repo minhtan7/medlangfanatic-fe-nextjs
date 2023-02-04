@@ -19,10 +19,12 @@ export const CourseCard = ({ course }) => {
     // useScript(process.env.REACT_APP_GG_TAG_MNG)
     return course &&
         <Card className={styles["course-card"]}>
-            < Image
-                src={slugTranslate({ slug: course.slug, target: "thumbnail" })} style={{ borderRadius: 0 }}
-                alt={course.slug} fill object-fit='contain'
-            />
+            <div style={{ width: "100%", height: "160px" }} className='position-relative'>
+                < Image
+                    src={slugTranslate({ slug: course.slug, target: "thumbnail" })} style={{ borderRadius: 0 }}
+                    alt={course.slug} fill object-fit='contain'
+                />
+            </div>
             < Card.Body style={{ color: "black" }}>
                 <Card.Title style={{ textAlign: "center" }}>Chi phí khóa học:
                     <h2 style={{ color: "#011c7e", margin: "0 0 0.8rem" }}>{course.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}K</h2>

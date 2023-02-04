@@ -43,13 +43,7 @@ body{
     font-family: 'Montserrat', sans-serif !important
 }
 
-a{
-  text-decoration: none;
-  color: var(--main)
-}
-a:hover{
-  color:var(--main-dark)
-}
+
 
 .icon::before {
     display: inline-block;
@@ -461,7 +455,7 @@ a:hover{
 }
 
 .accordion-button:not(.collapsed) {
-    color: unset;
+    color: var(--main);
     background-color: #f7f9fa;;
     box-shadow: unset;
     /* border: 1px solid var(--bs-accordion-border-color); */

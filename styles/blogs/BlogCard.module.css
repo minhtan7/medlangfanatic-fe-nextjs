@@ -12,6 +12,13 @@
     transition: 0.4s ease-in-out;
     box-shadow: 0 0 24px 0 rgb(0 0 0 / 30%);
 }
+.title{
+  text-decoration: none!important;
+  color: var(--main)!important
+}
+.title:hover{
+  color:var(--main-dark)
+}
 @keyframes appear{
     from{
         opacity:0;

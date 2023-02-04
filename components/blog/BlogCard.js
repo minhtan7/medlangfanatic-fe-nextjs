@@ -15,12 +15,12 @@ export default function BlogCard({ blog, length = 200, compact }) {
     return mount && (
         <Card className={styles['blog-card']} >
             {!compact &&
-                <Link href={`/blogs/${blog.slug}`}>
+                <Link href={`/blogs/${blog.slug}`} >
                     <Image variant="top" style={{ borderRadius: 0, cursor: "pointer" }} src={blog.image} alt={blog.title} width={350} height={195} />
                 </Link>
             }
             <Card.Body >
-                <Link href={`/blogs/${blog.slug}`}>
+                <Link href={`/blogs/${blog.slug}`} className={styles["title"]}>
                     <Card.Title style={{ cursor: "pointer" }} >{blog.title}</Card.Title>
                 </Link>
                 <div>
