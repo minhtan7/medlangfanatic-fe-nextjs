@@ -537,7 +537,7 @@ body{
     margin:auto
 }
 .modal-content {
-    background-color: initial;
+    background-color: initial !important;
   }
 .modal-content .course-card {
     box-shadow: 0 0 12px 1px #ffffffa8;
