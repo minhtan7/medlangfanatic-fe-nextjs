@@ -21,14 +21,17 @@ export default function BlogPage({ blogs, totalPage, page }) {
         setSearch(e.target.value)
     }
     useEffect(() => {
-        const fetchSearch = async () => {
+        const fetchSearch = async (search) => {
             const res = await apiService.get(`/posts/search/${search}`)
             setResults(res.data.posts)
         }
-        fetchSearch()
+        if (search) {
+            fetchSearch(search)
+        }
     }, [search])
-    const handleOnBlur = () => {
+    const handleDeleteSearch = () => {
         setResults([])
+        setSearch("")
     }
     return (
         <Layout>
@@ -46,7 +49,7 @@ export default function BlogPage({ blogs, totalPage, page }) {
                         </Col>
                         <Col md={3} >
                             <div className='position-relative pt-5'>
-                                <SearchBlock search={search} handleChange={handleChange} handleOnBlur={handleOnBlur} />
+                                <SearchBlock search={search} handleChange={handleChange} handleDeleteSearch={handleDeleteSearch} />
                                 <SearchResult results={results} />
                             </div>
 

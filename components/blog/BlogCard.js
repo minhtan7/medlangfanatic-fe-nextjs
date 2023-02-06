@@ -16,7 +16,13 @@ export default function BlogCard({ blog, length = 200, compact }) {
         <Card className={styles['blog-card']} >
             {!compact &&
                 <Link href={`/blogs/${blog.slug}`} >
-                    <Image variant="top" style={{ borderRadius: 0, cursor: "pointer" }} src={blog.image} alt={blog.title} width={350} height={195} />
+                    <div className="position-relative w-100" style={{ height: "195px" }}>
+                        <Image variant="top" style={{ borderRadius: 0, cursor: "pointer" }} src={blog.image} alt={blog.title}
+                            fill object-fit={true}
+                        // width={350} height={195} 
+                        />
+
+                    </div>
                 </Link>
             }
             <Card.Body >
