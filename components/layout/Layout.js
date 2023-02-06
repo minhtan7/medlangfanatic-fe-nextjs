@@ -6,11 +6,9 @@ import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 
 
-const metaDecorator = {
-    hostname: "https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app"
-}
 
-export default function Layout({ title, description, children }) {
+
+export default function Layout({ title, description, children, imageUrl, site_name, url }) {
     const [loaded, setLoaded] = useState(false)
     useEffect(() => {
         setLoaded(true)
@@ -36,22 +34,22 @@ export default function Layout({ title, description, children }) {
                 <meta property="og:title" content={title} />
                 <meta property="og:image" content="https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg" />
                 <meta property="og:description" content={description} /> */}
-                <link rel='canonical' href="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app" key="canonical" />
+                <link rel='canonical' href="https://medlangfanatic.com" key="canonical" />
                 <meta property="og:title" content={title} key="ogtitle" />
-                <meta property="og:description" content="a description" key="ogdesc" />
+                <meta property="og:description" content={description} key="ogdesc" />
                 <meta
                     property="og:image"
-                    content="https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg"
+                    content={imageUrl}
                     key="ogimage"
                 />
                 <meta
                     property="og:site_name"
-                    content="Med Lang Fanatic"
+                    content={site_name}
                     key="ogsitename"
                 />
                 <meta
                     property="og:url"
-                    content="https://medlangfanatic-fe-nextjs-oazduaxip-minhtan7.vercel.app"
+                    content={url}
                     key="ogurl"
                 />
                 <meta property="og:type" content="article" key="ogtype" />
@@ -67,4 +65,6 @@ export default function Layout({ title, description, children }) {
 Layout.defaultProps = {
     title: "Med Lang Fanatic",
     description: "Med Lang Fanatic | Khóa học tiếng Anh Y khoa online. Cải thiện khả năng ngoại ngữ và nâng cao kỹ năng giao tiếp trong Y khoa.",
+    imageRul: "https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg",
+    url: "https://medlangfanatic.com"
 }
