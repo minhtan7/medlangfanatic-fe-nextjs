@@ -28,7 +28,7 @@ export default function PaginationBar({ page, totalPage }) {
             <Link href={`/blogs/page/${parseInt(index_page) + 1}`}>
                 <Button variant="primary"
                     className={styles["pagination-btn"]}
-                    disabled={index_page === totalPage ? true : false}
+                    disabled={parseInt(index_page) === totalPage ? true : false}
                 >
                     <FontAwesomeIcon icon={faChevronRight} />
                 </Button>
