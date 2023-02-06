@@ -23,7 +23,7 @@ export default function HomePage({ instructors, courseListContent, fbs, blogs })
       <Layout
         title="Med Lang Fanatic"
         description="Med Lang Fanatic | Khóa học tiếng Anh Y khoa online.Cải thiện khả năng ngoại ngữ và nâng cao kỹ năng giao tiếp trong Y khoa."
-        imageUrl="https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg"
+        imageUrl="https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png"
         site_name="Med Lang Fanatic"
         url="https://medlangfanatic.com"
       >

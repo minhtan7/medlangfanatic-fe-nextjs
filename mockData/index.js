@@ -111,7 +111,7 @@ const courseListContent = {
     },
     mavl: {
         title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
-        image: "https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg",
+        image: "https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png",
         content: "Khóa học MAVL hướng dẫn bạn phân nhóm từ vựng giúp liên tưởng, và bài tập tương tác đa dạng giúp hiểu sâu hàm nghĩa các từ vựng.",
         path: "courses/mavl",
         idEl: "mavl-thumbnail-vertical",

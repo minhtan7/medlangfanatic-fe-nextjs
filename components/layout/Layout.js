@@ -65,6 +65,6 @@ export default function Layout({ title, description, children, imageUrl, site_na
 Layout.defaultProps = {
     title: "Med Lang Fanatic",
     description: "Med Lang Fanatic | Khóa học tiếng Anh Y khoa online. Cải thiện khả năng ngoại ngữ và nâng cao kỹ năng giao tiếp trong Y khoa.",
-    imageRul: "https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg",
+    imageRul: "https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png",
     url: "https://medlangfanatic.com"
 }
