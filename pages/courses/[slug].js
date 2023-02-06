@@ -55,13 +55,12 @@ const filterCover = (slug) => {
 export default function CoursePage({ course }) {
 
     useFilterCssRoot({ slug: course && course.slug, ...filterCss(course && course.slug) })
-    console.log(course.title)
     return course && (
         <Layout
-            title={course.title}
+            title={course.name}
             description="Med Lang Fanatic | Khóa học tiếng Anh Y khoa online.Cải thiện khả năng ngoại ngữ và nâng cao kỹ năng giao tiếp trong Y khoa."
             imageUrl={slugTranslate({ target: "thumbnail", slug: course.slug })}
-            site_name={"Med Lang Fanatic | " + slugTranslate({ target: "courseTitle", slug: course.slug })}
+            site_name={"Med Lang Fanatic | " + course.name}
             url={"https://medlangfanatic.com/courses/" + course.slug}
         >
             <Hero course={course} />
