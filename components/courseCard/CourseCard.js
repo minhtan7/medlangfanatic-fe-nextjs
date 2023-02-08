@@ -51,8 +51,8 @@ export const CourseCard = ({ course }) => {
 
                 {slugTranslate({ target: "recruitStatus", slug: course.slug }) && <RecruitBtn cursor={true} course={course} />}
             </Card.Body >
-            {course.slug === "clinical-case-presentation" |
-                course.slug === "communication-with-patients-101"
+            {course.slug === "clinical-case-presentation"
+                | course.slug === "communication-with-patients-101"
                 ? null : (
                     <Card.Body>
                         <Timer targetDate={slugTranslate({ slug: course.slug, target: "targetDate" })} />

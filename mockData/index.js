@@ -89,7 +89,7 @@ const courseListContent = {
         path: "courses/communication-with-patients-101",
         idEl: "cwp-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-cwp-main',
-        recruit: false
+        recruit: true
     },
     "clinical-case-presentation": {
         title: "Trình Ca Lâm Sàng",
