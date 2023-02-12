@@ -7,11 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { BASE_URL, POST_PER_PAGE } from '@/config/index'
 import apiService from '@/lib/apiService'
 import LoadingSpinner from '@/components/utils/LoadingSpinner'
-import BlogCard from '@/components/blog/BlogCard'
+import { BlogCard } from '@/components/blog/BlogCard'
 import PaginationBar from '@/components/utils/PaginationBar'
 import Layout from '@/components/layout/Layout'
 import { useEffect, useState } from 'react'
 import { SearchBlock, SearchResult } from '@/components/utils/Search'
+import { useRouter } from 'next/router'
 
 
 export default function BlogPage({ blogs, totalPage, page }) {
@@ -20,6 +21,7 @@ export default function BlogPage({ blogs, totalPage, page }) {
     const handleChange = (e) => {
         setSearch(e.target.value)
     }
+
     useEffect(() => {
         const fetchSearch = async (search) => {
             const res = await apiService.get(`/posts/search/${search}`)
@@ -28,10 +30,15 @@ export default function BlogPage({ blogs, totalPage, page }) {
         if (search) {
             fetchSearch(search)
         }
+
     }, [search])
     const handleDeleteSearch = () => {
         setResults([])
         setSearch("")
+    }
+    let { query: { index_page } } = useRouter()
+    if (!index_page) {
+        index_page = 1
     }
     return (
         <Layout>
@@ -64,7 +71,7 @@ export default function BlogPage({ blogs, totalPage, page }) {
                         ))}
                         <hr />
                     </Row>
-                    <PaginationBar page={page} totalPage={totalPage} />
+                    <PaginationBar totalPage={totalPage} href={"/blogs/page/"} page={index_page} />
                 </Container>
             </div>
         </Layout>

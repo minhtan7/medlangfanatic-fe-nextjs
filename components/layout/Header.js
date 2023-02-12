@@ -32,7 +32,7 @@ function CourseHeader() {
                         <Nav.Link className='me-3' href="#instructors">Giảng viên</Nav.Link>
                         <Nav.Link className='me-3' href="#faq">FAQ</Nav.Link>
                         {slugTranslate({ target: "recruitStatus", slug }) ?
-                            <Link href={`/form/${slug.toLowerCase()}`}>
+                            <Link href={`/form/${slug.toLowerCase()}`} className='text-decoration-none'>
                                 <Nav.Link
                                     as={"span"}
                                     className={`${styles.signUp} ${slugTranslate({ slug, target: "signUpHover" })}`}
@@ -64,10 +64,7 @@ function MainHeader() {
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-
-                    </Nav>
-                    <Nav>
+                    <Nav className="me-auto ms-4" >
                         <Link href="/" passHref className='text-decoration-none'>
                             <Nav.Link as="span" active={currentPath === "/"} className='me-3 text-decoration-none'>Trang chủ</Nav.Link>
                         </Link>
@@ -89,6 +86,9 @@ function MainHeader() {
                         {/* <Link className='sign-up' href="/register-form" >
                             <Nav.Link as="div" active={currentPath === "/#course-list-session"} className='me-3'>Đăng ký ngay</Nav.Link>
                         </Link> */}
+                    </Nav>
+                    <Nav>
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -1,0 +1,11 @@
+.tks-wrapper{
+    width: 540px; 
+    height: 496px
+}
+
+@media only screen and (max-width: 600px) {
+    .tks-wrapper{
+        width: 70vw;
+        height: 70vw;
+    }   
+}

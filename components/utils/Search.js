@@ -1,12 +1,18 @@
 import styles from "@/styles/utils/Search.module.css"
 import { faSearch, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import BlogCard from "../blog/BlogCard"
+import { BlogCard } from "../blog/BlogCard"
+import { useRouter } from "next/router"
 
 
-export function SearchBlock({ search, handleChange, handleDeleteSearch }) {
+export function SearchBlock({ toPage, search, handleChange, handleDeleteSearch }) {
+    const router = useRouter()
     const handleSubmit = (e) => {
         e.preventDefault()
+        console.log(toPage)
+        if (toPage) {
+            router.push(`/blogs/search?q=${search}`)
+        }
     }
     return (
         <form

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 const { default: Link } = require("next/link")
 const { Container } = require("react-bootstrap")
 const { default: Carousel } = require("react-multi-carousel")
-const { default: BlogCard } = require("../blog/BlogCard")
+const { BlogCard } = require("../blog/BlogCard")
 
 import styles from "@/styles/home/BlogSession.module.css"
 
