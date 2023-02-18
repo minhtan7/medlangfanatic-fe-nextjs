@@ -55,10 +55,10 @@ export default function BlogPage({ blogs, totalPage, page }) {
                             </div>
                         </Col>
                         <Col md={3} >
-                            <div className='position-relative pt-5'>
+                            {/* <div className='position-relative pt-5'>
                                 <SearchBlock search={search} handleChange={handleChange} handleDeleteSearch={handleDeleteSearch} />
                                 <SearchResult results={results} />
-                            </div>
+                            </div> */}
 
                         </Col>
                     </Row>
