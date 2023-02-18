@@ -20,7 +20,7 @@ export const Instructors = ({ slug }) => {
             <Row key={index}>
                 <Col md={4} className="d-flex justify-content-center">
                     <Image
-                        src={ins.imageUrl} roundedCircle alt="instructor"
+                        src={ins.imageUrl} alt="instructor"
                         width={180} height={180} style={{ border: "2px solid var(--main)", padding: 0, height: "fit-content", borderRadius: "50%" }}
                     />
                 </Col>

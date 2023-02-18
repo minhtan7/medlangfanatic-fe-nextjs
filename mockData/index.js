@@ -89,7 +89,9 @@ const courseListContent = {
         path: "courses/communication-with-patients-101",
         idEl: "cwp-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-cwp-main',
-        recruit: true
+        recruit: true,
+        price: 3650,
+        slug: "communication-with-patients-101"
     },
     "clinical-case-presentation": {
         title: "Trình Ca Lâm Sàng",
@@ -98,7 +100,9 @@ const courseListContent = {
         path: "courses/clinical-case-presentation",
         idEl: "pccs-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-pccs-main',
-        recruit: false
+        recruit: false,
+        price: 3650,
+        slug: "clinical-case-presentation"
     },
     "medical-terminology": {
         title: "Thuật Ngữ Y Khoa",
@@ -107,19 +111,58 @@ const courseListContent = {
         path: "courses/medical-terminology",
         idEl: "mt-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-mt-secondary',
-        recruit: true
+        recruit: true,
+        price: 1690,
+        slug: "medical-terminology"
     },
     mavl: {
-        title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
+        // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
+        title: `Từ Vựng Học Thuật Y Khoa`,
         image: "https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png",
         content: "Khóa học MAVL hướng dẫn bạn phân nhóm từ vựng giúp liên tưởng, và bài tập tương tác đa dạng giúp hiểu sâu hàm nghĩa các từ vựng.",
         path: "courses/mavl",
         idEl: "mavl-thumbnail-vertical",
         btnClass: "btn-sign-up",
-        recruit: true
+        recruit: true,
+        price: 3650,
+        slug: "mavl"
     },
 
 }
+
+const slugCourseByCat = {
+    all: {
+        title: "Tất cả",
+        slugs: [
+            "communication-with-patients-101",
+            "clinical-case-presentation",
+            "medical-terminology",
+            "mavl",
+        ]
+    },
+    readingAndListening: {
+        title: "Reading và Listening",
+        slugs: [
+            "medical-terminology",
+            "mavl"
+        ]
+    },
+    communication: {
+        title: "Giao tiếp",
+        slugs: [
+            "communication-with-patients-101",
+            "clinical-case-presentation"
+        ]
+    },
+    free: {
+        title: "Miễn phí",
+        slugs: [
+            "communication-with-patients-101",
+            "clinical-case-presentation"
+        ]
+    }
+}
+
 const courseDetail = {
     description: "Khóa học giới thiệu cho các bạn cấu trúc của một ca lâm sàng được trình miệng bằng tiếng Anh, và đi sâu vào phân tích cách trình bày hiệu quả cho từng phần riêng biệt. Các bạn sẽ lần lượt làm quen với nhiều loại công thức và từ vựng khác nhau, với những cấu trúc dễ học dễ áp dụng, để đạt mục tiêu đầu ra là có thể tự tin trình bày một ca lâm sàng bằng tiếng Anh."
 }
@@ -656,7 +699,7 @@ const sideBarItemsEx = [{
 
 
 
-export { instructors, courseDetail, faq, feedBack, about, blogContent, courseListContent, fbs, sideBarItemsDoc, sideBarItemsEx }
+export { instructors, courseDetail, faq, feedBack, about, blogContent, courseListContent, fbs, sideBarItemsDoc, sideBarItemsEx, slugCourseByCat }
 
 
 // const x = [

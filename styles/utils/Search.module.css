@@ -7,28 +7,29 @@
 
 .search-txt{
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
-    border:1px solid var(--main);
-    /* background:none; */
-    outline:none;
+    border: 1px solid var(--main);
+    outline: none;
     padding: 0 12px;
+    padding-left: 50px;
     color: black;
-    font-size:16px;
-    transition : 0.4s;
-    line-height: 40px;
+    font-size: 14px;
+    transition: 0.4s;
+    line-height: 31px;
     width: 100%;
     border-radius: 40px;
+    transform: translateY(-50%);
 }
 
 .search-btn{
-    color : var(--contrast);
+    color : black;
     float : right;
     width : 35px;
     height : 35px;
     border-radius: 50%;
     cursor: pointer;
-    background : var(--main);
+    /* background : var(--main); */
     display:flex;
     justify-content: center;
     align-items: center;
@@ -36,23 +37,26 @@
     transition:0.4s;
     position: absolute;
     top: 50%;
-    right: 2%;
-    transform: translate(0px, -47%);
+    left: 2%;
+    transform: translate(0px, -50%);
 }
 
 
 /* search result */
 .wrapper-result{
     position:absolute;
-    top: 6rem;
-    right: 0;
+    /* top: 6rem; */
+    /* right: 0; */
     z-index: 100;
     background-color: white;
     border:1px solid var(--main);
-    width: 40rem
+    width: 33rem
 }
 .wrapper-blog{
     border: 1px solid black
+}
+.wrapper-nav{
+    /* border: 1px solid black */
 }
 
 @media only screen and (max-width: 600px) {

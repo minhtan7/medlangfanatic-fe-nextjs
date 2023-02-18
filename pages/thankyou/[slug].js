@@ -24,7 +24,7 @@ export default function ThankyouPage() {
                     <Col sx={12} md={6}>
                         <div className="text-main pb-5 px-5 d-flex flex-column justify-content-center align-items-center w-100 h-100 text-center">
                             <h1 className="fw-bold">Cám ơn bạn!</h1>
-                            <p className='mb-4'>Med Lang Fanatic đã nhận được đơn đăng ký của bạn. Hãy kiểm tra hộp email và làm theo hướng dẫn để hoàn tất đăng ký bạn nhé. </p>
+                            <p className='mb-4 '>Med Lang Fanatic đã nhận được đơn đăng ký của bạn. Hãy kiểm tra hộp email và làm theo hướng dẫn để hoàn tất đăng ký bạn nhé. </p>
                             <h4><i>You&apos;re just a course away from the amazing future!  </i></h4>
                         </div>
                     </Col>

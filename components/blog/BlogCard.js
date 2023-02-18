@@ -18,7 +18,7 @@ export function BlogCard({ blog, length = 200, compact }) {
                 <Link href={`/blogs/${blog.slug}`} >
                     <div className="position-relative w-100" style={{ height: "195px" }}>
                         <Image variant="top" style={{ borderRadius: 0, cursor: "pointer" }} src={blog.image} alt={blog.title}
-                            fill object-fit={true}
+                            fill object-fit="contain"
                         // width={350} height={195} 
                         />
 
@@ -56,7 +56,7 @@ export function BlogCardHorizontal({ blog, length = 200, compact }) {
                 <Link href={`/blogs/${blog.slug}`} >
                     <div className="position-relative w-100" style={{ height: "195px" }}>
                         <Image variant="top" style={{ borderRadius: 0, cursor: "pointer" }} src={blog.image} alt={blog.title}
-                            fill object-fit={true}
+                            fill object-fit="contain"
                         // width={350} height={195} 
                         />
                     </div>

@@ -14,7 +14,8 @@ export default function Layout({ title, description, children, imageUrl, site_na
         setLoaded(true)
     }, [])
     const router = useRouter()
-    const path = router.pathname.split("/")[1]
+    // const path = router.pathname.split("/")[1]
+    // console.log(router)
     return (
         <div>
             <Head>
@@ -55,7 +56,7 @@ export default function Layout({ title, description, children, imageUrl, site_na
                 <meta property="og:type" content="article" key="ogtype" />
 
             </Head>
-            {path === "courses" ? <CourseHeader /> : <MainHeader />}
+            {router.pathname == "/courses/[slug]" ? <CourseHeader /> : <MainHeader />}
             {children}
             <Footer />
         </div>

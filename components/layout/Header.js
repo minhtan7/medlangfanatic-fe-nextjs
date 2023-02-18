@@ -6,6 +6,12 @@ import styles from '@/styles/Header.module.css'
 import { slugTranslate } from '@/lib/slugTranslate';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Button, Form } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { SearchBlock, SearchResultNav } from '../utils/Search';
+import { useEffect, useState } from 'react';
+import apiService from '@/lib/apiService';
 
 function CourseHeader() {
     // const navigate = useNavigate()
@@ -52,48 +58,123 @@ function CourseHeader() {
         </Navbar>
     );
 }
+// function MainHeader() {
+//     const router = useRouter()
+//     const currentPath = router.asPath
+//     return (
+//         <Navbar id="header" collapseOnSelect expand="lg" className="bg-main" variant="dark">
+//             <Container>
+//                 <Link href="/" passHref>
+//                     <Navbar.Brand as="img" src="https://res.cloudinary.com/tanvo/image/upload/v1674243360/medlangfanatic/logo/logo_transparent_gnqfo9.webp" href="#home" width={96} />
+//                 </Link>
+
+//                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+//                 <Navbar.Collapse id="responsive-navbar-nav">
+//                     <Nav className="me-auto ms-4" >
+//                         <Link href="/" passHref className='text-decoration-none'>
+//                             <Nav.Link as="span" active={currentPath === "/"} className='me-3 text-decoration-none'>Trang chủ</Nav.Link>
+//                         </Link>
+//                         {/* <Nav.Link as={Link} className='me-3'>Trang chủ</Nav.Link> */}
+
+//                         <Link href="/#course-list-session" className='text-decoration-none'>
+//                             <Nav.Link as="span" active={currentPath === "/#course-list-session"} className='me-3'>Khóa học</Nav.Link>
+//                         </Link>
+
+//                         <Link className='me-3 text-decoration-none' href="/blogs" >
+//                             <Nav.Link as="span" active={currentPath === "/blogs"} className='me-3'>Blogs</Nav.Link>
+//                         </Link>
+//                         {/* <Link className='me-3 text-decoration-none' href="/documents" >
+//                             <Nav.Link as="span" active={currentPath === "/documents"} className='me-3'>Tài liệu</Nav.Link>
+//                         </Link> */}
+//                         {/* <Link className='me-3 text-decoration-none' href="/game" >
+//                             <Nav.Link as="span" active={currentPath === "/game"} className='me-3'>Game</Nav.Link>
+//                         </Link> */}
+//                         {/* <Link className='sign-up' href="/register-form" >
+//                             <Nav.Link as="div" active={currentPath === "/#course-list-session"} className='me-3'>Đăng ký ngay</Nav.Link>
+//                         </Link> */}
+//                     </Nav>
+//                     <Nav>
+
+//                     </Nav>
+//                 </Navbar.Collapse>
+//             </Container>
+//         </Navbar>
+//     );
+// }
+
 function MainHeader() {
+    const [search, setSearch] = useState("")
+    const [results, setResults] = useState([])
+    const handleChange = (e) => {
+        setSearch(e.target.value)
+    }
+
+    useEffect(() => {
+        const fetchSearch = async (search) => {
+            const res = await apiService.get(`/posts/search/${search}`)
+            setResults(res.data.posts)
+        }
+        if (search) {
+            fetchSearch(search)
+        }
+
+    }, [search])
+    const handleDeleteSearch = () => {
+        setResults([])
+        setSearch("")
+    }
     const router = useRouter()
     const currentPath = router.asPath
     return (
-        <Navbar id="header" collapseOnSelect expand="lg" className="bg-main" variant="dark">
-            <Container>
-                <Link href="/" passHref>
-                    <Navbar.Brand as="img" src="https://res.cloudinary.com/tanvo/image/upload/v1674243360/medlangfanatic/logo/logo_transparent_gnqfo9.webp" href="#home" width={96} />
-                </Link>
+        <>
+            <Navbar id="header" collapseOnSelect expand="lg" className="box-shadow-card position-fixed bg-white w-100" style={{ zIndex: 1000 }}>
+                <Container>
+                    <Link href="/" passHref>
+                        <Navbar.Brand as="img" src="https://res.cloudinary.com/tanvo/image/upload/v1676544705/medlangfanatic/logo/logo-white-background_qba4wk.jpg" href="#home" width={96} />
+                    </Link>
 
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto ms-4" >
-                        <Link href="/" passHref className='text-decoration-none'>
-                            <Nav.Link as="span" active={currentPath === "/"} className='me-3 text-decoration-none'>Trang chủ</Nav.Link>
-                        </Link>
-                        {/* <Nav.Link as={Link} className='me-3'>Trang chủ</Nav.Link> */}
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <div className='ms-5 position-relative' style={{ width: "33rem" }} >
+                            <SearchBlock search={search} handleChange={handleChange} handleDeleteSearch={handleDeleteSearch} />
+                            <div className='position-absolute' style={{ zIndex: "100", width: "20rem", height: "auto", top: "3rem", left: "0px" }} >
+                                <SearchResultNav results={results} />
+                            </div>
+                        </div>
+                        {/* <div className="flex-grow-1"></div> */}
+                        <Nav className="me-auto ms-4" >
+                            <Link href="/" passHref className='text-decoration-none'>
+                                <Nav.Link as="span" active={currentPath === "/"} className='me-3 text-decoration-none text-main'>Trang chủ</Nav.Link>
+                            </Link>
+                            <Link href="/#course-list-session" passHref className='text-decoration-none'>
+                                <Nav.Link as="span" active={currentPath === "/courses"} className='me-3 text-decoration-none text-main'>Khóa học</Nav.Link>
+                            </Link>
 
-                        <Link href="/#course-list-session" className='text-decoration-none'>
-                            <Nav.Link as="span" active={currentPath === "/#course-list-session"} className='me-3'>Khóa học</Nav.Link>
-                        </Link>
 
-                        <Link className='me-3 text-decoration-none' href="/blogs" >
-                            <Nav.Link as="span" active={currentPath === "/blogs"} className='me-3'>Blogs</Nav.Link>
-                        </Link>
-                        {/* <Link className='me-3 text-decoration-none' href="/documents" >
+                            <Link className='me-3 text-decoration-none' href="/blogs" >
+                                <Nav.Link as="span" active={currentPath === "/blogs"} className='me-3 text-main'>Blogs</Nav.Link>
+                            </Link>
+                            {/* <Link className='me-3 text-decoration-none' href="/documents" >
                             <Nav.Link as="span" active={currentPath === "/documents"} className='me-3'>Tài liệu</Nav.Link>
                         </Link> */}
-                        {/* <Link className='me-3 text-decoration-none' href="/game" >
+                            {/* <Link className='me-3 text-decoration-none' href="/game" >
                             <Nav.Link as="span" active={currentPath === "/game"} className='me-3'>Game</Nav.Link>
                         </Link> */}
-                        {/* <Link className='sign-up' href="/register-form" >
+                            {/* <Link className='sign-up' href="/register-form" >
                             <Nav.Link as="div" active={currentPath === "/#course-list-session"} className='me-3'>Đăng ký ngay</Nav.Link>
                         </Link> */}
-                    </Nav>
-                    <Nav>
+                        </Nav>
+                        <Nav>
 
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+            <div style={{ height: "100px" }}></div>
+        </>
     );
 }
+
+
 
 export { CourseHeader, MainHeader };

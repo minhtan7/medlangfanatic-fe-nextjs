@@ -1,0 +1,23 @@
+.cta{
+    background-image: url("https://res.cloudinary.com/tanvo/image/upload/v1676478974/medlangfanatic/HomePage/sign-up-for-doc_mhsntb.jpg");
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, 10%);
+    padding: 0.9rem 2rem;
+}
+
+.btn:hover{
+    background-color: var(--main-dark)!important;
+    color: white!important
+}
+
+.wrapper{
+    transform: translate(-50%, -90%);
+    text-align: center;
+}

@@ -1,6 +1,6 @@
-import { faFileText, faNoteSticky, faPlayCircle, faT, faGlasses } from '@fortawesome/free-solid-svg-icons'
+import { faFileText, faNoteSticky, faPlayCircle, faT, faGlasses, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Button, Card, ListGroup } from 'react-bootstrap'
+import { Badge, Button, Card, ListGroup, Tab } from 'react-bootstrap'
 
 import { useScript } from 'hook/useScript'
 import { slugTranslate } from '@/lib/slugTranslate'
@@ -10,6 +10,7 @@ import styles from "@/styles/courseCard/CourseCard.module.css"
 import Link from 'next/link'
 import { RecruitBtn } from '../buttons/RecruitBtn'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 export const CourseCard = ({ course }) => {
     // const { hours, minutes, seconds } = formatTime(course?.duration || 0)
@@ -122,3 +123,31 @@ const filterIcon = (icon) => {
     }
 }
 
+export const AllCourseCourseCard = ({ course, width, height }) => {
+    const router = useRouter()
+    return (
+        <div className={styles["all-courses-card"]} style={{ width }}>
+            <div className='position-relative cursor-pointer' style={{ height }} onClick={() => router.push(`/courses/${course.slug}`)}>
+                <Image src={course.image}
+                    fill object-fit="contain" alt={course.title} />
+            </div>
+            <div className='ms-3 me-3 mt-2  text-black fw-normal'>
+                <h6 >
+                    <Badge className={styles["all-course-badge"]}>Free</Badge>
+                </h6>
+                <h5 onClick={() => router.push(`/courses/${course.slug}`)} className={`cursor-pointer text-nowrap ${styles["title"]}`} dangerouslySetInnerHTML={{ __html: course.title }}></h5>
+                <p style={{ fontSize: "14px" }}>Skills you&apos;ll gain: Data Analytics, Data Science, Statistical Programming, Business Analyst, SQ...</p>
+                <br />
+                <p style={{ fontSize: "12px" }} className='mb-0'>
+                    <small>
+                        <FontAwesomeIcon icon={faStar} color='orange' />
+                        <strong className='ms-1'>4.8</strong>
+                        <span className='ms-2'>(200+ reviews)</span>
+                    </small>
+                </p>
+                <p className='mb-0' style={{ fontSize: "12px" }}><small>Beginner &#183; Professional Certificate &#183; 3-6 months </small></p>
+                <br />
+            </div>
+        </div >
+    )
+}
