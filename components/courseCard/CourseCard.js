@@ -126,15 +126,19 @@ const filterIcon = (icon) => {
 export const AllCourseCourseCard = ({ course, width, height }) => {
     const router = useRouter()
     return (
-        <div className={styles["all-courses-card"]} style={{ width }}>
+        <div className={`${styles["all-courses-card"]} m-auto`} style={{ width }}>
+            {/* <div className='position-relative cursor-pointer' style={{ height }} onClick={() => router.push(`/courses/${course.slug}`)}>
+                <Image src={course.image}
+                    fill object-fit="contain" alt={course.title} />
+            </div> */}
             <div className='position-relative cursor-pointer' style={{ height }} onClick={() => router.push(`/courses/${course.slug}`)}>
                 <Image src={course.image}
                     fill object-fit="contain" alt={course.title} />
             </div>
             <div className='ms-3 me-3 mt-2  text-black fw-normal'>
-                <h6 >
+                {/* <h6 >
                     <Badge className={styles["all-course-badge"]}>Free</Badge>
-                </h6>
+                </h6> */}
                 <h5 onClick={() => router.push(`/courses/${course.slug}`)} className={`cursor-pointer text-nowrap ${styles["title"]}`} dangerouslySetInnerHTML={{ __html: course.title }}></h5>
                 <p style={{ fontSize: "14px" }}>Skills you&apos;ll gain: Data Analytics, Data Science, Statistical Programming, Business Analyst, SQ...</p>
                 <br />

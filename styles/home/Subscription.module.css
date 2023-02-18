@@ -19,12 +19,9 @@
     width: 100%;
 }
 #subscription-session .subscription-span{
-    top: 50%;
-    right: 1rem;
-    z-index: 1;
     background-color: var(--contrast)!important;
-    transform: translateY(-50%);
-    padding: 0.5rem 2rem;
+    /* transform: translateY(-50%); */
+    padding: 1.3rem 2.6rem;
     border-radius: 80px;
     color: var(--main);
     font-weight: bold;

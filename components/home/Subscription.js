@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 
 import styles from "@/styles/home/Subscription.module.css"
+import Link from "next/link"
 
 const SUBSRIBE_MESSAGE_SUCCESS = "Cám ơn bạn đã đăng ký!! Bạn kiểm tra mail hàng tuần nhé"
 const SUBSRIBE_MESSAGE_FAIL = "Có trục trặc xảy ra. Bạn vui lòng tải lại trang và thử lần nữa nhé. Cám ơn bạn!"
@@ -35,15 +36,18 @@ export const Subscription = () => {
             <Container className={`h-100 ${styles.container}`}>
                 <Row className='flex-column flex-md-row'>
                     <Col className='d-flex mb-2 mb-md-0'>
-                        <h2 className='my-auto mb-2 mb-md-0 '>Đăng ký nhận tài liệu<br /> tiếng Anh Y khoa!</h2>
+                        <h2 className='m-auto mb-2 mb-md-0 '>Đăng ký nhận tài liệu<br /> tiếng Anh Y khoa!</h2>
                     </Col>
-                    <Col className='m-auto'>
-                        <form onSubmit={handleSubmit} className="position-relative">
+                    <Col className='m-auto text-center'>
+                        {/* <form onSubmit={handleSubmit} className="position-relative">
                             <div>
                                 <input onChange={handleChange} name='email' type="email" placeholder="Email..." />
                                 <Button className={`${styles["subscription-span"]} position-md-absolute`} >Đăng ký</Button>
                             </div>
-                        </form>
+                        </form> */}
+                        <Link href="/form/document">
+                            <Button className={`${styles["subscription-span"]}`} >Đăng ký nhận Tài Liệu</Button>
+                        </Link>
                     </Col>
                 </Row>
             </Container>

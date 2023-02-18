@@ -153,14 +153,15 @@ const slugCourseByCat = {
             "communication-with-patients-101",
             "clinical-case-presentation"
         ]
-    },
-    free: {
-        title: "Miễn phí",
-        slugs: [
-            "communication-with-patients-101",
-            "clinical-case-presentation"
-        ]
     }
+    ,
+    // free: {
+    //     title: "Miễn phí",
+    //     slugs: [
+    //         "communication-with-patients-101",
+    //         "clinical-case-presentation"
+    //     ]
+    // }
 }
 
 const courseDetail = {

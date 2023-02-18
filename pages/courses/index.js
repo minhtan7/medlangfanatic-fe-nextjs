@@ -1,5 +1,6 @@
 import { AllCourseCourseCard } from "@/components/courseCard/CourseCard";
 import AllCoursesHero from "@/components/courses/AllCoursesHero";
+import { Subscription } from "@/components/home/Subscription";
 import Layout from "@/components/layout/Layout";
 import { CTA } from "@/components/utils/CTA";
 import { courseListContent, slugCourseByCat } from "mockData";
@@ -29,7 +30,7 @@ export default function Courses() {
                             <Row className="">
                                 {slugCourseByCat[cat].slugs.map(slug => (
                                     <Col md={3} key={slug} className="p-3">
-                                        <AllCourseCourseCard course={courseListContent[slug]} width={"100%"} height={"140px"} />
+                                        <AllCourseCourseCard course={courseListContent[slug]} width={"300px"} height={"165px"} />
                                     </Col>
                                 ))}
                             </Row>
@@ -38,7 +39,10 @@ export default function Courses() {
 
                 </Tabs>
             </Container>
-            <CTA />
+            {/* <CTA /> */}
+            <div className='mt-5 pb-md-2 pt-md-5' style={{ backgroundColor: "#edf1ff91" }}>
+                <Subscription />
+            </div>
         </Layout>
     )
 }

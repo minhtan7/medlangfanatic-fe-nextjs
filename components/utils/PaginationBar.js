@@ -4,14 +4,12 @@ import Link from "next/link";
 import { Button } from "react-bootstrap";
 
 import styles from "@/styles/utils/PaginationBar.module.css"
-import { useRouter } from "next/router";
 
 export default function PaginationBar({ page, totalPage, href }) {
     // let { query: { index_page } } = useRouter()
     // if (!index_page) {
     //     index_page = 1
     // }
-    console.log(page)
     return (
         <div className="text-end me-5 py-3">
             <span className="me-3" style={{ fontSize: "1.4rem" }}>
