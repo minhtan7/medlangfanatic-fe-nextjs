@@ -19,7 +19,9 @@ export default function Courses() {
         setKey(type ? type : "all")
     }, [type])
     return (
-        <Layout>
+        <Layout
+
+        >
             <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <AllCoursesHero />

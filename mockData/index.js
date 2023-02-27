@@ -166,7 +166,20 @@ const courseListContent = {
         price: 1690,
         slug: "listening-skills",
         type: "standard"
-
+    },
+    "combo-vocabulary": {
+        // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
+        title: "Combo kỹ năng đọc y khoa",
+        // image: "https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png",
+        image: "https://res.cloudinary.com/tanvo/image/upload/v1677147132/medlangfanatic/courses/a-comprehesnsive-of-reading-skills_v8jlir.png",
+        content: "Đào tạo toàn diện giúp bạn nâng cao khả năng đọc hiểu và hiểu biết về các tài liệu y khoa.",
+        path: "courses/combo-vocabulary",
+        idEl: "combo-vocabulary-thumbnail-vertical",
+        btnClass: "btn-sign-up",
+        recruit: true,
+        price: 5340,
+        slug: "combo-vocabulary",
+        type: "master"
     },
 }
 
@@ -174,12 +187,14 @@ const slugCourseByCat = {
     all: {
         title: "Tất cả",
         slugs: [
+            "combo-vocabulary",
             "communication-with-patients-101",
             "clinical-case-presentation",
             "mavl",
             "how-to-learn-medical-vocabulary",
             "listening-skills",
             "medical-terminology",
+
         ]
     },
     readingAndListening: {
@@ -199,6 +214,7 @@ const slugCourseByCat = {
     vocabulary: {
         title: "Vocabulary",
         slugs: [
+            "combo-vocabulary",
             "medical-terminology",
             "mavl",
             "how-to-learn-medical-vocabulary",

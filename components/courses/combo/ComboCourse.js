@@ -348,7 +348,7 @@ export default function ComboCourse({ course }) {
                                     <td className={`text-decoration-line-through  text-end pe-3 ${styles["cell-price"]}`} >5.340.000đ</td>
                                 </tr>
                                 <tr style={{ height: "3rem" }}>
-                                    <td colSpan={3} className={`text-end pe-3 ${styles["cell-down-price"]}`} >5.340.000đ</td>
+                                    <td colSpan={3} className={`text-end pe-3 ${styles["cell-down-price"]}`} >4.340.000đ</td>
                                 </tr>
                                 <tr style={{ height: "1rem" }}>
 
