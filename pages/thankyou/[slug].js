@@ -2,6 +2,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import Image from 'next/image'
 import Layout from '@/components/layout/Layout'
 import styles from "@/styles/thankou/ThankyouPage.module.css"
+import Script from 'next/script'
 
 // const slugs = {
 //     "medical-terminology": 2026776,
@@ -13,6 +14,8 @@ export default function ThankyouPage() {
 
     return (
         <Layout>
+            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
+            <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <Container>
                 <Row>
                     <Col sx={12} md={6}>

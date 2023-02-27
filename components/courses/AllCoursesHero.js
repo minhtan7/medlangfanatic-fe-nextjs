@@ -6,7 +6,7 @@ export default function AllCoursesHero() {
         <div className="position-relative overflow-hidden">
             <div className="position-relative wrapper-img" >
                 <Image src="https://res.cloudinary.com/tanvo/image/upload/v1676478962/medlangfanatic/courses/all-courses_flsvdn.jpg"
-                    alt="all courses" fill object-fit={true}
+                    alt="all courses" fill object-fit="contain"
                 />
             </div>
             <h1

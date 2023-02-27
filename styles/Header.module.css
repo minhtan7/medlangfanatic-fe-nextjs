@@ -18,3 +18,20 @@
 .signUpMt:hover{
     background-color: #fffa8e;
 }
+
+.search{
+    width: 33rem;
+}
+
+.dropdown a{
+    color: var(--main);
+}
+.dropdown a:hover, .dropdown a:focus{
+    color: var(--main);
+}
+
+@media only screen and (max-width: 600px) {
+  .search{
+        width: 20rem;
+    }
+}

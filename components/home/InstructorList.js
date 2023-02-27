@@ -6,8 +6,9 @@ import Image from "next/image"
 import { isMobile } from "react-device-detect"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { useEffect, useState } from "react"
+import { instructors } from "mockData"
 
-const { Container, Row, Col } = require("react-bootstrap")
+const { Container, Row, Col, Card } = require("react-bootstrap")
 
 export const InstructorList = ({ instructors }) => {
 
@@ -45,7 +46,7 @@ export const InstructorList = ({ instructors }) => {
     )
 }
 
-const InstructorCardLeft = ({ instructor }) => {
+export const InstructorCardLeft = ({ instructor }) => {
     const [mobile, setMobile] = useState(false)
     useEffect(() => {
         setMobile(isMobile)
@@ -141,5 +142,39 @@ const InstructorCardRight = ({ instructor }) => {
                 </div>
             </div>
         </>
+    )
+}
+
+
+export const InstructorCardVerticle = ({ instructor }) => {
+    return (
+        <Card className="border-0">
+            <div className="overflow-hidden text-center p-3 pb-0">
+                <div className="rounded-3" style={{ width: "100%", height: "250px", backgroundColor: "var(--main-bg-hover)", margin: "auto" }}>
+                    <Image src={instructor.imageTransparent}
+                        width={250} height={250}
+                        alt="instructor" />
+                </div>
+            </div>
+            <Card.Body>
+                <p className="lh-1 mb-2 text-center">Bác sĩ</p>
+                <Link href={instructor.link} passHref className="text-decoration-none text-main text-center">
+                    <Card.Title className="text-center text-decoration-none">{instructor.name}</Card.Title>
+                </Link>
+                <hr />
+
+                <ul className={`${styles["speaker-topic"]} mb-0 fa-ul`}>
+                    {instructor.bio.split("\n").map((b, idx) => (
+                        <li key={idx} className="text-justify">
+                            <span className="fa-li" >
+                                <FontAwesomeIcon icon={faCheck} />
+                            </span>
+                            {b}
+                        </li>
+                    ))}
+                </ul>
+
+            </Card.Body>
+        </Card>
     )
 }

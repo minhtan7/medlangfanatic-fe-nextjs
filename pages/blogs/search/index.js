@@ -9,6 +9,7 @@ import Layout from "@/components/layout/Layout"
 import { Container } from "react-bootstrap"
 import { SearchBlock } from "@/components/utils/Search"
 import PaginationBar from "@/components/utils/PaginationBar"
+import Script from "next/script"
 
 export default function SearchPage() {
     const [results, setResults] = useState({})
@@ -34,9 +35,10 @@ export default function SearchPage() {
             fetchSearch({ search: q, page, limit })
         }
     }, [q])
-    console.log(results)
     return (
         <Layout>
+            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
+            <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <Container className="mt-5 mb-5">
                 {Object.keys(results).length && <div className={`${styles["wrapper-result"]}`}>
                     <div className=''>

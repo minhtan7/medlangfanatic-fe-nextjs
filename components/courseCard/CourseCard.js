@@ -20,7 +20,7 @@ export const CourseCard = ({ course }) => {
     // useScript(process.env.REACT_APP_GG_TAG_MNG)
     return course &&
         <Card className={styles["course-card"]}>
-            <div style={{ width: "100%", height: "160px" }} className='position-relative'>
+            <div style={{ width: "100%", height: "192px" }} className='position-relative'>
                 < Image
                     src={slugTranslate({ slug: course.slug, target: "thumbnail" })} style={{ borderRadius: 0 }}
                     alt={course.slug} fill object-fit='contain'
@@ -36,8 +36,7 @@ export const CourseCard = ({ course }) => {
                     <span>Học thử!</span>
                 </Button> */}
 
-
-                {slugTranslate({ target: "recruitStatus", slug: course.slug }) ?
+                {course.slug.toLowerCase() !== "how-to-learn-medical-vocabulary" ? slugTranslate({ target: "recruitStatus", slug: course.slug }) ?
                     <Link href={`/form/${course.slug.toLowerCase()}`}>
                         <Button
                             variant="primary" className='btn-sign-up mb-3' >
@@ -47,13 +46,21 @@ export const CourseCard = ({ course }) => {
                     <Button
                         variant="primary" className='btn-sign-up mb-3' >
                         <span>Đã đủ học viên</span>
+                    </Button> : <Link href={`/courses/combo-vocabulary`}>
+                    <Button
+                        variant="primary" className='btn-sign-up mb-3' >
+                        <span>Đăng ký ngay</span>
                     </Button>
+                </Link>
                 }
 
-                {slugTranslate({ target: "recruitStatus", slug: course.slug }) && <RecruitBtn cursor={true} course={course} />}
+                {/* {slugTranslate({ target: "recruitStatus", slug: course.slug }) && <RecruitBtn cursor={true} course={course} />} */}
             </Card.Body >
             {course.slug === "clinical-case-presentation"
                 | course.slug === "communication-with-patients-101"
+                | course.slug === "listening-skills"
+                | course.slug === "how-to-learn-medical-vocabulary"
+                | course.slug === "combo-vocabulary"
                 ? null : (
                     <Card.Body>
                         <Timer targetDate={slugTranslate({ slug: course.slug, target: "targetDate" })} />
@@ -73,21 +80,24 @@ export const CourseCard = ({ course }) => {
                             style={{ borderRadius: 0 }} />
                     </Card.Body>
                 ) : null}
-            {course.slug === "communication-with-patients-101" ? null : <Card.Body style={{ paddingTop: "0" }}>
-                <p style={{ color: "black", marginBottom: '0' }}>Khóa học bao gồm:</p>
-                <ListGroup variant="flush">
-                    {course.material.map((m, index) => (
-                        <ListGroup.Item key={index} className={`${styles["course-card-item"]} fa-ul`} as="ul" >
-                            <li>
-                                <span className="fa-li" >
-                                    {filterIcon(m.icon)}
-                                </span>
-                                {m.text}
-                            </li>
-                        </ListGroup.Item>
+            {course.slug === "communication-with-patients-101"
+                | course.slug === "combo-vocabulary"
+                ? null :
+                <Card.Body style={{ paddingTop: "0" }}>
+                    <p style={{ color: "black", marginBottom: '0' }}>Khóa học bao gồm:</p>
+                    <ListGroup variant="flush">
+                        {course.material.map((m, index) => (
+                            <ListGroup.Item key={index} className={`${styles["course-card-item"]} fa-ul`} as="ul" >
+                                <li>
+                                    <span className="fa-li" >
+                                        {filterIcon(m.icon)}
+                                    </span>
+                                    {m.text}
+                                </li>
+                            </ListGroup.Item>
 
-                    ))}
-                    {/* {course.material.map((m, index) => (
+                        ))}
+                        {/* {course.material.map((m, index) => (
                         <ListGroup.Item key={index} className='course-card-item fa-ul' as="ul" >
                             <li>
                                 <span className="fa-li" >
@@ -98,8 +108,8 @@ export const CourseCard = ({ course }) => {
                         </ListGroup.Item>
 
                     ))} */}
-                </ListGroup>
-            </Card.Body>}
+                    </ListGroup>
+                </Card.Body>}
 
 
         </Card >
@@ -123,6 +133,31 @@ const filterIcon = (icon) => {
     }
 }
 
+const filterType = (type) => {
+    switch (type) {
+        case "master":
+            return (
+                <h6 >
+                    <Badge className={`${styles["badge-master"]} ${styles.badge}`}>Master Class</Badge>
+                </h6>
+            )
+        case "standard":
+            return (
+                <h6 >
+                    <Badge className={`${styles["badge-standard"]} ${styles.badge}`}>Standard Class</Badge>
+                </h6>
+            )
+        case "free":
+            return (
+                <h6 >
+                    <Badge className={`${styles["badge-free"]} ${styles.badge}`}>Free</Badge>
+                </h6>
+            )
+        default:
+            return
+    }
+}
+
 export const AllCourseCourseCard = ({ course, width, height }) => {
     const router = useRouter()
     return (
@@ -135,22 +170,27 @@ export const AllCourseCourseCard = ({ course, width, height }) => {
                 <Image src={course.image}
                     fill object-fit="contain" alt={course.title} />
             </div>
-            <div className='ms-3 me-3 mt-2  text-black fw-normal'>
-                {/* <h6 >
-                    <Badge className={styles["all-course-badge"]}>Free</Badge>
-                </h6> */}
-                <h5 onClick={() => router.push(`/courses/${course.slug}`)} className={`cursor-pointer text-nowrap ${styles["title"]}`} dangerouslySetInnerHTML={{ __html: course.title }}></h5>
-                <p style={{ fontSize: "14px" }}>Skills you&apos;ll gain: Data Analytics, Data Science, Statistical Programming, Business Analyst, SQ...</p>
-                <br />
-                <p style={{ fontSize: "12px" }} className='mb-0'>
-                    <small>
-                        <FontAwesomeIcon icon={faStar} color='orange' />
-                        <strong className='ms-1'>4.8</strong>
-                        <span className='ms-2'>(200+ reviews)</span>
-                    </small>
-                </p>
-                <p className='mb-0' style={{ fontSize: "12px" }}><small>Beginner &#183; Professional Certificate &#183; 3-6 months </small></p>
-                <br />
+            <div className=' ms-3 me-3 mt-2 text-black fw-normal d-flex flex-column justify-content-between'
+                style={{ height: "133px" }}
+            // style={{ height: "245px" }}
+            >
+                <div>
+                    {filterType(course.type)}
+                    <h5 onClick={() => router.push(`/courses/${course.slug}`)} className={`cursor-pointer text-nowrap ${styles["title"]}`} dangerouslySetInnerHTML={{ __html: course.title }}></h5>
+                    <p style={{ fontSize: "14px" }}>{course.content}</p>
+                    <br />
+                </div>
+                {/* <div>
+                    <p style={{ fontSize: "12px" }} className='mb-0'>
+                        <small>
+                            <FontAwesomeIcon icon={faStar} color='orange' />
+                            <strong className='ms-1'>4.8</strong>
+                            <span className='ms-2'>(200+ reviews)</span>
+                        </small>
+                    </p>
+                    <p className='mb-0' style={{ fontSize: "12px" }}><small>Beginner &#183; Professional Certificate &#183; 3-6 months </small></p>
+                    <br />
+                </div> */}
             </div>
         </div >
     )

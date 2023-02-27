@@ -6,7 +6,7 @@ import styles from '@/styles/Header.module.css'
 import { slugTranslate } from '@/lib/slugTranslate';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, NavDropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { SearchBlock, SearchResultNav } from '../utils/Search';
@@ -135,20 +135,40 @@ function MainHeader() {
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <div className='ms-5 position-relative' style={{ width: "33rem" }} >
+                        <div className={`ms-3 ms-md-5 position-relative ${styles.search}`}  >
                             <SearchBlock search={search} handleChange={handleChange} handleDeleteSearch={handleDeleteSearch} />
                             <div className='position-absolute' style={{ zIndex: "100", width: "20rem", height: "auto", top: "3rem", left: "0px" }} >
                                 <SearchResultNav results={results} />
                             </div>
                         </div>
                         {/* <div className="flex-grow-1"></div> */}
-                        <Nav className="me-auto ms-4" >
+                        <Nav className="ms-auto ms-4" >
                             <Link href="/" passHref className='text-decoration-none'>
                                 <Nav.Link as="span" active={currentPath === "/"} className='me-3 text-decoration-none text-main'>Trang chủ</Nav.Link>
                             </Link>
-                            <Link href="/#course-list-session" passHref className='text-decoration-none'>
+                            {/* <Link href="/#course-list-session" passHref className='text-decoration-none'>
                                 <Nav.Link as="span" active={currentPath === "/courses"} className='me-3 text-decoration-none text-main'>Khóa học</Nav.Link>
-                            </Link>
+                            </Link> */}
+                            <NavDropdown title="Khóa học" id="basic-nav-dropdown" className={styles.dropdown}>
+                                <Link href="/courses?type=readingAndListening" passHref className='text-decoration-none'>
+                                    <NavDropdown.Item href='/courses?type=readingAndListening' className='text-main'>
+                                        <p className='m-0 fw-bold'>Reading & listening</p>
+                                        <small>Cách đọc và nghe tài liệu Y văn</small>
+                                    </NavDropdown.Item>
+                                </Link>
+                                <Link href="/courses?type=all" passHref className='text-decoration-none'>
+                                    <NavDropdown.Item href='/courses?type=all' className='text-main'>
+                                        <p className='m-0 fw-bold'>Speaking</p>
+                                        <small>Trình bệnh án lâm sàng, thuyết trình</small>
+                                    </NavDropdown.Item>
+                                </Link>
+                                <Link href="/courses" passHref className='text-decoration-none'>
+                                    <NavDropdown.Item href="/courses/mavl" className='text-main'>
+                                        <p className='m-0 fw-bold'>Vocabulary</p>
+                                        <small>Tư duy và cách học từ hiệu quả</small>
+                                    </NavDropdown.Item>
+                                </Link>
+                            </NavDropdown>
 
 
                             <Link className='me-3 text-decoration-none' href="/blogs" >

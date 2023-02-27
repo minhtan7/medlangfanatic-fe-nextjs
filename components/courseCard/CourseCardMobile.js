@@ -30,13 +30,30 @@ export const CourseCardMobile = ({ course }) => {
                     className='btn-sign-up-contrast mb-2' >
                     <span>Học thử!</span>
                 </Button> */}
-                <Link href={`/form/${course.slug.toLowerCase()}`}>
+                {/* <Link href={`/form/${course.slug.toLowerCase()}`}>
                     <Button
                         variant="primary" className='btn-sign-up mb-3' >
                         <span>Đăng ký ngay</span>
                     </Button>
                 </Link>
-                <RecruitBtn course={course} />
+                <RecruitBtn course={course} /> */}
+                {course.slug.toLowerCase() !== "how-to-learn-medical-vocabulary" ? slugTranslate({ target: "recruitStatus", slug: course.slug }) ?
+                    <Link href={`/form/${course.slug.toLowerCase()}`}>
+                        <Button
+                            variant="primary" className='btn-sign-up mb-3' >
+                            <span>Đăng ký ngay</span>
+                        </Button>
+                    </Link> :
+                    <Button
+                        variant="primary" className='btn-sign-up mb-3' >
+                        <span>Đã đủ học viên</span>
+                    </Button> : <Link href={`/courses/combo-vocabulary`}>
+                    <Button
+                        variant="primary" className='btn-sign-up mb-3' >
+                        <span>Đăng ký ngay</span>
+                    </Button>
+                </Link>
+                }
             </Card.Body >
             {course.slug === "clinical-case-presentation" |
                 course.slug === "communication-with-patients-101"

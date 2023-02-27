@@ -12,6 +12,8 @@ const COURSE_BY_SLUG = {
     "communication-with-patients-101": [hung, huong, tram, cang, duc, truc],
     mavl: [hung, tram],
     "medical-terminology": [hung, cang],
+    "listening-skills": [hung],
+    "how-to-learn-medical-vocabulary": [hung]
 }
 export const Instructors = ({ slug }) => {
 

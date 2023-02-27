@@ -33,6 +33,18 @@ const featureObj = {
         time: "https://res.cloudinary.com/tanvo/image/upload/v1672313880/medlangfanatic/courses/cwp/cwp-time_lybshz.jpg",
         fiveStarts: "https://res.cloudinary.com/tanvo/image/upload/v1672313880/medlangfanatic/courses/cwp/cwp-5__npp3pu.jpg"
     },
+    "listening-skills": {
+        subject: "https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-doi_tuong_arypjn.png",
+        format: "https://res.cloudinary.com/tanvo/image/upload/v1674322595/medlangfanatic/courses/mavl/mavl-hinh_thuc_shmitq.png",
+        time: "https://res.cloudinary.com/tanvo/image/upload/v1674322595/medlangfanatic/courses/mavl/mavl-thoi_gian_vpvzv1.png",
+        fiveStarts: "https://res.cloudinary.com/tanvo/image/upload/v1674322595/medlangfanatic/courses/mavl/mavl-nam_sao_cmdu5j.png"
+    },
+    "how-to-learn-medical-vocabulary": {
+        subject: "https://res.cloudinary.com/tanvo/image/upload/v1674322583/medlangfanatic/courses/mt/mt-doi_tuong_dyvbff.jpg",
+        format: "https://res.cloudinary.com/tanvo/image/upload/v1674322582/medlangfanatic/courses/mt/mt-hinh_thuc_tpfytr.jpg",
+        time: "https://res.cloudinary.com/tanvo/image/upload/v1674322582/medlangfanatic/courses/mt/mt-thoi_gian_o0tkrl.jpg",
+        fiveStarts: "https://res.cloudinary.com/tanvo/image/upload/v1674322582/medlangfanatic/courses/mt/mt-nam_sao_bigqpg.jpg"
+    },
 
 }
 
@@ -68,9 +80,6 @@ export const Features = ({ course }) => {
     const handleChangleSlideBar = (index) => {
         setSlide(index)
     }
-
-
-
     const slug = course.slug
 
     return course && <div id={styles["about-bar"]} className="mb-5">

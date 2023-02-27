@@ -1,5 +1,10 @@
 .btn-sign-up,.btn-sign-up-contrast{
-    width: 12rem!important;
+    width: 22rem!important;
+    padding: 2rem 3rem;
+    border-radius: 10px!important;
+}
+.btn-sign-up,.btn-sign-up-contrast:hover{
+    box-shadow: inset 22em 0 0 0 var(--contrast)!important;
 }
 
 .cta-hung img{
@@ -17,4 +22,20 @@
 }
 .text-main {
     font-weight: 900;
+}
+
+.cta{
+    background-image: url("https://res.cloudinary.com/tanvo/image/upload/v1676478944/medlangfanatic/HomePage/home-hero_q3jph5.jpg");
+    height: fit-content;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title{
+    font-size: 3.2rem;
+    font-weight: 800;
+}
+.sub{
+    font-size: 3.2rem;
+    font-weight: 700;
 }

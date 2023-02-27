@@ -153,7 +153,7 @@ const contentIcon = {
     Download: <FontAwesomeIcon icon={faFileArrowDown} />
 }
 
-export const CourseDetailContent = ({ chapters, slug }) => {
+export const CourseDetailContent = ({ chapters, slug, notShowTitle }) => {
     if (slug === "clinical-case-presentation") {
         return <div id="course-detail-content" className="mb-5">
             <div className="px-3 px-md-5">
@@ -204,7 +204,7 @@ export const CourseDetailContent = ({ chapters, slug }) => {
     }
     return chapters && <div className={`${styles["course-detail-content"]} mb-5`} >
         <div className="px-3 px-md-5">
-            <h2 className='mb-4 text-main-title'>Chương trình học</h2>
+            {notShowTitle ? null : <h2 className='mb-4 text-main-title'>Chương trình học</h2>}
             <Accordion alwaysOpen>
                 {chapters.map(chapter => {
                     // const { hours, minutes, seconds } = formatTime(chapter.duration_in_seconds)

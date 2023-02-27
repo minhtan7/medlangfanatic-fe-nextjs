@@ -18,7 +18,9 @@ const slugs = {
     "mavl-trial": "https://webforms.pipedrive.com/f/5XdP3bJX5SfOZmrSFx0Fg41UHirDkKLIr3Sm8hafZ2DOHU1HJK8Osq1efouFK9wmVZ",
     "clinical-case-presentation": "https://webforms.pipedrive.com/f/6FCJQ2wrJH8q1JR8NoyJCeF6vDA2GVbfYVh7DtgOjGkeqHjg3o2Vz8YsFpp2euHWUP",
     "communication-with-patients-101": "https://webforms.pipedrive.com/f/6jZHCqSSCU9dyeZNUMyqnLlrTYi9jR0xgoaCnmtUYHvmJDLwZfhQCsc3rCD9AvMo1B",
-    "document": "https://webforms.pipedrive.com/f/bYYsEmdAWOeSU2Pw7yWCOiSbrRfOby9SP9RtJSIMZH4wIqkpRegRx5sg1usNTk6Ldx"
+    "document": "https://webforms.pipedrive.com/f/bYYsEmdAWOeSU2Pw7yWCOiSbrRfOby9SP9RtJSIMZH4wIqkpRegRx5sg1usNTk6Ldx",
+    "listening-skills": "https://webforms.pipedrive.com/f/5VG61SLwRTR8qSNkIjHR6m99JfyNAXA8cETVeUMoE0a9PT1HlpJMPlydgGbr1A4Z9h",
+    "combo-vocabulary": "https://webforms.pipedrive.com/f/5VCoQi5YHBpDfEESeZY5lKenczHjq6WsKYjTwR0LGrwIPOzhEc7I22J4ZNcDHL5OmL"
 }
 
 export default function FormPage({ pipedrive, slug }) {
@@ -42,6 +44,8 @@ export default function FormPage({ pipedrive, slug }) {
     return (
         <Layout>
             <Script src={pipedrive} />
+            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
+            <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <Container className='py-5' id="form-page">
                 <Row>
                     <Col xs={0} md={6} >

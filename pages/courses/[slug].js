@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap'
+import { Accordion, Button, Card, Col, Container, Row, Table, useAccordionButton } from 'react-bootstrap'
 import Link from 'next/link';
 
 // import { CourseCard, RecruitBtn } from '../../components/CourseCard/CourseCard'
@@ -18,8 +18,20 @@ import { ShowCourseBtn } from '@/components/layout/ToTopArrow';
 import { CourseCard } from '@/components/courseCard/CourseCard';
 import { CTA } from '@/components/courses/CTA';
 import { useFilterCssRoot } from 'hook/useFilterCssRoot';
-import { Cover, CoverCWP, CoverMedicalTerminology, CoverPCCS } from '@/components/courses/Cover';
+import { Cover, CoverCWP, CoverMedicalTerminology, CoverPCCS, HLMV, LLM } from '@/components/courses/Cover';
 import { filterCss } from '@/lib/filterCss';
+import { useRouter } from 'next/router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faCheckCircle, faCircle, faDotCircle, faHandSparkles, faListDots, faMagicWandSparkles, faPlusCircle, faSprayCanSparkles, faStairs, faStarOfLife, faWandMagicSparkles, faWandSparkles } from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image';
+
+import styles from "@/styles/courses/CoursePage.module.css"
+import { InstructorCardLeft, InstructorCardVerticle } from '@/components/home/InstructorList';
+import { instructors } from 'mockData';
+import { isMobile } from 'react-device-detect';
+import ComboCourse from '@/components/courses/combo/ComboCourse';
+import NormalCourse from '@/components/courses/combo/NormalCourse';
+import Script from 'next/script';
 
 const defaultHeight = 72;
 
@@ -37,53 +49,25 @@ const defaultHeight = 72;
 //             break;
 //     }
 // }
-const filterCover = (slug) => {
-    switch (slug) {
-        case "mavl":
-            return <Cover />
-        case "medical-terminology":
-            return <CoverMedicalTerminology />
-        case "clinical-case-presentation":
-            return <CoverPCCS />
-        case "communication-with-patients-101":
-            return <CoverCWP />
-        default:
-            break;
-    }
-}
+
 
 export default function CoursePage({ course }) {
+    const [load, setLoad] = useState(false)
+    const router = useRouter()
+    const { query: { slug } } = router
+    useEffect(() => {
+        setLoad(true)
+    }, [])
 
-    useFilterCssRoot({ slug: course && course.slug, ...filterCss(course && course.slug) })
-    return course && (
-        <Layout
-            title={course.name}
-            description="Med Lang Fanatic | Khóa học tiếng Anh Y khoa online.Cải thiện khả năng ngoại ngữ và nâng cao kỹ năng giao tiếp trong Y khoa."
-            imageUrl={slugTranslate({ target: "thumbnail", slug: course.slug })}
-            site_name={"Med Lang Fanatic | " + course.name}
-            url={"https://medlangfanatic.com/courses/" + course.slug}
-        >
-            <Hero course={course} />
-            {filterCover(course.slug.toLowerCase())}
-            <Container>
-                <Row>
-                    <Col xs={12} md={8} className="px-0 ">
-                        <Features course={course} />
-                        <CourseDetailContent chapters={course.chapters} slug={course.slug} />
-                        <Instructors instructors={course.instructors} slug={course.slug} />
-                        <StudentFeedback defaultHeight={defaultHeight} feedBack={course.review} />
-                        {course.slug === "clinical-case-presentation" ? null : <FAQ faq={course.faq} />}
-                    </Col>
-                    <Col xs={0} sm={0} md={4} className="d-none d-sm-none d-md-block">
-                        <CourseCard course={course} />
-                    </Col>
-                </Row>
-            </Container>
-            <CTA course={course} />
-            <ShowCourseBtn course={course} />
-        </Layout>
-    )
+    return (
+        <>
+            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
+            <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
+            {course && slug === "combo-vocabulary" ?
+                (<ComboCourse course={course} />) : (<NormalCourse course={course} />)}
+        </>)
 }
+
 
 
 
@@ -96,17 +80,52 @@ export async function getStaticPaths() {
                 { params: { slug: "mavl" } },
                 { params: { slug: "clinical-case-presentation" } },
                 { params: { slug: "communication-with-patients-101" } },
+                { params: { slug: "listening-skills" } },
+                { params: { slug: "how-to-learn-medical-vocabulary" } },
+                { params: { slug: "combo-vocabulary" } },
             ],
         fallback: true
     }
 }
 
+const comboVocab = {
+    title: "Combo vocab",
+    courses: ["medical-terminology", "mavl", "how-to-learn-medical-vocabulary"],
+    slug: "combo-vocabulary",
+    price: 3550,
+
+}
+
 export async function getStaticProps({ params: { slug } }) {
-    const courseId = slugTranslate({ target: "id", slug: slug.toLowerCase() })
-    const res = await apiService.get(`/courses/${courseId}`)
-    return {
-        props: {
-            course: res.data
+    if (slug.toLowerCase() !== "combo-vocabulary") {
+        const courseId = slugTranslate({ target: "id", slug: slug.toLowerCase() })
+        const res = await apiService.get(`/courses/${courseId}`)
+        return {
+            props: {
+                course: res.data
+            }
+        }
+    } else {
+        const course = await Promise.all(comboVocab.courses.map(async (el) => {
+            try {
+                const courseId = slugTranslate({ target: "id", slug: el })
+                console.log("courseId", courseId)
+                const res = await apiService.get(`/courses/${courseId}`)
+                return res.data
+
+            } catch (error) {
+                console.log(error.message)
+            }
+        }))
+        // console.log(course)
+        return {
+            props: {
+                course: {
+                    ...course,
+                    slug: "combo-vocabulary",
+                    price: 3550,
+                }
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ import { CourseHeader, MainHeader } from "./Header"
 import Footer from "./Footer"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
+import Script from "next/script"
 
 
 
@@ -54,11 +55,17 @@ export default function Layout({ title, description, children, imageUrl, site_na
                     key="ogurl"
                 />
                 <meta property="og:type" content="article" key="ogtype" />
+                <meta name="google-site-verification" content="SOtLkKesUpJwgVZpqCdJjwyiZEiOQj_4ysvmk9pgNL8" />
+
+
 
             </Head>
-            {router.pathname == "/courses/[slug]" ? <CourseHeader /> : <MainHeader />}
+
+            {/* {router.pathname == "/courses/[slug]" ? <CourseHeader /> : <MainHeader />} */}
+            <MainHeader />
             {children}
             <Footer />
+
         </div>
     )
 }

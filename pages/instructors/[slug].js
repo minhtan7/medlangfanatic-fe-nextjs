@@ -11,6 +11,7 @@ import { Subscription } from '@/components/home/Subscription'
 
 import styles from "@/styles/instructors/InstructorPage.module.css"
 import Layout from '@/components/layout/Layout'
+import Script from 'next/script'
 
 
 export default function InstructorPage({ slug }) {
@@ -22,6 +23,8 @@ export default function InstructorPage({ slug }) {
     const instructor = slugTranslate({ slug: slug ? slug : "bac-si-tran-quang-hung", target: "instructors" })
     return (
         <Layout>
+            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
+            <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <section id='instructor-page' >
                 <div className='mb-md-7 mx-md-7 mt-md-5'>
                     <Container>

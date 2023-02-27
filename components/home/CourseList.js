@@ -2,6 +2,9 @@ import { faCircleCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
 import { isMobile } from "react-device-detect"
+import Carousel from "react-multi-carousel"
+
+import { AllCourseCourseCard } from "@/components/courseCard/CourseCard"
 
 const { Row, Col, Container } = require("react-bootstrap")
 const { CourseThumbnailVertical } = require("../courseCard/CourseThumbnail")
@@ -21,6 +24,25 @@ const COURSE_LIST_ICON = [
     }
 
 ]
+
+const responsive = {
+    superLargeDesktop: {
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 4
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
 
 export const CourseList = ({ courseListContent }) => {
     const [mobile, setMobile] = useState(false)
@@ -53,7 +75,7 @@ export const CourseList = ({ courseListContent }) => {
                     ))}
                 </ul>
 
-                <Row xs={1} md={12} className="g-4 mt-md-2">
+                {/* <Row xs={1} md={12} className="g-4 mt-md-2">
                     {
                         Object.keys(courseListContent).map(c => (
                             <Col xs={12} md={3} key={courseListContent[c].idEl}>
@@ -62,7 +84,15 @@ export const CourseList = ({ courseListContent }) => {
                         )
                         )
                     }
-                </Row>
+                </Row> */}
+                <Carousel responsive={responsive}>
+                    {Object.keys(courseListContent).map(course => (
+                        // <div style={{ padding: "1rem 2rem" }}>
+                        <div key={courseListContent[course].idEl} style={{ padding: "1rem", textAlign: "left" }}>
+                            <AllCourseCourseCard course={courseListContent[course]} width={"300px"} height={"200px"} />
+                        </div>
+                    ))}
+                </Carousel>
             </Container>
         </div >
     )

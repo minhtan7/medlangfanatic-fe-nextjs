@@ -4,15 +4,24 @@ import { Subscription } from "@/components/home/Subscription";
 import Layout from "@/components/layout/Layout";
 import { CTA } from "@/components/utils/CTA";
 import { courseListContent, slugCourseByCat } from "mockData";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import Script from "next/script";
+import { useEffect, useState } from "react";
 import { Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 
 
 export default function Courses() {
     const [key, setKey] = useState('all');
+    const router = useRouter()
+    const { query: { type } } = router
 
+    useEffect(() => {
+        setKey(type ? type : "all")
+    }, [type])
     return (
         <Layout>
+            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
+            <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <AllCoursesHero />
             <Container id="all-course" className="mt-5 mb-5">
                 <Row className="mb-4">
@@ -22,7 +31,7 @@ export default function Courses() {
                 <Tabs
                     id="controlled-tab-example"
                     activeKey={key}
-                    onSelect={(k) => setKey(k)}
+                    onSelect={(k) => router.push({ pathname: router.pathname, query: { type: k } }, undefined, { scroll: false })}
                     className="mb-3"
                 >
                     {Object.keys(slugCourseByCat).map(cat => (
@@ -30,7 +39,7 @@ export default function Courses() {
                             <Row className="">
                                 {slugCourseByCat[cat].slugs.map(slug => (
                                     <Col md={3} key={slug} className="p-3">
-                                        <AllCourseCourseCard course={courseListContent[slug]} width={"300px"} height={"165px"} />
+                                        <AllCourseCourseCard course={courseListContent[slug]} width={"300px"} height={"200px"} />
                                     </Col>
                                 ))}
                             </Row>

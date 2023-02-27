@@ -27,7 +27,7 @@ export const CTA = ({ course }) => {
                                     <span>Đã đủ học viên</span>
                                 </Button>
                             }
-                            {slugTranslate({ target: "recruitStatus", slug: course.slug }) && <RecruitBtn cursor={true} course={course} />}
+                            {/* {slugTranslate({ target: "recruitStatus", slug: course.slug }) && <RecruitBtn cursor={true} course={course} />} */}
                         </div>
                     </Col>
                     <Col className='d-none d-md-block'></Col>

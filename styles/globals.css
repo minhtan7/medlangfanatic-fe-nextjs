@@ -4,6 +4,9 @@
 :root {
   /* --main: #089aaa; */
   --main: #011c7e;
+  --main-bg-hover:#eff2ff;
+  /* --main-bg-hover:#011c7e0f; */
+  
   --primary:#011c7e;
   /* --main-deactive:#bedde2; */
   --main-deactive: #dad5e9;
@@ -59,6 +62,9 @@ body{
 }
 .bg-main{
     background-color: var(--main);
+}
+.bg-main-hover{
+  background-color: var(--main-bg-hover)!important;
 }
 .bg-main-dark{
     background-color: var(--main-dark);
@@ -244,6 +250,9 @@ body{
 .text-main{
     color: var(--main);
 }
+.text-main-hover{
+  color: var(--main-bg-hover)
+}
 .text-contrast{
     color: var(--contrast)
 }
@@ -259,6 +268,9 @@ body{
 }
 .text-16{
     font-size: 16px;
+}
+.text-18{
+    font-size: 18px;
 }
 .text-30{
     font-size: 30px;
@@ -473,6 +485,19 @@ body{
     text-shadow: 1px 1px var(--contrast);
     border-bottom: 1px solid var(--main);
 }
+#header .dropdown-menu.show{
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 15px 20px 4px #011c7e14;
+  left: 50%;
+  transform: translateX(-30%);
+  width: 20rem;
+  padding: 1rem 0.5rem;
+}
+#header .dropdown-item:hover{
+  color: var(--main);
+  background-color: var(--main-bg-hover);
+}
 
 /* accordion */
 .accordion-item-outline{
@@ -583,3 +608,26 @@ body{
     transform: translate(0);
 }
 
+/* combo courses */
+#combo-cir button.accordion-button{
+  border-radius: 0;
+}
+#combo-cir .accordion-item:last-of-type{
+  border-radius: 0;
+}
+
+#combo-cir .accordion-item-outline.accordion-item{
+  border: none;
+  border-bottom: 1px solid #011c7e33;
+}
+
+#combo-cir .accordion-item-outline .accordion-button.collapsed {
+  background-color: white!important;
+}
+
+#combo-cir ul.fa-ul.accordion-body{
+  margin: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}

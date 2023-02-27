@@ -122,3 +122,54 @@ export const CoverCWP = () => {
         </Container>
     )
 }
+
+export const LLM = () => {
+    return (
+        <Container id={styles["cover-session"]} className='mb-5'>
+            <div className={`px-md-5 px-4 ${styles.border} py-3`} >
+                <h2 className='text-center mb-3 fw-bolder text-main'>Làm thế nào để cải thiện kỹ năng nghe?</h2>
+                <div className='position-relative'>
+                    <p className='text-justify lh-md'>
+                        Listening là một trong những kỹ năng trừu tượng nhất của ngôn ngữ. Và vì không hiểu rõ về bản chất của quá trình nghe, người ta chỉ hay nói đơn giản rằng: nghe riết rồi giỏi. Nhưng nghe gì? Nghe ra sao? Nghe đến khi nào? Liệu có một con đường nào giúp chúng ta có thể cải thiện kỹ năng nghe nhanh hơn không?<br />
+                        Bạn cảm thấy kỹ năng nghe là một vấn đề với bạn và bối rối không biết cải thiện như thế nào? Khóa học Listening to the language of medicine cung cấp mọi thứ bạn cần để biến kỹ năng nghe trở thành một trong những kỹ năng mà bạn tự tin nhất.
+                    </p>
+                    <p><small><i><b>Bài giảng về Lý thuyết nghe hiệu quả</b> là 1 trong những bài nói được chọn tại <b>hội nghị Polyglot Gathering 2018 tại Bratislava, Slovakia</b></i></small></p>
+                </div>
+                <Row >
+                    <Col >
+                        <a href="#course-detail-content">
+                            <Button className='w-100 h-100 p-5 text-center bg-main text-white rounded-0 me-3 fw-bold fs-4'>
+                                150+ bài nghe thực hành nhiều cấp độ
+                            </Button>
+                        </a>
+                    </Col>
+                    <Col>
+                        <a href='#course-detail-content'>
+                            <Button
+                                className='w-100 h-100 p-5 text-center bg-main text-white rounded-0 me-3 fw-bold fs-4'
+                            >
+                                Lý thuyết quan trọng <br />về lộ trình luyện nghe
+                            </Button>
+
+                        </a>
+                    </Col>
+                </Row>
+            </div>
+        </Container>
+    )
+}
+
+export const HLMV = () => {
+    return (
+        <Container id={styles["cover-session"]} className='mb-5'>
+            <div className={`px-md-5 px-4 ${styles.border} py-3`} >
+                <h2 className='text-center mb-3 fw-bolder text-main'>Học từ vựng liệu có dễ?</h2>
+                <div className='position-relative'>
+                    <p className='text-justify lh-md'>
+                        Học từ vựng không hẳn là một vấn đề, nếu như bạn đắm chìm vào ngôn ngữ, và dành nhiều thời gian cho nó, hấp thu từ vựng từ những ngữ cảnh khác nhau quả là một việc thú vị. Nhưng nếu bạn không có thời gian? Và có quá nhiều thứ để học? Chúng ta phải ưu tiên học từ vựng theo thứ tự nào? Đó quả là những câu hỏi hóc búa mà chúng ta sẽ lần lượt giải đáp trong khóa học thú vị này.
+                    </p>
+                </div>
+            </div>
+        </Container>
+    )
+}

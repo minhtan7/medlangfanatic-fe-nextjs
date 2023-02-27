@@ -1,64 +1,73 @@
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import { Col, Container, Placeholder, Row } from 'react-bootstrap'
+import { Button, Col, Container, Placeholder, Row } from 'react-bootstrap'
 // import { RecruitBtn } from '../CourseCard/CourseCard'
 import Image from 'next/image'
 import { slugTranslate } from '@/lib/slugTranslate'
 import styles from "@/styles/courses/Hero.module.css"
 import { RecruitBtn } from '../buttons/RecruitBtn'
+import Link from 'next/link'
 
 export const Hero = ({ course }) => {
 
     return <div id={styles.hero} className='mb-5 bg-main position-relative overflow-hidden' >
-        {course ? (<Container className='position-relative' style={{ zIndex: 1 }}>
-            <Row >
-                <Col xs={12} md={6} className="px-2 px-md-3 m-auto overflow-hidden" style={{ paddingTop: "4rem" }}>
-                    {heroCourseName(course.slug)}
-                    <ul className={`fa-ul ${styles["sub-title"]}`}>
-                        {course.heroDescription.map(h => (
-                            <li key={h}>
-                                <span className="fa-li" >
-                                    <FontAwesomeIcon icon={faCheck} />
-                                </span>
-                                {h}
-                            </li>
-                        ))}
-                    </ul>
-                    {slugTranslate({ target: "recruitStatus", slug: course.slug }) && <RecruitBtn cursor={true} course={course} />}
+        {course ? (
+            <Container className='position-relative' style={{ zIndex: 1 }}>
+                <Row >
+                    <Col xs={12} md={6} className="px-2 px-md-3 m-auto overflow-hidden" style={{ paddingTop: "4rem" }}>
+                        {heroCourseName(course.slug)}
+                        <ul className={`fa-ul ${styles["sub-title"]}`}>
+                            {course.heroDescription.map(h => (
+                                <li key={h}>
+                                    <span className="fa-li" >
+                                        <FontAwesomeIcon icon={faCheck} />
+                                    </span>
+                                    {h}
+                                </li>
+                            ))}
+                        </ul>
+                        {/* {slugTranslate({ target: "recruitStatus", slug: course.slug }) && <RecruitBtn cursor={true} course={course} />} */}
+                        {/* {slugTranslate({ target: "recruitStatus", slug: course.slug }) &&
+                            (<Link href={`/form/${course.slug.toLowerCase()}`}>
+                                <Button
+                                    variant="primary" className='btn-sign-up-contrast mb-3' style={{ width: "4rem" }} >
+                                    <span>Đăng ký ngay</span>
+                                </Button>
+                            </Link>)} */}
 
-                </Col>
-                <Col md={6} className="d-none d-md-block">
-                    <div className={styles['hero-image-wrapper']}>
-                        <div className={styles['hero-image']}>
-                            <Image width="412" height="412" src={slugTranslate({ slug: course.slug, target: "hero" })} alt="hidden logo" />
+                    </Col>
+                    <Col md={6} className="d-none d-md-block">
+                        <div className={styles['hero-image-wrapper']}>
+                            <div className={styles['hero-image']}>
+                                <Image width="412" height="412" src={slugTranslate({ slug: course.slug, target: "hero" })} alt="hidden logo" />
+                            </div>
                         </div>
-                    </div>
-                </Col>
-            </Row>
-        </Container>) : (<Container >
-            <Row >
-                <Col xs={12} md={6} className="px-5"  >
-                    <Placeholder size="sm" as={"h1"} animation="glow">
-                        <Placeholder xs={8} /><br />
-                        <Placeholder xs={4} />
-                    </Placeholder>
+                    </Col>
+                </Row>
+            </Container>) : (<Container >
+                <Row >
+                    <Col xs={12} md={6} className="px-5"  >
+                        <Placeholder size="sm" as={"h1"} animation="glow">
+                            <Placeholder xs={8} /><br />
+                            <Placeholder xs={4} />
+                        </Placeholder>
 
-                    <ul className='fa-ul'>
-                        <li> <span className="fa-li" ><FontAwesomeIcon icon={faCheck} /></span>Cấu trúc của một ca lâm sàng được trình miệng bằng tiếng Anh</li>
-                        <li><span className="fa-li" ><FontAwesomeIcon icon={faCheck} /></span>Đi sâu vào phân tích cách trình bày hiệu quả cho từng phần riêng biệt. </li>
-                        <li><span className="fa-li" ><FontAwesomeIcon icon={faCheck} /></span>Công thức và từ vựng khác nhau</li>
-                        <li><span className="fa-li" ><FontAwesomeIcon icon={faCheck} /></span>Cấu trúc dễ học dễ áp dụng.</li>
-                    </ul>
-                </Col>
-                <Col md={6}>
-                    <div className={styles['hero-image']}>
-                        <Image width="412" height="412" src="/images/hero-image.webp" alt="hidden logo" />
-                    </div>
-                </Col>
+                        <ul className='fa-ul'>
+                            <li> <span className="fa-li" ><FontAwesomeIcon icon={faCheck} /></span>Cấu trúc của một ca lâm sàng được trình miệng bằng tiếng Anh</li>
+                            <li><span className="fa-li" ><FontAwesomeIcon icon={faCheck} /></span>Đi sâu vào phân tích cách trình bày hiệu quả cho từng phần riêng biệt. </li>
+                            <li><span className="fa-li" ><FontAwesomeIcon icon={faCheck} /></span>Công thức và từ vựng khác nhau</li>
+                            <li><span className="fa-li" ><FontAwesomeIcon icon={faCheck} /></span>Cấu trúc dễ học dễ áp dụng.</li>
+                        </ul>
+                    </Col>
+                    <Col md={6}>
+                        <div className={styles['hero-image']}>
+                            <Image width="412" height="412" src="/images/hero-image.webp" alt="hidden logo" />
+                        </div>
+                    </Col>
 
-            </Row>
-        </Container>)}
+                </Row>
+            </Container>)}
         <div className={styles['hidden-logo']}>
             <Image width="1140" height="790" src="/images/logo_transparent.webp" alt="hidden logo" />
         </div>
@@ -88,6 +97,16 @@ const heroCourseName = (slug) => {
             return <>
                 <h1 className={`${styles["title-animation"]} ${styles["anim-typewriter-first"]} mb-3 text-contrast fw-bold`} style={{ fontSize: "3.3rem" }} >COMMUNICATION </h1>
                 <h1 className={`${styles["title-animation"]} ${styles["anim-typewriter-second"]} mb-3 text-contrast fw-bold`} style={{ fontSize: "3.3rem" }}> WITH PATIENTS 101</h1>
+            </>
+        case "listening-skills":
+            return <>
+                <h1 className={`${styles["title-animation"]} ${styles["anim-typewriter-first"]} mb-3 text-contrast fw-bold`} style={{ fontSize: "2.5rem" }} >LISTENING TO</h1>
+                <h1 className={`${styles["title-animation"]} ${styles["anim-typewriter-second"]} mb-3 text-contrast fw-bold`} style={{ fontSize: "2.5rem" }}>THE LANGUAGE OF MEDICINE</h1>
+            </>
+        case "how-to-learn-medical-vocabulary":
+            return <>
+                <h1 className={`${styles["title-animation"]} ${styles["anim-typewriter-first"]} mb-3 text-contrast fw-bold`} style={{ fontSize: "3rem" }} >HOW TO LEARN</h1>
+                <h1 className={`${styles["title-animation"]} ${styles["anim-typewriter-second"]} mb-3 text-contrast fw-bold`} style={{ fontSize: "3rem" }}>MEDICAL VOCABULARY</h1>
             </>
         default:
             break;

@@ -12,14 +12,17 @@ import apiService from '@/lib/apiService'
 
 import styles from "@/styles/blogs/SingleBlogPage.module.css"
 import Layout from '@/components/layout/Layout'
+import Script from 'next/script'
 
 export default function SingleBlogPage({ blog }) {
     // useScript("https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0")
     // useScript("<path>/dist/share-buttons.js")
     // useScript("//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js")
 
-    return (
+    return blog && (
         <Layout>
+            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
+            <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             {!Object.keys(blog).length ? <LoadingSpinner /> : (
                 <Container className='mb-5'>
                     <Row className='pt-5'>
@@ -78,7 +81,7 @@ export async function getStaticPaths() {
     console.log(paths)
     return {
         paths,
-        fallback: false
+        fallback: true
     }
 }
 

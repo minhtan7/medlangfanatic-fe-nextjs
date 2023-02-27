@@ -36,6 +36,7 @@ const instructors = [
         title: "BS. CKI.",
         bio: `Trưởng phòng Đào tạo và Quản lý chất lượng Jio Health\nFounder của Med Lang Fanatic\nGiảng viên kỹ năng giao tiếp trong y khoa, được đào tạo theo chương trình của ACH Hoa Kỳ\nTổ chức các khóa học tiếng Anh tại Đại học Y Dược TPHCM, Đại học Y khoa Phạm Ngọc Thạch, và tại Tổng lãnh sự quán Hoa Kỳ tại TPHCM`,
         imageUrl: "https://res.cloudinary.com/tanvo/image/upload/v1674247540/medlangfanatic/Instructors/dr.hung_kgiok1.webp",
+        imageTransparent: "https://res.cloudinary.com/tanvo/image/upload/v1677433925/medlangfanatic/courses/combo/hung-transparent_atow8f.png",
         titleFull: "Bác sĩ Chuyên Khoa I",
         link: "/instructors/bac-si-tran-quang-hung"
     },
@@ -44,6 +45,7 @@ const instructors = [
         title: "BS.",
         bio: `Tốt nghiệp bác sĩ đa khoa hạng Summa Cum Laude với GPA 4.67/5 tại đại học Debrecen, Hungary\nCựu phó chủ tịch hội sinh viên Việt Nam tại Debrecen, Hungary`,
         imageUrl: "https://res.cloudinary.com/tanvo/image/upload/v1674247540/medlangfanatic/Instructors/dr.tram_lphdre.webp",
+        imageTransparent: "https://res.cloudinary.com/tanvo/image/upload/v1677433926/medlangfanatic/courses/combo/tram-transparent_csanxe.png",
         titleFull: "Bác sĩ",
         link: "/instructors/bac-si-nguyen-ngoc-quynh-tram"
     },
@@ -53,6 +55,7 @@ const instructors = [
         titleFull: "Ths. BS. CKI.",
         title: "Ths. BS. CKI.",
         imageUrl: "https://res.cloudinary.com/tanvo/image/upload/v1674247540/medlangfanatic/Instructors/dr.cang_qpbtvb.jpg",
+        imageTransparent: "https://res.cloudinary.com/tanvo/image/upload/v1677366307/medlangfanatic/Instructors/dr.cang_bhs51l.png",
         link: "/instructors/bac-si-nguyen-dinh-cang"
     },
     {
@@ -84,50 +87,87 @@ const instructors = [
 const courseListContent = {
     "communication-with-patients-101": {
         title: "Giao Tiếp Với Bệnh Nhân",
-        image: "https://res.cloudinary.com/tanvo/image/upload/v1672313340/medlangfanatic/courses/cwp/communications_ycbuwr.jpg",
-        content: "Khóa học hướng đến các bạn sinh viên y đã đi lâm sàng, hoặc các bác sĩ đã ra trường. Các bạn sẽ được trang bị những câu giao tiếp cơ bản nhất để có thể tự tin hỏi bệnh, khám, và tư vấn cho các bệnh nhân người nước ngoài.",
+        image: "https://res.cloudinary.com/tanvo/image/upload/v1677147280/medlangfanatic/courses/cwp101_ism7zx.png",
+        // image: "https://res.cloudinary.com/tanvo/image/upload/v1672313340/medlangfanatic/courses/cwp/communications_ycbuwr.jpg",
+        content: "Luyện tập kỹ năng speaking để có thể giao tiếp tự tin bằng tiếng Anh với bệnh nhân.",
         path: "courses/communication-with-patients-101",
         idEl: "cwp-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-cwp-main',
         recruit: true,
         price: 3650,
-        slug: "communication-with-patients-101"
+        slug: "communication-with-patients-101",
+        type: "master"
     },
     "clinical-case-presentation": {
         title: "Trình Ca Lâm Sàng",
-        image: "https://res.cloudinary.com/tanvo/image/upload/v1671965829/medlangfanatic/courses/presenting-clinical-case-from-scratch/pccs-thumbnail_nei3t5.jpg",
-        content: "Khóa học cho bạn trải nghiệm ngắm nghía cách trình bệnh án hiệu quả bằng tiếng Anh dưới góc độ ngôn ngữ học, và tự chuẩn bị cho mình một hành trang 'cao cấp' để đạt những bước tiến xa hơn trong sự nghiệp.",
+        image: "https://res.cloudinary.com/tanvo/image/upload/v1677147132/medlangfanatic/courses/pccs_ejihsz.png",
+        // image: "https://res.cloudinary.com/tanvo/image/upload/v1671965829/medlangfanatic/courses/presenting-clinical-case-from-scratch/pccs-thumbnail_nei3t5.jpg",
+        content: "Học cách trình bày thông tin y khoa và báo cáo ca lâm sàng một cách chuyên nghiệp.",
         path: "courses/clinical-case-presentation",
         idEl: "pccs-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-pccs-main',
         recruit: false,
         price: 3650,
-        slug: "clinical-case-presentation"
+        slug: "clinical-case-presentation",
+        type: "master"
     },
     "medical-terminology": {
         title: "Thuật Ngữ Y Khoa",
-        image: "https://res.cloudinary.com/tanvo/image/upload/v1674322583/medlangfanatic/courses/mt/mt-thumbnail_uhsldz.jpg",
-        content: "Medical Terminology: An essential course for healthcare professional: xây dựng vững chắc căn bản thuật ngữ y khoa tiếng Anh sau 60 giờ học đúng lộ trình.",
+        image: "https://res.cloudinary.com/tanvo/image/upload/v1677147133/medlangfanatic/courses/MT_jpdcgb.png",
+        // image: "https://res.cloudinary.com/tanvo/image/upload/v1674322583/medlangfanatic/courses/mt/mt-thumbnail_uhsldz.jpg",
+        content: "Nắm vững nền tảng thuật ngữ y khoa chuyên ngành với hệ thống bài tập đa dạng và thú vị.",
         path: "courses/medical-terminology",
         idEl: "mt-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-mt-secondary',
         recruit: true,
         price: 1690,
-        slug: "medical-terminology"
+        slug: "medical-terminology",
+        type: "standard"
     },
     mavl: {
         // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
         title: `Từ Vựng Học Thuật Y Khoa`,
-        image: "https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png",
-        content: "Khóa học MAVL hướng dẫn bạn phân nhóm từ vựng giúp liên tưởng, và bài tập tương tác đa dạng giúp hiểu sâu hàm nghĩa các từ vựng.",
+        image: "https://res.cloudinary.com/tanvo/image/upload/v1677147132/medlangfanatic/courses/mavl_su5gsx.png",
+        // image: "https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png",
+        content: "Nắm vững vốn từ vựng academic tối cần thiết trong việc đọc các tài liệu y văn.",
         path: "courses/mavl",
         idEl: "mavl-thumbnail-vertical",
         btnClass: "btn-sign-up",
         recruit: true,
         price: 3650,
-        slug: "mavl"
+        slug: "mavl",
+        type: "master"
     },
+    "how-to-learn-medical-vocabulary": {
+        // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
+        title: `<span class="text-18">Nền tảng học từ vựng Y khoa</span>`,
+        // image: "https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png",
+        image: "https://res.cloudinary.com/tanvo/image/upload/v1677147132/medlangfanatic/courses/how-to-learn-medical-vocabulary_lhhr2j.png",
+        content: "Kiểm tra vốn từ vựng thông thường và lên kế hoạch học từ vựng y khoa",
+        path: "courses/how-to-learn-medical-vocabulary",
+        idEl: "how-to-learn-medical-vocabulary-thumbnail-vertical",
+        btnClass: "btn-sign-up",
+        recruit: true,
+        price: 0,
+        slug: "how-to-learn-medical-vocabulary",
+        type: "free"
+    }
+    ,
+    "listening-skills": {
+        // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
+        title: "Phát triển kỹ năng nghe",
+        // image: "https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png",
+        image: "https://res.cloudinary.com/tanvo/image/upload/v1677147132/medlangfanatic/courses/listieng-to-the-language-of-medicine_ehpgrx.png",
+        content: "Tìm hiểu cách học kỹ năng nghe hiệu quả và đắm chìm vào kho bài luyện nghe khổng lồ đủ mọi cấp độ.",
+        path: "courses/listening-skills",
+        idEl: "listening-skills-thumbnail-vertical",
+        btnClass: "btn-sign-up",
+        recruit: true,
+        price: 1690,
+        slug: "listening-skills",
+        type: "standard"
 
+    },
 }
 
 const slugCourseByCat = {
@@ -136,25 +176,34 @@ const slugCourseByCat = {
         slugs: [
             "communication-with-patients-101",
             "clinical-case-presentation",
-            "medical-terminology",
             "mavl",
+            "how-to-learn-medical-vocabulary",
+            "listening-skills",
+            "medical-terminology",
         ]
     },
     readingAndListening: {
         title: "Reading và Listening",
         slugs: [
-            "medical-terminology",
-            "mavl"
+            "listening-skills",
+            "how-to-learn-medical-vocabulary",
         ]
     },
     communication: {
-        title: "Giao tiếp",
+        title: "Speaking",
         slugs: [
             "communication-with-patients-101",
             "clinical-case-presentation"
         ]
-    }
-    ,
+    },
+    vocabulary: {
+        title: "Vocabulary",
+        slugs: [
+            "medical-terminology",
+            "mavl",
+            "how-to-learn-medical-vocabulary",
+        ]
+    },
     // free: {
     //     title: "Miễn phí",
     //     slugs: [
