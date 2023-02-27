@@ -55,7 +55,7 @@ const instructors = [
         titleFull: "Ths. BS. CKI.",
         title: "Ths. BS. CKI.",
         imageUrl: "https://res.cloudinary.com/tanvo/image/upload/v1674247540/medlangfanatic/Instructors/dr.cang_qpbtvb.jpg",
-        imageTransparent: "https://res.cloudinary.com/tanvo/image/upload/v1677366307/medlangfanatic/Instructors/dr.cang_bhs51l.png",
+        imageTransparent: "https://res.cloudinary.com/tanvo/image/upload/v1677500092/medlangfanatic/courses/combo/cang_arjgtw.png",
         link: "/instructors/bac-si-nguyen-dinh-cang"
     },
     {
@@ -171,7 +171,7 @@ const courseListContent = {
         // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
         title: "Combo kỹ năng đọc y khoa",
         // image: "https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png",
-        image: "https://res.cloudinary.com/tanvo/image/upload/v1677147132/medlangfanatic/courses/a-comprehesnsive-of-reading-skills_v8jlir.png",
+        image: "https://res.cloudinary.com/tanvo/image/upload/v1677147132/medlangfanatic/courses/a-comprehensive-course-of-medical-vocabulary_zqxndy.png",
         content: "Đào tạo toàn diện giúp bạn nâng cao khả năng đọc hiểu và hiểu biết về các tài liệu y khoa.",
         path: "courses/combo-vocabulary",
         idEl: "combo-vocabulary-thumbnail-vertical",
