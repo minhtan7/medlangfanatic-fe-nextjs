@@ -45,6 +45,8 @@ export async function getStaticPaths() {
                 { params: { slug: "mavl" } },
                 { params: { slug: "clinical-case-presentation" } },
                 { params: { slug: "communication-with-patients-101" } },
+                { params: { slug: "listening-skills" } },
+                { params: { slug: "combo-vocabulary" } },
             ],
         fallback: false
     }
