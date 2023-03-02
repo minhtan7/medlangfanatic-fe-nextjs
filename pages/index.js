@@ -14,6 +14,7 @@ import apiService from '@/lib/apiService'
 import { VideoSession } from '@/components/home/VideoSession';
 import { Podcast } from '@/components/home/Podcast';
 import { Subscription } from '@/components/home/Subscription';
+import Script from 'next/script';
 
 
 
@@ -27,6 +28,8 @@ export default function HomePage({ instructors, courseListContent, fbs, blogs })
         site_name="Med Lang Fanatic"
         url="https://medlangfanatic.com"
       >
+        <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
+
         <main >
           <CTA />
           <InstructorList instructors={instructors} />
