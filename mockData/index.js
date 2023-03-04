@@ -84,6 +84,7 @@ const instructors = [
     },
 
 ]
+
 const courseListContent = {
     "communication-with-patients-101": {
         title: "Giao Tiếp Với Bệnh Nhân",
@@ -96,8 +97,11 @@ const courseListContent = {
         recruit: true,
         price: 3650,
         slug: "communication-with-patients-101",
-        type: "master"
+        type: "master",
+        reviewAvg: 4.9,
+        noReview: 87
     },
+    //87
     "clinical-case-presentation": {
         title: "Trình Ca Lâm Sàng",
         image: "https://res.cloudinary.com/tanvo/image/upload/v1677147132/medlangfanatic/courses/pccs_ejihsz.png",
@@ -109,8 +113,11 @@ const courseListContent = {
         recruit: false,
         price: 3650,
         slug: "clinical-case-presentation",
-        type: "master"
+        type: "master",
+        reviewAvg: 4.9,
+        noReview: 92
     },
+    //92
     "medical-terminology": {
         title: "Thuật Ngữ Y Khoa",
         image: "https://res.cloudinary.com/tanvo/image/upload/v1677147133/medlangfanatic/courses/MT_jpdcgb.png",
@@ -122,8 +129,11 @@ const courseListContent = {
         recruit: true,
         price: 1690,
         slug: "medical-terminology",
-        type: "standard"
+        type: "standard",
+        reviewAvg: 5,
+        noReview: 211
     },
+    //211
     mavl: {
         // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
         title: `Từ Vựng Học Thuật Y Khoa`,
@@ -136,8 +146,11 @@ const courseListContent = {
         recruit: true,
         price: 3650,
         slug: "mavl",
-        type: "master"
+        type: "master",
+        reviewAvg: 5,
+        noReview: 325
     },
+    //325
     "how-to-learn-medical-vocabulary": {
         // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
         title: `<span class="text-18">Nền tảng học từ vựng Y khoa</span>`,
@@ -150,8 +163,11 @@ const courseListContent = {
         recruit: true,
         price: 0,
         slug: "how-to-learn-medical-vocabulary",
-        type: "free"
+        type: "free",
+        reviewAvg: 5,
+        noReview: 50
     }
+    //50
     ,
     "listening-skills": {
         // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
@@ -165,8 +181,11 @@ const courseListContent = {
         recruit: true,
         price: 1690,
         slug: "listening-skills",
-        type: "standard"
+        type: "standard",
+        reviewAvg: 4.9,
+        noReview: 155
     },
+    //155
     "combo-vocabulary": {
         // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
         title: "Combo kỹ năng đọc y khoa",
@@ -179,8 +198,11 @@ const courseListContent = {
         recruit: true,
         price: 5340,
         slug: "combo-vocabulary",
-        type: "master"
+        type: "master",
+        reviewAvg: 5,
+        noReview: 239
     },
+    //239
 }
 
 const slugCourseByCat = {

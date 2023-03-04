@@ -171,26 +171,29 @@ export const AllCourseCourseCard = ({ course, width, height }) => {
                     fill object-fit="contain" alt={course.title} />
             </div>
             <div className=' ms-3 me-3 mt-2 text-black fw-normal d-flex flex-column justify-content-between'
-                style={{ height: "133px" }}
-            // style={{ height: "245px" }}
+                // style={{ height: "133px" }}
+                style={{ height: "210px" }}
             >
                 <div>
                     {filterType(course.type)}
-                    <h5 onClick={() => router.push(`/courses/${course.slug}`)} className={`cursor-pointer text-nowrap ${styles["title"]}`} dangerouslySetInnerHTML={{ __html: course.title }}></h5>
-                    <p style={{ fontSize: "14px" }}>{course.content}</p>
-                    <br />
+                    <h3 onClick={() => router.push(`/courses/${course.slug}`)}
+                        style={{ fontSize: "16px" }}
+                        className={`cursor-pointer fw-bold text-nowrap ${styles["title"]}`}
+                        dangerouslySetInnerHTML={{ __html: course.title }}></h3>
+                    <p style={{ fontSize: "12px" }}>{course.content}</p>
+                    {/* <br /> */}
                 </div>
-                {/* <div>
+                <div>
                     <p style={{ fontSize: "12px" }} className='mb-0'>
                         <small>
                             <FontAwesomeIcon icon={faStar} color='orange' />
-                            <strong className='ms-1'>4.8</strong>
-                            <span className='ms-2'>(200+ reviews)</span>
+                            <strong className='ms-1'>{course.reviewAvg}</strong>
+                            <span className='ms-2'>({course.noReview}+ reviews)</span>
                         </small>
                     </p>
                     <p className='mb-0' style={{ fontSize: "12px" }}><small>Beginner &#183; Professional Certificate &#183; 3-6 months </small></p>
                     <br />
-                </div> */}
+                </div>
             </div>
         </div >
     )

@@ -109,7 +109,7 @@ export default function ComboCourse({ course }) {
                         fill object-fit="contain"
                     />
                     <span >
-                        <strong>200+ học viên</strong><br />
+                        <strong>239+ học viên</strong><br />
                         đăng ký khóa học
                     </span>
                 </li>

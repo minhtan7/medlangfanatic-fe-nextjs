@@ -48,7 +48,8 @@
     /* border: 1px solid black; */
     box-shadow: 0px 0px 12px 1px #00000078;
     border-radius: 5px;
-    height: 350px;
+    /* height: 350px; */
+    height: 430px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -77,3 +78,7 @@
 .title:hover{
     color: var(--main)
 }
+
+/* .title{
+    font-size: ;
+} */

@@ -13,12 +13,35 @@ import apiService from '@/lib/apiService'
 import styles from "@/styles/blogs/SingleBlogPage.module.css"
 import Layout from '@/components/layout/Layout'
 import Script from 'next/script'
+import { CourseCarousel } from '@/components/home/CourseList'
+import { courseListContent } from 'mockData'
+import { recommendedCourse } from '@/lib/recommendCourse'
+import AllBlogHero from '@/components/blog/AllBlogHero'
+
+const responsive = {
+    superLargeDesktop: {
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 4
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
 
 export default function SingleBlogPage({ blog }) {
     // useScript("https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0")
     // useScript("<path>/dist/share-buttons.js")
     // useScript("//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js")
-
+    const sortedReCourses = recommendedCourse({ topic: blog.topic, courseListContent: courseListContent })
     return blog && (
         <Layout>
             <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
@@ -48,6 +71,10 @@ export default function SingleBlogPage({ blog }) {
                     </Row>
                 </Container>
             )}
+            <Container>
+                <h2>Khóa học bổ trợ:</h2>
+                <CourseCarousel responsive={responsive} courseListContent={sortedReCourses} />
+            </Container>
             {/* <Subscribe /> */}
             <div className='mt-5 pb-md-2 pt-md-5' style={{ backgroundColor: "#edf1ff91" }}>
                 <Subscription />
@@ -61,6 +88,7 @@ export default function SingleBlogPage({ blog }) {
 
 
 const randomRelatedBlog = (blog) => {
+    console.log(blog)
     if (blog.relatedPost.length === 1 | blog.relatedPost.length === 0) return
     if (blog.relatedPost[blog.relatedPost.length - 1].slug === blog.slug) {
         return blog.relatedPost[0]

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Container, Row, Tabs } from 'react-bootstrap'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -14,41 +14,58 @@ import { useEffect, useState } from 'react'
 import { SearchBlock, SearchResult } from '@/components/utils/Search'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
+import AllBlogHero from '@/components/blog/AllBlogHero'
 
 
 export default function BlogPage({ blogs, totalPage, page }) {
-    const [search, setSearch] = useState("")
-    const [results, setResults] = useState([])
-    const handleChange = (e) => {
-        setSearch(e.target.value)
-    }
+    // const [search, setSearch] = useState("")
+    // const [results, setResults] = useState([])
+    // const handleChange = (e) => {
+    //     setSearch(e.target.value)
+    // }
 
-    useEffect(() => {
-        const fetchSearch = async (search) => {
-            const res = await apiService.get(`/posts/search/${search}`)
-            setResults(res.data.posts)
-        }
-        if (search) {
-            fetchSearch(search)
-        }
-
-    }, [search])
-    const handleDeleteSearch = () => {
-        setResults([])
-        setSearch("")
-    }
-    let { query: { index_page } } = useRouter()
+    const [key, setKey] = useState('all');
+    const router = useRouter()
+    let { query: { index_page, type } } = useRouter()
     if (!index_page) {
         index_page = 1
     }
+    useEffect(() => {
+        setKey(type ? type : "all")
+    }, [type])
+
+    // useEffect(() => {
+    //     const fetchSearch = async (search) => {
+    //         const res = await apiService.get(`/posts/search/${search}`)
+    //         setResults(res.data.posts)
+    //     }
+    //     if (search) {
+    //         fetchSearch(search)
+    //     }
+
+    // }, [search])
+    // const handleDeleteSearch = () => {
+    //     setResults([])
+    //     setSearch("")
+    // }
+
     return (
         <Layout>
             <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
-            <div id="blog-page" style={{ backgroundColor: "#edf1ff91" }}>
+            <AllBlogHero />
+            <div id="blog-page" className='mt-5' style={{ backgroundColor: "#edf1ff91" }}>
                 <Container>
+                    {/* <Tabs
+                        id="controlled-tab-example"
+                        activeKey={key}
+                        onSelect={(k) => router.push({ pathname: router.pathname, query: { type: k } }, undefined, { scroll: false })}
+                        className="mb-3"
+                    >
+                        
+                    </Tabs> */}
                     <Row>
-                        <Col>
+                        {/* <Col>
                             <div className=' pt-5'>
                                 <Link href="/" className='text-secondary text-decoration-none'>
                                     <FontAwesomeIcon icon={faAngleLeft} className="me-3" />
@@ -56,7 +73,7 @@ export default function BlogPage({ blogs, totalPage, page }) {
                                 </Link>
                                 <h1 className='title' >Blogs</h1>
                             </div>
-                        </Col>
+                        </Col> */}
                         <Col md={3} >
                             {/* <div className='position-relative pt-5'>
                                 <SearchBlock search={search} handleChange={handleChange} handleDeleteSearch={handleDeleteSearch} />
@@ -80,51 +97,7 @@ export default function BlogPage({ blogs, totalPage, page }) {
         </Layout>
     )
 }
-const today = (new Date()).toString()
-const blogContent = [
-    {
-        _id: 1,
-        title: "McKinsey experts bring sustainability and inclusion to the skies",
-        content: "At the world’s largest air show, our colleagues explored sustainable aviation, building inclusive talent pipelines, and improving business performance against once-in-career disruptions.",
-        topic: ["sustainability", "inclusive growth"],
-        createAt: today
-    },
-    {
-        _id: 2,
-        title: "Tearing the ‘paper ceiling’: McKinsey supports effort driving upward mobility for millions of workers",
-        content: "Bachelor’s degree requirements, the default for most middle and high-wage jobs, exclude many skilled workers. A new nationwide campaign is encouraging employers to change hiring practices.",
-        topic: ["sustainability", "inclusive growth"],
-        createAt: today
-    },
-    {
-        _id: 3,
-        title: "An explicit choice: Three leaders on making the decision to grow",
-        content: "McKinsey leaders share stories about how the pursuit of sustainable, inclusive, and profitable growth can elevate business performance and inspire people.",
-        topic: ["sustainability", "inclusive growth"],
-        createAt: today
-    },
-    {
-        _id: 4,
-        title: "Tearing the ‘paper ceiling’: McKinsey supports effort driving upward mobility for millions of workers",
-        content: "Bachelor’s degree requirements, the default for most middle and high-wage jobs, exclude many skilled workers. A new nationwide campaign is encouraging employers to change hiring practices.",
-        topic: ["sustainability", "inclusive growth"],
-        createAt: today
-    },
-    {
-        _id: 5,
-        title: "Tearing the ‘paper ceiling’: McKinsey supports effort driving upward mobility for millions of workers",
-        content: "Bachelor’s degree requirements, the default for most middle and high-wage jobs, exclude many skilled workers. A new nationwide campaign is encouraging employers to change hiring practices.",
-        topic: ["sustainability", "inclusive growth"],
-        createAt: today
-    },
-    {
-        _id: 6,
-        title: "An explicit choice: Three leaders on making the decision to grow",
-        content: "McKinsey leaders share stories about how the pursuit of sustainable, inclusive, and profitable growth can elevate business performance and inspire people.",
-        topic: ["sustainability", "inclusive growth"],
-        createAt: today
-    },
-]
+
 export async function getStaticPaths() {
     const response = await apiService.get(`/posts?page=1&limit=${POST_PER_PAGE}`);
     const paths = []
@@ -144,7 +117,8 @@ export async function getStaticProps({ params }) {
     return {
         props: {
             blogs, totalPage, page
-        }
+        },
+        revalidate: 86400
     }
 
 }

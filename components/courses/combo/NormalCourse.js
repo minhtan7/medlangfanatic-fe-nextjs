@@ -13,6 +13,9 @@ import { useFilterCssRoot } from "hook/useFilterCssRoot"
 import { filterCss } from "@/lib/filterCss"
 import { slugTranslate } from "@/lib/slugTranslate"
 import { Cover, CoverCWP, CoverMedicalTerminology, CoverPCCS, HLMV, LLM } from '@/components/courses/Cover';
+import { CourseCarousel } from "@/components/home/CourseList"
+import { courseListContent } from "mockData"
+import { recommendedCourse } from "@/lib/recommendCourse"
 
 
 const filterCover = (slug) => {
@@ -36,6 +39,25 @@ const filterCover = (slug) => {
     }
 }
 const defaultHeight = 72;
+
+const responsive = {
+    superLargeDesktop: {
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 4
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
 
 export default function NormalCourse({ course }) {
     useFilterCssRoot({ slug: course && course.slug, ...filterCss(course && course.slug) })
@@ -71,6 +93,12 @@ export default function NormalCourse({ course }) {
                     </Col>
                 </Row>
             </Container>
+            {course.slug === "how-to-learn-medical-vocabulary" && (
+                <Container>
+                    <h2>Khóa học bổ trợ:</h2>
+                    <CourseCarousel responsive={responsive} courseListContent={recommendedCourse({ courseListContent: courseListContent, recommendedSlugs: Object.keys(courseListContent).filter(el => el !== "how-to-learn-medical-vocabulary") })} />
+                </Container>
+            )}
             <CTA course={course} />
             <ShowCourseBtn course={course} />
         </Layout>

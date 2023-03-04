@@ -85,15 +85,21 @@ export const CourseList = ({ courseListContent }) => {
                         )
                     }
                 </Row> */}
-                <Carousel responsive={responsive}>
-                    {Object.keys(courseListContent).map(course => (
-                        // <div style={{ padding: "1rem 2rem" }}>
-                        <div key={courseListContent[course].idEl} style={{ padding: "1rem", textAlign: "left" }}>
-                            <AllCourseCourseCard course={courseListContent[course]} width={"300px"} height={"200px"} />
-                        </div>
-                    ))}
-                </Carousel>
+                <CourseCarousel responsive={responsive} courseListContent={courseListContent} />
             </Container>
         </div >
+    )
+}
+
+export const CourseCarousel = ({ responsive, courseListContent }) => {
+    return (
+        <Carousel responsive={responsive}>
+            {Object.keys(courseListContent).map(course => (
+                // <div style={{ padding: "1rem 2rem" }}>
+                <div key={courseListContent[course].idEl} style={{ padding: "1rem", textAlign: "left" }}>
+                    <AllCourseCourseCard course={courseListContent[course]} width={"300px"} height={"200px"} />
+                </div>
+            ))}
+        </Carousel>
     )
 }
