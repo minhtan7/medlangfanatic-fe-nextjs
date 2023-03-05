@@ -20,7 +20,8 @@ const slugs = {
     "communication-with-patients-101": "https://webforms.pipedrive.com/f/6jZHCqSSCU9dyeZNUMyqnLlrTYi9jR0xgoaCnmtUYHvmJDLwZfhQCsc3rCD9AvMo1B",
     "document": "https://webforms.pipedrive.com/f/bYYsEmdAWOeSU2Pw7yWCOiSbrRfOby9SP9RtJSIMZH4wIqkpRegRx5sg1usNTk6Ldx",
     "listening-skills": "https://webforms.pipedrive.com/f/5VG61SLwRTR8qSNkIjHR6m99JfyNAXA8cETVeUMoE0a9PT1HlpJMPlydgGbr1A4Z9h",
-    "combo-vocabulary": "https://webforms.pipedrive.com/f/5VCoQi5YHBpDfEESeZY5lKenczHjq6WsKYjTwR0LGrwIPOzhEc7I22J4ZNcDHL5OmL"
+    "combo-vocabulary": "https://webforms.pipedrive.com/f/5VCoQi5YHBpDfEESeZY5lKenczHjq6WsKYjTwR0LGrwIPOzhEc7I22J4ZNcDHL5OmL",
+    "how-to-learn-medical-vocabulary": "https://webforms.pipedrive.com/f/6Ox8KwHEIirzOR1Xe0fo7H1rNa0mfmHdHvT1ICDoy1vUDuKi8NtoYZvNI1rgX52kQH"
 }
 
 export default function FormPage({ pipedrive, slug }) {

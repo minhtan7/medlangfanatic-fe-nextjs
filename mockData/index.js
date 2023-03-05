@@ -94,12 +94,14 @@ const courseListContent = {
         path: "courses/communication-with-patients-101",
         idEl: "cwp-thumbnail-vertical",
         btnClass: 'btn-sign-up btn-cwp-main',
-        recruit: true,
+        recruit: false,
         price: 3650,
         slug: "communication-with-patients-101",
         type: "master",
         reviewAvg: 4.9,
-        noReview: 87
+        noReview: 87,
+        noApplication: 130,
+        selfLearn: false
     },
     //87
     "clinical-case-presentation": {
@@ -115,7 +117,9 @@ const courseListContent = {
         slug: "clinical-case-presentation",
         type: "master",
         reviewAvg: 4.9,
-        noReview: 92
+        noReview: 92,
+        noApplication: 138,
+        selfLearn: false
     },
     //92
     "medical-terminology": {
@@ -131,7 +135,9 @@ const courseListContent = {
         slug: "medical-terminology",
         type: "standard",
         reviewAvg: 5,
-        noReview: 211
+        noReview: 211,
+        noApplication: 316,
+        selfLearn: true
     },
     //211
     mavl: {
@@ -148,7 +154,9 @@ const courseListContent = {
         slug: "mavl",
         type: "master",
         reviewAvg: 5,
-        noReview: 325
+        noReview: 325,
+        noApplication: 487,
+        selfLearn: true
     },
     //325
     "how-to-learn-medical-vocabulary": {
@@ -165,7 +173,9 @@ const courseListContent = {
         slug: "how-to-learn-medical-vocabulary",
         type: "free",
         reviewAvg: 5,
-        noReview: 50
+        noReview: 50,
+        noApplication: 79,
+        selfLearn: true
     }
     //50
     ,
@@ -183,7 +193,9 @@ const courseListContent = {
         slug: "listening-skills",
         type: "standard",
         reviewAvg: 4.9,
-        noReview: 155
+        noReview: 40,
+        noApplication: 232,
+        selfLearn: true
     },
     //155
     "combo-vocabulary": {
@@ -200,7 +212,9 @@ const courseListContent = {
         slug: "combo-vocabulary",
         type: "master",
         reviewAvg: 5,
-        noReview: 239
+        noReview: 78,
+        noApplication: 117,
+        selfLearn: true
     },
     //239
 }

@@ -41,7 +41,7 @@ export default function SingleBlogPage({ blog }) {
     // useScript("https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0")
     // useScript("<path>/dist/share-buttons.js")
     // useScript("//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js")
-    const sortedReCourses = recommendedCourse({ topic: blog.topic, courseListContent: courseListContent })
+    const sortedReCourses = blog && blog.topic && recommendedCourse({ topic: blog.topic, courseListContent: courseListContent })
     return blog && (
         <Layout>
             <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
@@ -71,10 +71,10 @@ export default function SingleBlogPage({ blog }) {
                     </Row>
                 </Container>
             )}
-            <Container>
+            {sortedReCourses?.length && <Container>
                 <h2>Khóa học bổ trợ:</h2>
                 <CourseCarousel responsive={responsive} courseListContent={sortedReCourses} />
-            </Container>
+            </Container>}
             {/* <Subscribe /> */}
             <div className='mt-5 pb-md-2 pt-md-5' style={{ backgroundColor: "#edf1ff91" }}>
                 <Subscription />
@@ -88,7 +88,6 @@ export default function SingleBlogPage({ blog }) {
 
 
 const randomRelatedBlog = (blog) => {
-    console.log(blog)
     if (blog.relatedPost.length === 1 | blog.relatedPost.length === 0) return
     if (blog.relatedPost[blog.relatedPost.length - 1].slug === blog.slug) {
         return blog.relatedPost[0]
@@ -106,7 +105,6 @@ export async function getStaticPaths() {
     const response = await apiService.get(`/posts?page=1&limit=100`);
     const paths = response.data.posts.map((p) => ({ params: { slug: p.slug } }))
 
-    console.log(paths)
     return {
         paths,
         fallback: true

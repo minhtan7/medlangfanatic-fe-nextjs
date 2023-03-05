@@ -36,22 +36,17 @@ export const CourseCard = ({ course }) => {
                     <span>Học thử!</span>
                 </Button> */}
 
-                {course.slug.toLowerCase() !== "how-to-learn-medical-vocabulary" ? slugTranslate({ target: "recruitStatus", slug: course.slug }) ?
-                    <Link href={`/form/${course.slug.toLowerCase()}`}>
+                {slugTranslate({ target: "recruitStatus", slug: course.slug }) ?
+                    (<Link href={`/form/${course.slug.toLowerCase()}`}>
                         <Button
                             variant="primary" className='btn-sign-up mb-3' >
                             <span>Đăng ký ngay</span>
                         </Button>
-                    </Link> :
-                    <Button
+                    </Link>) :
+                    (<Button
                         variant="primary" className='btn-sign-up mb-3' >
                         <span>Đã đủ học viên</span>
-                    </Button> : <Link href={`/courses/combo-vocabulary`}>
-                    <Button
-                        variant="primary" className='btn-sign-up mb-3' >
-                        <span>Đăng ký ngay</span>
-                    </Button>
-                </Link>
+                    </Button>)
                 }
 
                 {/* {slugTranslate({ target: "recruitStatus", slug: course.slug }) && <RecruitBtn cursor={true} course={course} />} */}
@@ -191,7 +186,14 @@ export const AllCourseCourseCard = ({ course, width, height }) => {
                             <span className='ms-2'>({course.noReview}+ reviews)</span>
                         </small>
                     </p>
-                    <p className='mb-0' style={{ fontSize: "12px" }}><small>Beginner &#183; Professional Certificate &#183; 3-6 months </small></p>
+                    <p className='mb-0' style={{ fontSize: "14px" }}>
+                        <small>
+                            {course.selfLearn ? <b>Tuyển sinh liên tục</b> :
+                                course.recruit ? <b>Đang tuyển sinh</b> : "Đã đủ học viên"
+                            }
+
+                        </small>
+                    </p>
                     <br />
                 </div>
             </div>
