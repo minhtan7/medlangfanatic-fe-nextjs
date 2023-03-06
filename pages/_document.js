@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head >
         <link rel='shortcut icon' href='/favicon.ico' />
+        <script async defer src={process.env.NEXT_APP_LUCKY_ORANGE}></script>
       </Head>
       <body>
         <Main />

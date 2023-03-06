@@ -14,7 +14,6 @@ export default function ThankyouPage() {
 
     return (
         <Layout>
-            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <Container>
                 <Row>

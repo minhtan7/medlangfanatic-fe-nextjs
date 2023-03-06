@@ -23,7 +23,6 @@ export default function InstructorPage({ slug }) {
     const instructor = slugTranslate({ slug: slug ? slug : "bac-si-tran-quang-hung", target: "instructors" })
     return (
         <Layout>
-            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <section id='instructor-page' >
                 <div className='mb-md-7 mx-md-7 mt-md-5'>

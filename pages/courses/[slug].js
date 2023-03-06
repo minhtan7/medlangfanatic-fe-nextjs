@@ -15,7 +15,6 @@ export default function CoursePage({ course }) {
 
     return (
         <>
-            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             {course && slug === "combo-vocabulary" ?
                 (<ComboCourse course={course} />) : (<NormalCourse course={course} />)}

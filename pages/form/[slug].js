@@ -45,7 +45,6 @@ export default function FormPage({ pipedrive, slug }) {
     return (
         <Layout>
             <Script src={pipedrive} />
-            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <Container className='py-5' id="form-page">
                 <Row>

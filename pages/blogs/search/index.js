@@ -37,7 +37,6 @@ export default function SearchPage() {
     }, [q])
     return (
         <Layout>
-            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <Container className="mt-5 mb-5">
                 {Object.keys(results).length && <div className={`${styles["wrapper-result"]}`}>

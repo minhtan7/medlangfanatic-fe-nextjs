@@ -200,7 +200,7 @@ const courseListContent = {
     //155
     "combo-vocabulary": {
         // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
-        title: "Combo kỹ năng đọc y khoa",
+        title: "Combo từ vựng Y khoa",
         // image: "https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png",
         image: "https://res.cloudinary.com/tanvo/image/upload/v1677147132/medlangfanatic/courses/a-comprehensive-course-of-medical-vocabulary_zqxndy.png",
         content: "Đào tạo toàn diện giúp bạn nâng cao khả năng đọc hiểu và hiểu biết về các tài liệu y khoa.",

@@ -27,7 +27,6 @@ export default function HomePage({ instructors, courseListContent, fbs, blogs })
         site_name="Med Lang Fanatic"
         url="https://medlangfanatic.com"
       >
-        <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
         <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
 
         <main >

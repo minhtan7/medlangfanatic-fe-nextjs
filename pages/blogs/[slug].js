@@ -44,7 +44,6 @@ export default function SingleBlogPage({ blog }) {
     const sortedReCourses = blog && blog.topic && recommendedCourse({ topic: blog.topic, courseListContent: courseListContent })
     return blog && (
         <Layout>
-            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             {!Object.keys(blog).length ? <LoadingSpinner /> : (
                 <Container className='mb-5'>

@@ -51,7 +51,6 @@ export default function BlogPage({ blogs, totalPage, page }) {
 
     return (
         <Layout>
-            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <AllBlogHero />
             <div id="blog-page" className='mt-5' style={{ backgroundColor: "#edf1ff91" }}>

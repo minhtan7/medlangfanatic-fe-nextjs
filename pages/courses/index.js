@@ -22,7 +22,6 @@ export default function Courses() {
         <Layout
 
         >
-            <Script src={process.env.NEXT_APP_LUCKY_ORANGE} />
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <AllCoursesHero />
             <Container id="all-course" className="mt-5 mb-5">
