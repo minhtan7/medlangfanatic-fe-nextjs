@@ -42,7 +42,6 @@ export default function SingleBlogPage({ blog }) {
     // useScript("<path>/dist/share-buttons.js")
     // useScript("//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js")
     const sortedReCourses = blog && blog.topic && recommendedCourse({ topic: blog.topic, courseListContent: courseListContent })
-    console.log(sortedReCourses)
     return blog && (
         <Layout>
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
