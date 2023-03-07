@@ -42,6 +42,7 @@ export default function SingleBlogPage({ blog }) {
     // useScript("<path>/dist/share-buttons.js")
     // useScript("//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js")
     const sortedReCourses = blog && blog.topic && recommendedCourse({ topic: blog.topic, courseListContent: courseListContent })
+    console.log(sortedReCourses)
     return blog && (
         <Layout>
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
@@ -70,7 +71,7 @@ export default function SingleBlogPage({ blog }) {
                     </Row>
                 </Container>
             )}
-            {sortedReCourses?.length && <Container>
+            {sortedReCourses && Object.keys(sortedReCourses).length && <Container>
                 <h2>Khóa học bổ trợ:</h2>
                 <CourseCarousel responsive={responsive} courseListContent={sortedReCourses} />
             </Container>}
