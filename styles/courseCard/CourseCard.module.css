@@ -82,3 +82,30 @@
 /* .title{
     font-size: ;
 } */
+
+/* sign up btn on card */
+         
+.btn-grad {
+/* background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%); */
+/* background-image: linear-gradient(to right, #4CB8C4 0%, #3CD3AD  51%, #4CB8C4  100%); */
+background-image: linear-gradient(to right, #000046 0%, #00afe0  51%, #000046  100%);
+
+margin: 0;
+padding: 3px 15px;
+text-align: center;
+transition: 0.5s;
+background-size: 200% auto;
+color: white;            
+box-shadow: 0 0 20px #eee;
+border-radius: 3px;
+display: block;
+font-size: 12px;
+}
+
+.btn-grad:hover {
+background-position: right center; /* change the direction of the change here */
+color: #fff;
+text-decoration: none;
+}
+
+         

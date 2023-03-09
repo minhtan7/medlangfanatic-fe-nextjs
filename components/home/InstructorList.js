@@ -7,6 +7,7 @@ import { isMobile } from "react-device-detect"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { useEffect, useState } from "react"
 import { instructors } from "mockData"
+import Carousel from "react-multi-carousel"
 
 const { Container, Row, Col, Card } = require("react-bootstrap")
 
@@ -146,7 +147,43 @@ const InstructorCardRight = ({ instructor }) => {
 }
 
 
+export const InstructorListHP = ({ instructors }) => {
+
+    return (
+        <div id="hp-instructor-card" className='mb-5 mt-5 text-justify mx-md-7'>
+            <Container>
+                <Row>
+                    <Col>
+                        <h1 className='fw-bold text-main'>Giảng viên</h1>
+                    </Col>
+                </Row>
+                <InstructorCarousel responsive={responsive} instructors={instructors} />
+            </Container>
+
+        </div>
+    )
+}
+const responsive = {
+    superLargeDesktop: {
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 4
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
+
 export const InstructorCardVerticle = ({ instructor }) => {
+    console.log(instructor)
     return (
         <Card className="border-0">
             <div className="overflow-hidden text-center p-3 pb-0">
@@ -157,10 +194,16 @@ export const InstructorCardVerticle = ({ instructor }) => {
                 </div>
             </div>
             <Card.Body>
-                <p className="lh-1 mb-2 text-center">Bác sĩ</p>
-                <Link href={instructor.link} passHref className="text-decoration-none text-main text-center">
-                    <Card.Title className="text-center text-decoration-none">{instructor.name}</Card.Title>
-                </Link>
+                <div style={{ height: "3rem" }}>
+                    <p className="lh-1 mb-2 text-center">Bác sĩ</p>
+                    <Link href={instructor.link} passHref className={`text-decoration-none text-main text-center ${instructor.link === "#" && 'pe-none'}`}>
+                        {instructor.slug === "huong-tran" | instructor.slug === "tram-nguyen" ?
+                            <Card.Title style={{ fontSize: "1.1rem" }} className="text-center text-decoration-none">{instructor.name}</Card.Title> :
+                            <Card.Title className="text-center text-decoration-none">{instructor.name}</Card.Title>
+                        }
+
+                    </Link>
+                </div>
                 <hr />
 
                 <ul className={`${styles["speaker-topic"]} mb-0 fa-ul`}>
@@ -176,5 +219,27 @@ export const InstructorCardVerticle = ({ instructor }) => {
 
             </Card.Body>
         </Card>
+    )
+}
+
+
+
+export const InstructorCarousel = ({ responsive, instructors }) => {
+    return (
+        <Carousel
+            responsive={responsive}
+            autoPlay
+            autoPlaySpeed={3000}
+            ssr={true}
+            // customTransition="all .5"
+            // transitionDuration={1000}
+            infinite={true}
+        >
+            {instructors.map(ins => (
+                <div key={ins.name} >
+                    <InstructorCardVerticle instructor={ins} />
+                </div>
+            ))}
+        </Carousel>
     )
 }

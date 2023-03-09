@@ -5,7 +5,7 @@ import "react-multi-carousel/lib/styles.css";
 
 import Layout from '@/components/layout/Layout'
 import { CTA } from '@/components/home/CTA'
-import { InstructorList } from '@/components/home/InstructorList'
+import { InstructorList, InstructorListHP } from '@/components/home/InstructorList'
 import { instructors, courseListContent, fbs } from 'mockData'
 import { CourseList } from '@/components/home/CourseList'
 import { FeedbackList } from '@/components/home/FeedbackList'
@@ -31,12 +31,13 @@ export default function HomePage({ instructors, courseListContent, fbs, blogs })
 
         <main >
           <CTA />
-          <InstructorList instructors={instructors} />
+          {/* <InstructorList instructors={instructors} /> */}
           <CourseList courseListContent={courseListContent && courseListContent} />
+          <InstructorListHP instructors={instructors} />
           <FeedbackList fbs={fbs} />
           <BlogSession blogs={blogs} />
-          <VideoSession />
-          <Podcast />
+          {/* <VideoSession /> */}
+          {/* <Podcast /> */}
           <Subscription />
         </main>
       </Layout>

@@ -38,7 +38,8 @@ const instructors = [
         imageUrl: "https://res.cloudinary.com/tanvo/image/upload/v1674247540/medlangfanatic/Instructors/dr.hung_kgiok1.webp",
         imageTransparent: "https://res.cloudinary.com/tanvo/image/upload/v1677433925/medlangfanatic/courses/combo/hung-transparent_atow8f.png",
         titleFull: "Bác sĩ Chuyên Khoa I",
-        link: "/instructors/bac-si-tran-quang-hung"
+        link: "/instructors/bac-si-tran-quang-hung",
+        slug: "hung-tran"
     },
     {
         name: "Nguyễn Ngọc\nQuỳnh Trâm",
@@ -47,7 +48,8 @@ const instructors = [
         imageUrl: "https://res.cloudinary.com/tanvo/image/upload/v1674247540/medlangfanatic/Instructors/dr.tram_lphdre.webp",
         imageTransparent: "https://res.cloudinary.com/tanvo/image/upload/v1677433926/medlangfanatic/courses/combo/tram-transparent_csanxe.png",
         titleFull: "Bác sĩ",
-        link: "/instructors/bac-si-nguyen-ngoc-quynh-tram"
+        link: "/instructors/bac-si-nguyen-ngoc-quynh-tram",
+        slug: "tram-nguyen"
     },
     {
         name: "Nguyễn Đình Cang",
@@ -56,7 +58,8 @@ const instructors = [
         title: "Ths. BS. CKI.",
         imageUrl: "https://res.cloudinary.com/tanvo/image/upload/v1674247540/medlangfanatic/Instructors/dr.cang_qpbtvb.jpg",
         imageTransparent: "https://res.cloudinary.com/tanvo/image/upload/v1677500092/medlangfanatic/courses/combo/cang_arjgtw.png",
-        link: "/instructors/bac-si-nguyen-dinh-cang"
+        link: "/instructors/bac-si-nguyen-dinh-cang",
+        slug: "cang-dinh"
     },
     {
         title: "BS.",
@@ -64,8 +67,9 @@ const instructors = [
         name: "Trần Nguyễn\nThanh Hương",
         bio: "Bác sĩ, khoa Phẫu thuật tim trẻ em, Bệnh viện Đại học Y Dược TP.HCM.\nHoàn thành Step 1 và Step 2 CK USMLE\nTrưởng nhóm biên dịch sách “The End of Alzheimer\nChứng chỉ OET (Occupational English Test) - Medicine.\nCựu Chủ nhiệm CLB tiếng Anh H.E.I. tại Đại học Y Dược TPHCM",
         imageUrl: "https://res.cloudinary.com/tanvo/image/upload/v1674247540/medlangfanatic/Instructors/dr.huong_ggmqir.png",
-        link: "/instructors/bac-si-tran-nguyen-thanh-huong"
-
+        link: "/instructors/bac-si-tran-nguyen-thanh-huong",
+        imageTransparent: "https://res.cloudinary.com/tanvo/image/upload/v1678356803/medlangfanatic/Instructors/huong-transparent-1_dkmtmt.png",
+        slug: "huong-tran"
     },
     {
         title: "BS.",
@@ -73,7 +77,9 @@ const instructors = [
         name: "Hoàng Đức",
         bio: "Bác sĩ chuyên ngành Chăm sóc Giảm nhẹ/ Ung thư, Bệnh viện Ung Bướu TP.HCM\nGiảng viên tiếng Anh tại Jio Health\nHoàn thành khoá học Mastering Medical Teaching, Stanford Center for Professional Development năm 2021\nCựu Chủ nhiệm CLB tiếng Anh H.E.I. tại Đại học Y Dược TPHCM",
         imageUrl: "https://res.cloudinary.com/tanvo/image/upload/v1674247540/medlangfanatic/Instructors/dr.duc_krejjl.jpg",
-
+        link: "#",
+        imageTransparent: "https://res.cloudinary.com/tanvo/image/upload/v1678355671/medlangfanatic/Instructors/duc-transparent_jry7zd.png",
+        slug: "duc-hoang"
     },
     {
         name: "Nguyễn Trần\nThanh Trúc",
@@ -81,6 +87,9 @@ const instructors = [
         title: "BS.",
         titleFull: "Bác sĩ",
         imageUrl: "https://res.cloudinary.com/tanvo/image/upload/v1674247540/medlangfanatic/Instructors/dr.truc_kzifdr.jpg",
+        link: "#",
+        imageTransparent: "https://res.cloudinary.com/tanvo/image/upload/v1678355951/medlangfanatic/Instructors/truc-transparent_xn0ck8.png",
+        slug: "truc-tran"
     },
 
 ]

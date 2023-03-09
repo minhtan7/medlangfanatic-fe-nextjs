@@ -85,7 +85,14 @@ export const CourseList = ({ courseListContent }) => {
                         )
                     }
                 </Row> */}
-                <CourseCarousel responsive={responsive} courseListContent={courseListContent} />
+                {/* <CourseCarousel responsive={responsive} courseListContent={courseListContent} /> */}
+                <Row>
+                    {Object.keys(courseListContent).map(course => (
+                        <Col md={3} key={courseListContent[course].idEl} style={{ padding: "1rem", textAlign: "left" }}>
+                            <AllCourseCourseCard course={courseListContent[course]} width={"300px"} height={"200px"} />
+                        </Col>
+                    ))}
+                </Row>
             </Container>
         </div >
     )

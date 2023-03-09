@@ -22,9 +22,8 @@ export default function Layout({ title, description, children, imageUrl, site_na
             <Head>
                 <title>{title}</title>
                 <meta name="description" content={description} />
-                {/* <meta name="description" content={description} />
                 <meta property="og:type" content="website" />
-                {/* <link rel='canonical' href={metaDecorator.hostname + window.location.pathname + window.location.search} /> */}
+                {/* <link rel='canonical' href={metaDecorator.hostname + window.location.pathname + window.location.search} />
                 {/* <meta
                     property="og:url"
                     content={metaDecorator.hostname + window.location.pathname + window.location.search}
@@ -36,7 +35,7 @@ export default function Layout({ title, description, children, imageUrl, site_na
                 <meta property="og:title" content={title} />
                 <meta property="og:image" content="https://res.cloudinary.com/tanvo/image/upload/v1674322596/medlangfanatic/courses/mavl/mavl-thumbnail_ker6a6.svg" />
                 <meta property="og:description" content={description} /> */}
-                <link rel='canonical' href="https://medlangfanatic.com" key="canonical" />
+                <link rel='canonical' href={url} key="canonical" />
                 <meta property="og:title" content={title} key="ogtitle" />
                 <meta property="og:description" content={description} key="ogdesc" />
                 <meta

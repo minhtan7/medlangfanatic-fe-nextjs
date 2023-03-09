@@ -186,13 +186,30 @@ export const AllCourseCourseCard = ({ course, width, height }) => {
                             <span className='ms-2'>({course.noReview}+ reviews)</span>
                         </small>
                     </p>
-                    <p className='mb-0' style={{ fontSize: "14px" }}>
-                        <small>
+                    <p className='mb-0 d-flex justify-content-between align-items-center' style={{ fontSize: "14px" }}>
+                        {/* <small>
                             {course.selfLearn ? <b>Tuyển sinh liên tục</b> :
                                 course.recruit ? <b>Đang tuyển sinh</b> : "Đã đủ học viên"
                             }
 
-                        </small>
+                        </small> */}
+                        {/* <span className={`${styles["btn-grad"]}`}>Đăng ký ngay</span> */}
+                        {course.selfLearn ?
+                            <>
+                                <small><b>Tuyển sinh liên tục</b></small>
+                                <span className={`${styles["btn-grad"]}`}>Đăng ký ngay</span>
+                            </> :
+                            course.recruit ?
+                                <>
+                                    <small><b>Đang tuyển sinh</b></small>
+                                    <span className={`${styles["btn-grad"]}`}>Đăng ký ngay</span>
+                                </> :
+                                <>
+                                    <small><b>Đủ học viên</b></small>
+                                    <span className={`${styles["btn-grad"]}`}>Giữ chỗ khóa sau</span>
+                                </>
+
+                        }
                     </p>
                     <br />
                 </div>

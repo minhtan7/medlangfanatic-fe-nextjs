@@ -43,7 +43,13 @@ export default function SingleBlogPage({ blog }) {
     // useScript("//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js")
     const sortedReCourses = blog && blog.topic && recommendedCourse({ topic: blog.topic, courseListContent: courseListContent })
     return blog && (
-        <Layout>
+        <Layout
+            title={blog.title}
+            description={blog.content.slice(0, 147) + "..."}
+            imageUrl={blog.image}
+            site_name={blog.title}
+            url={`https://medlangfanatic.com/blogs/${blog.slug}`}
+        >
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             {!Object.keys(blog).length ? <LoadingSpinner /> : (
                 <Container className='mb-5'>

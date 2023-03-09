@@ -127,7 +127,7 @@ function MainHeader() {
     const currentPath = router.asPath
     return (
         <>
-            <Navbar id="header" collapseOnSelect expand="lg" className="box-shadow-card position-fixed bg-white w-100" style={{ zIndex: 1000 }}>
+            <Navbar id="header" collapseOnSelect expand="lg" className="box-shadow-card position-fixed bg-white w-100" style={{ zIndex: 10000 }}>
                 <Container>
                     <Link href="/" passHref>
                         <Navbar.Brand as="img" src="https://res.cloudinary.com/tanvo/image/upload/v1676544705/medlangfanatic/logo/logo-white-background_qba4wk.jpg" href="#home" width={96} />
@@ -150,9 +150,15 @@ function MainHeader() {
                                 <Nav.Link as="span" active={currentPath === "/courses"} className='me-3 text-decoration-none text-main'>Khóa học</Nav.Link>
                             </Link> */}
                             <NavDropdown title="Khóa học" id="basic-nav-dropdown" className={styles.dropdown}>
+                                <Link href="/courses?type=all" passHref className='text-decoration-none'>
+                                    <NavDropdown.Item href='/courses?type=readingAndListening' className='text-main'>
+                                        <p className='m-0 fw-bold'>All Courses</p>
+                                        <small>Tất cả khóa học</small>
+                                    </NavDropdown.Item>
+                                </Link>
                                 <Link href="/courses?type=readingAndListening" passHref className='text-decoration-none'>
                                     <NavDropdown.Item href='/courses?type=readingAndListening' className='text-main'>
-                                        <p className='m-0 fw-bold'>Reading & listening</p>
+                                        <p className='m-0 fw-bold'>Reading & Listening</p>
                                         <small>Cách đọc và nghe tài liệu Y văn</small>
                                     </NavDropdown.Item>
                                 </Link>

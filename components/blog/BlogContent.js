@@ -3,6 +3,7 @@ const { FontAwesomeIcon } = require("@fortawesome/react-fontawesome")
 import { slugTranslate } from '@/lib/slugTranslate'
 import dayjs from 'dayjs'
 import styles from "@/styles/blogs/BlogContent.module.css"
+import Image from 'next/image'
 
 
 export default function BlogContent({ blog }) {
@@ -22,11 +23,11 @@ export default function BlogContent({ blog }) {
                 </a>
             </div>
 
-            <div>
-                <img
-                    // src={blog.image} 
+            <div className={styles["blog-image"]}>
+                <Image
+                    fill object-fit={true}
                     src={blog.image}
-                    alt="blog" width="100%" />
+                    alt={blog.title} />
             </div>
             <div className='py-4 d-block d-md-flex justify-content-between' >
                 <small className="text-muted">{dayjs(blog.createAt).format("DD/MM/YYYY")}</small>

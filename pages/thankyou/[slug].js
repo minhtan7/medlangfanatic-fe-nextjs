@@ -46,6 +46,7 @@ export async function getStaticPaths() {
                 { params: { slug: "communication-with-patients-101" } },
                 { params: { slug: "listening-skills" } },
                 { params: { slug: "combo-vocabulary" } },
+                { params: { slug: "how-to-learn-medical-vocabulary" } },
             ],
         fallback: false
     }
