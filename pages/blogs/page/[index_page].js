@@ -50,7 +50,12 @@ export default function BlogPage({ blogs, totalPage, page }) {
     // }
 
     return (
-        <Layout>
+        <Layout
+            title="Blogs tiếng Anh Y khoa"
+            description="Tổng hợp các bài blogs về tiếng Anh chuyên ngành Y khoa dành cho nhân viên Y tế Việt Nam"
+            site_name="Blogs tiếng Anh Y khoa"
+            url={`https://medlangfanatic.com/blogs`}
+        >
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <AllBlogHero />
             <div id="blog-page" className='mt-5' style={{ backgroundColor: "#edf1ff91" }}>

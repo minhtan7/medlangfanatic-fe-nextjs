@@ -197,16 +197,16 @@ export const AllCourseCourseCard = ({ course, width, height }) => {
                         {course.selfLearn ?
                             <>
                                 <small><b>Tuyển sinh liên tục</b></small>
-                                <span className={`${styles["btn-grad"]}`}>Đăng ký ngay</span>
+                                <Link className='text-decoration-none' href={`/form/${course.slug}`}><span className={`${styles["btn-grad"]}`}>Đăng ký ngay</span></Link>
                             </> :
                             course.recruit ?
                                 <>
                                     <small><b>Đang tuyển sinh</b></small>
-                                    <span className={`${styles["btn-grad"]}`}>Đăng ký ngay</span>
+                                    <Link className='text-decoration-none' href={`/form/${course.slug}`}><span className={`${styles["btn-grad"]}`}>Đăng ký ngay</span></Link>
                                 </> :
                                 <>
                                     <small><b>Đủ học viên</b></small>
-                                    <span className={`${styles["btn-grad"]}`}>Giữ chỗ khóa sau</span>
+                                    <Link className='text-decoration-none' href={`/form/${course.slug}`}><span className={`${styles["btn-grad"]}`}>Giữ chỗ khóa sau</span></Link>
                                 </>
 
                         }

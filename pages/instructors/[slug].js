@@ -22,7 +22,12 @@ export default function InstructorPage({ slug }) {
 
     const instructor = slugTranslate({ slug: slug ? slug : "bac-si-tran-quang-hung", target: "instructors" })
     return (
-        <Layout>
+        <Layout
+            title="Giảng viên của Med Lang Fanatic"
+            description="Giảng viên với kiến thức chuyên sâu và kinh nghiệm tu nghiệp ở nước ngoài (Pháp, Mỹ, Hungary, Đài Loan, Úc)"
+            site_name="Giảng viên của Med Lang Fanatic"
+            url={`https://medlangfanatic.com/courses`}
+        >
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <section id='instructor-page' >
                 <div className='mb-md-7 mx-md-7 mt-md-5'>

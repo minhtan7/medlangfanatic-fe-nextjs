@@ -20,7 +20,10 @@ export default function Courses() {
     }, [type])
     return (
         <Layout
-
+            title="Khóa học tiếng Anh Y khoa online"
+            description="Tổng hợp các khóa học về tiếng Anh chuyên ngành Y khoa dành cho nhân viên Y tế Việt Nam | Từ vựng chuyên ngành Y khoa; Giao tiếp với bệnh nhân; Trình ca lâm sàng | Nghe nói đọc viết trong y văn"
+            site_name="Khóa học tiếng Anh Y khoa online"
+            url={`https://medlangfanatic.com/courses`}
         >
             <Script src={process.env.NEXT_APP_GG_TAG_MNG} />
             <AllCoursesHero />
