@@ -185,7 +185,7 @@ const courseListContent = {
         slug: "communication-with-patients-101",
         type: "master",
         reviewAvg: 4.9,
-        noReview: 87,
+        noReview: 89,
         noApplication: 130,
         selfLearn: false
     },

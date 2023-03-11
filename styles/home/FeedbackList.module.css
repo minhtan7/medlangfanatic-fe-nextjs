@@ -25,7 +25,7 @@
 
 
 .circle-list li.last::after{
-    content: "78+ Feedback";
+    content: "982+ Feedback";
     position: absolute;
     font-size: 12px;
     width: 7rem;
