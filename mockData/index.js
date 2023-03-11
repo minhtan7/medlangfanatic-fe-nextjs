@@ -94,6 +94,83 @@ const instructors = [
 
 ]
 
+const fiveFeatureBlogs = [
+
+    {
+        "title": "Lịch thi thành thạo ngoại ngữ trong khám chữa bệnh cho người nước ngoài 2023",
+        content: "Nói cho đầy đủ thì đây là kỳ thi kiểm tra và công nhận sử dụng thành thạo ngoại ngữ (Anh, Pháp, Trung) hoặc đủ trình độ phiên dịch ngoại ngữ trong khám chữa bệnh tại Việt Nam.",
+        "image": "https://res.cloudinary.com/tanvo/image/upload/v1678571719/medlangfanatic/blogs/lich-thi-2023_ai39hf.jpg",
+        topic: [
+            { "name": "medical english" },
+            { "name": "listening" },
+            { "name": "speaking" }
+        ],
+        "slug": "lich-thi-thanh-thao-ngoai-ngu-trong-kham-chua-benh-cho-nguoi-nuoc-ngoai-2023",
+        "createdAt": "2023-03-05T13:26:00.000Z"
+    },
+    {
+        "title": "Cấu trúc đề thi của Chứng chỉ Thành thạo ngoại ngữ trong khám chữa bệnh cho người nước ngoài",
+        content: "Mô tả cấu trúc đề thi, với 2 đối tượng là nhân viên y tế (bác sĩ, điều dưỡng) và không phải nhân viên y tế (thi lấy chứng chỉ phiên dịch viên)",
+        "image": "https://res.cloudinary.com/tanvo/image/upload/v1677717548/medlangfanatic/blogs/cau_truc_de_thi_chung_chi_ngoai_ngu_gayj8b.jpg",
+        topic: [
+            { "name": "medical english" },
+            { "name": "tips" },
+            { "name": "speaking" },
+            { "name": "listening" },
+        ],
+        "slug": "cau-truc-de-thi-cua-chung-chi-thanh-thao-ngoai-ngu-trong-kham-chua-benh-cho-nguoi-nuoc-ngoai",
+        "createdAt": "2023-03-01T13:26:00.000Z"
+    },
+    {
+        "title": "Áp dụng SMART GOALS để học Anh văn chuyên ngành",
+        content: 'Bình thường mục tiêu của chúng ta đặt ra rất là chung chung, chỉ đơn giản là "Cải thiện tiếng Anh chuyên ngành". Và mục tiêu chung chung như vậy thường rất khó có thể đạt được, dù là tiếng Anh hay là một mục tiêu nào đó trong cuộc sống.',
+        "image": "https://res.cloudinary.com/tanvo/image/upload/v1676754476/medlangfanatic/blogs/ap_dung_smart_goal_de_hoc_anh_van_chuyen_nganh_tsnvvh.jpg",
+        topic: [
+            { "name": "tips" },
+            { "name": "learning.how.to.learn" },
+        ],
+        "slug": "ap-dung-smart-goals-de-hoc-anh-van-chuyen-nganh",
+        "createdAt": "2023-02-08T13:26:00.000Z",
+    },
+    {
+        "title": "Đương đầu với acronym",
+        content: "Acronyms là kiểu viết tắt bằng cách ghép chữ đầu của một cụm từ lại với nhau. Ví dụ như COPD là viết tắt của Chronic Obstructive Pulmonary Disease; OSA là viết tắt của Obstructive Sleep Apnea. Acronyms giúp tác giả viết ngắn gọn hơn.",
+        "image": "https://res.cloudinary.com/tanvo/image/upload/v1676754483/medlangfanatic/blogs/duong_dau_voi_acronym_tlawq7.jpg",
+        topic: [
+            { "name": "medical vocabulary" },
+            { "name": "learning.how.to.learn" },
+            { "name": "medical english" },
+            { "name": "tips" },
+        ],
+        "createdAt": "2023-02-05T13:26:00.000Z",
+        "slug": "duong-dau-voi-acronym",
+    },
+    {
+        "title": "Đôi điều về đọc sách ngoại văn",
+        content: "Đây là một đề tài có thể nói rộng và sâu được. Và đây cũng là một thứ mà trong khóa học “Medical literacy: the essential course” mình luôn nhấn mạnh với các bạn học viên. Nhưng nếu phải chia sẻ ngắn gọn những lời khuyên thì các bạn cần nhớ những điều sau đây",
+        "image": "https://res.cloudinary.com/tanvo/image/upload/v1677717548/medlangfanatic/blogs/cau_truc_de_thi_chung_chi_ngoai_ngu_gayj8b.jpg",
+        topic: [
+            { "name": "medical english" },
+            { "name": "learning.how.to.learn" }
+        ],
+        "slug": "doi-dieu-ve-doc-sach-ngoai-van",
+        "createdAt": "2022-11-05T11:26:00.000Z",
+    },
+    {
+        "title": "Sách từ vựng nào để học khi mới bắt đầu? - The paradox of choice",
+        content: "Mình là một người có xu hướng tích trữ mọi thứ, kể cả sách vở tài liệu. Cho nên mình từng đọc qua nhiều đầu sách ngoại ngữ chuyên ngành khác nhau. Và vào thời sinh viên ấy, thật khó có thể để kết thúc một cuốn sách trọn vẹn. ",
+        "image": "https://res.cloudinary.com/tanvo/image/upload/v1676733927/medlangfanatic/blogs/sach-tu-vung-nao-de-hoc-khi-moi-bat-dau-the-paradox-of-choice_uhe3ng.jpg",
+        topic: [
+            { "name": "medical vocabulary" },
+            { "name": "medical english" },
+            { "name": "tips" },
+            { "name": "listening" },
+        ],
+        "createdAt": "2023-01-13T13:26:00.000Z",
+        "slug": "sach-tu-vung-nao-de-hoc-khi-moi-bat-dau-the-paradox-of-choice",
+    },
+]
+
 const courseListContent = {
     "communication-with-patients-101": {
         title: "Giao Tiếp Với Bệnh Nhân",
@@ -202,15 +279,13 @@ const courseListContent = {
         slug: "listening-skills",
         type: "standard",
         reviewAvg: 4.9,
-        noReview: 40,
-        noApplication: 232,
+        noReview: 137,
+        noApplication: 294,
         selfLearn: true
     },
     //155
     "combo-vocabulary": {
-        // title: `<span>Từ Vựng Học Thuật<br />Y Khoa</span>`,
         title: "Combo từ vựng Y khoa",
-        // image: "https://res.cloudinary.com/tanvo/image/upload/v1675725048/medlangfanatic/courses/mavl/mavl-thumbnail_z83mgg.png",
         image: "https://res.cloudinary.com/tanvo/image/upload/v1677147132/medlangfanatic/courses/a-comprehensive-course-of-medical-vocabulary_zqxndy.png",
         content: "Đào tạo toàn diện giúp bạn nâng cao khả năng đọc hiểu và hiểu biết về các tài liệu y khoa.",
         path: "courses/combo-vocabulary",
@@ -810,7 +885,7 @@ const sideBarItemsEx = [{
 
 
 
-export { instructors, courseDetail, faq, feedBack, about, blogContent, courseListContent, fbs, sideBarItemsDoc, sideBarItemsEx, slugCourseByCat }
+export { fiveFeatureBlogs, instructors, courseDetail, faq, feedBack, about, blogContent, courseListContent, fbs, sideBarItemsDoc, sideBarItemsEx, slugCourseByCat }
 
 
 // const x = [

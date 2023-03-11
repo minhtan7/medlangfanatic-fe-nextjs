@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout"
-import { instructors } from "mockData"
+import { courseListContent, instructors } from "mockData"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
@@ -12,6 +12,7 @@ const { FontAwesomeIcon } = require("@fortawesome/react-fontawesome")
 import styles from "@/styles/courses/CoursePage.module.css"
 import Link from "next/link"
 import { isMobile } from "react-device-detect"
+import { slugTranslate } from "@/lib/slugTranslate"
 
 
 const combo = {
@@ -123,7 +124,12 @@ export default function ComboCourse({ course }) {
         </li></ul>)
     }
     return course && (
-        <Layout>
+        <Layout
+            title={course.name}
+            description={courseListContent[course.slug].content}
+            imageUrl={slugTranslate({ target: "thumbnail", slug: course.slug })}
+            site_name={"Med Lang Fanatic | " + course.name}
+            url={"https://medlangfanatic.com/courses/" + course.slug}>
             <Container className={`position-relative ${styles.wrapper} mt-md-5 pt-md-5`}>
                 <Row >
                     {!mobile ? null : (

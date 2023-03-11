@@ -6,7 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 import Layout from '@/components/layout/Layout'
 import { CTA } from '@/components/home/CTA'
 import { InstructorList, InstructorListHP } from '@/components/home/InstructorList'
-import { instructors, courseListContent, fbs } from 'mockData'
+import { instructors, courseListContent, fbs, fiveFeatureBlogs } from 'mockData'
 import { CourseList } from '@/components/home/CourseList'
 import { FeedbackList } from '@/components/home/FeedbackList'
 import { BlogSession } from '@/components/home/BlogSession'
@@ -46,14 +46,14 @@ export default function HomePage({ instructors, courseListContent, fbs, blogs })
 }
 
 export async function getStaticProps() {
-  const res = await apiService.get(`/posts`)
+  // const res = await apiService.get(`/posts`)
 
   return {
     props: {
       instructors,
       courseListContent,
       fbs,
-      blogs: res.data.posts
+      blogs: fiveFeatureBlogs
     },
   }
 }

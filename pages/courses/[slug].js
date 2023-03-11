@@ -62,7 +62,6 @@ export async function getStaticProps({ params: { slug } }) {
         const course = await Promise.all(comboVocab.courses.map(async (el) => {
             try {
                 const courseId = slugTranslate({ target: "id", slug: el })
-                console.log("courseId", courseId)
                 const res = await apiService.get(`/courses/${courseId}`)
                 return res.data
 

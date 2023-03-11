@@ -208,7 +208,6 @@ export const AllCourseCourseCard = ({ course, width, height }) => {
                                     <small><b>Đủ học viên</b></small>
                                     <Link className='text-decoration-none' href={`/form/${course.slug}`}><span className={`${styles["btn-grad"]}`}>Giữ chỗ khóa sau</span></Link>
                                 </>
-
                         }
                     </p>
                     <br />

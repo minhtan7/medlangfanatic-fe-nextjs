@@ -16,6 +16,9 @@ import { Cover, CoverCWP, CoverMedicalTerminology, CoverPCCS, HLMV, LLM } from '
 import { CourseCarousel } from "@/components/home/CourseList"
 import { courseListContent } from "mockData"
 import { recommendedCourse } from "@/lib/recommendCourse"
+import { useEffect, useState } from "react"
+import { isMobile } from "react-device-detect"
+import { CourseCardMobile } from "@/components/courseCard/CourseCardMobile"
 
 
 const filterCover = (slug) => {
@@ -61,10 +64,15 @@ const responsive = {
 
 export default function NormalCourse({ course }) {
     useFilterCssRoot({ slug: course && course.slug, ...filterCss(course && course.slug) })
+    const [mobile, setMobile] = useState(false)
+    useEffect(() => {
+        setMobile(isMobile)
+    }, [isMobile])
+
     return course && (
         <Layout
             title={course.name}
-            description="Med Lang Fanatic | Khóa học tiếng Anh Y khoa online.Cải thiện khả năng ngoại ngữ và nâng cao kỹ năng giao tiếp trong Y khoa."
+            description={courseListContent[course.slug].content}
             imageUrl={slugTranslate({ target: "thumbnail", slug: course.slug })}
             site_name={"Med Lang Fanatic | " + course.name}
             url={"https://medlangfanatic.com/courses/" + course.slug}
@@ -93,14 +101,18 @@ export default function NormalCourse({ course }) {
                     </Col>
                 </Row>
             </Container>
+            {mobile &&
+                <div className="position-relative" style={{ height: "fit-content", marginBottom: "2rem" }}>
+                    <CourseCardMobile course={course} />
+                </div>}
             {course.slug === "how-to-learn-medical-vocabulary" && (
                 <Container>
                     <h2>Khóa học bổ trợ:</h2>
-                    <CourseCarousel responsive={responsive} courseListContent={recommendedCourse({ courseListContent: courseListContent, recommendedSlugs: Object.keys(courseListContent).filter(el => el !== "how-to-learn-medical-vocabulary") })} />
+                    <CourseCarousel mobile={mobile} responsive={responsive} courseListContent={recommendedCourse({ courseListContent: courseListContent, recommendedSlugs: Object.keys(courseListContent).filter(el => el !== "how-to-learn-medical-vocabulary") })} />
                 </Container>
             )}
             <CTA course={course} />
-            <ShowCourseBtn course={course} />
+            {/* <ShowCourseBtn course={course} /> */}
         </Layout>
     )
 

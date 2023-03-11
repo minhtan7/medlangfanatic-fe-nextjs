@@ -19,7 +19,6 @@ import { useRouter } from 'next/router'
 
 
 const getRender = (frame) => {
-    console.log(frame)
     if (!frame) {
         return <WelcomeDoc />
     }

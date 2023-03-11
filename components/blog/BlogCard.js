@@ -19,6 +19,9 @@ export function BlogCard({ blog, length = 200, compact }) {
                     <div className="position-relative w-100" style={{ height: "195px" }}>
                         <Image variant="top" style={{ borderRadius: 0, cursor: "pointer" }} src={blog.image} alt={blog.title}
                             fill object-fit="contain"
+                            sizes="(max-width: 768px) 100vw,
+                                    (max-width: 1200px) 50vw,
+                                    33vw"
                         // width={350} height={195} 
                         />
 

@@ -183,7 +183,6 @@ const responsive = {
 };
 
 export const InstructorCardVerticle = ({ instructor }) => {
-    console.log(instructor)
     return (
         <Card className="border-0">
             <div className="overflow-hidden text-center p-3 pb-0">
@@ -231,9 +230,9 @@ export const InstructorCarousel = ({ responsive, instructors }) => {
             autoPlay
             autoPlaySpeed={3000}
             ssr={true}
-            // customTransition="all .5"
-            // transitionDuration={1000}
             infinite={true}
+        // customTransition="all .5"
+        // transitionDuration={1000}
         >
             {instructors.map(ins => (
                 <div key={ins.name} >

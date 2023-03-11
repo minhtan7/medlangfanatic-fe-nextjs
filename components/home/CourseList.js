@@ -98,9 +98,15 @@ export const CourseList = ({ courseListContent }) => {
     )
 }
 
-export const CourseCarousel = ({ responsive, courseListContent }) => {
+export const CourseCarousel = ({ responsive, courseListContent, mobile }) => {
     return (
-        <Carousel responsive={responsive}>
+        <Carousel
+            responsive={responsive}
+            autoPlay={!mobile}
+            autoPlaySpeed={3000}
+            ssr={true}
+            infinite={true}
+        >
             {Object.keys(courseListContent).map(course => (
                 // <div style={{ padding: "1rem 2rem" }}>
                 <div key={courseListContent[course].idEl} style={{ padding: "1rem", textAlign: "left" }}>

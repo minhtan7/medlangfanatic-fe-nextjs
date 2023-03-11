@@ -12,7 +12,6 @@ export function SearchBlock({ toPage, search, handleChange, handleDeleteSearch }
     const router = useRouter()
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(toPage)
         if (toPage) {
             router.push(`/blogs/search?q=${search}`)
         }
