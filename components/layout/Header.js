@@ -10,8 +10,9 @@ import { Button, Form, NavDropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { SearchBlock, SearchResultNav } from '../utils/Search';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import apiService from '@/lib/apiService';
+import { isMobile } from 'react-device-detect';
 
 function CourseHeader() {
     // const navigate = useNavigate()
@@ -105,6 +106,7 @@ function CourseHeader() {
 function MainHeader() {
     const [search, setSearch] = useState("")
     const [results, setResults] = useState([])
+    const [mobile, setMobile] = useState(false)
     const handleChange = (e) => {
         setSearch(e.target.value)
     }
@@ -125,9 +127,49 @@ function MainHeader() {
     }
     const router = useRouter()
     const currentPath = router.asPath
+    const refAds = useRef()
+    const [viewAds, setViewAds] = useState(true)
+    useEffect(() => {
+        const ref = refAds.current
+        const observer = new IntersectionObserver((entries,) => {
+            const entry = entries[0];
+            console.log(entry)
+            if (entry.isIntersecting) {
+                setViewAds(true)
+            } else {
+                setViewAds(false)
+            }
+        })
+        observer.observe(ref)
+        return () => {
+            observer.unobserve(ref);
+        };
+    }, [])
+    useEffect(() => {
+        setMobile(isMobile)
+    }, [isMobile])
     return (
         <>
-            <Navbar id="header" collapseOnSelect expand="lg" className="box-shadow-card position-fixed bg-white w-100" style={{ zIndex: 10000 }}>
+            <div ref={refAds} className={styles.ads}>
+                {mobile ?
+                    <p className='m-0'>Học hỏi không giới hạn kiến thức chuyên khoa Y <br />
+                        Đăng ký ngay Khoá học Combo từ vựng hoàn chỉnh {" "}
+                        <Link href="/courses/combo-vocabulary" className='text-decoration-none text-main'>
+                            <b>Tiết kiệm tới  31%</b>
+                        </Link>
+                    </p>
+                    :
+                    <p className='m-0'>Học hỏi không giới hạn kiến thức chuyên khoa Y <br />
+                        Đăng ký ngay Khoá học Combo từ vựng hoàn chỉnh {" "}
+                        <Link href="/courses/combo-vocabulary" className='text-decoration-none text-main'>
+                            <b>Tiết kiệm tới  31%</b>
+                        </Link>
+                    </p>
+
+                }
+            </div>
+            <Navbar id="header" collapseOnSelect expand="lg" className={`box-shadow-card ${viewAds ? "" : "position-fixed"} bg-white w-100`} style={{ top: 0, left: 0, zIndex: 10000, transition: "top 0.5s cubic-bezier(0.42, 0, 0.58, 1)", willChange: "transform" }}>
+
                 <Container>
                     <Link href="/" passHref>
                         <Navbar.Brand as="img" src="https://res.cloudinary.com/tanvo/image/upload/v1676544705/medlangfanatic/logo/logo-white-background_qba4wk.jpg" href="#home" width={96} />
@@ -196,7 +238,7 @@ function MainHeader() {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <div style={{ height: "100px" }}></div>
+            {/* <div style={{ height: "100px" }}></div> */}
         </>
     );
 }

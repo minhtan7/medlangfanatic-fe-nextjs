@@ -30,8 +30,22 @@
     color: var(--main);
 }
 
+.ads{
+    background-color: rgb(170, 235, 234);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition-duration: 0.3s;
+}
+
 @media only screen and (max-width: 600px) {
   .search{
         width: 20rem;
+    }
+    .ads{
+        font-size: 10px;
+        height: 4rem;
     }
 }
