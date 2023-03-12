@@ -155,7 +155,7 @@ function MainHeader() {
                     <p className='m-0'>Học hỏi không giới hạn kiến thức chuyên khoa Y <br />
                         Đăng ký ngay Khoá học Combo từ vựng hoàn chỉnh <br />
                         <Link href="/courses/combo-vocabulary" className='text-decoration-none text-main'>
-                            <b>Tiết kiệm tới  31%</b>
+                            <b style={{ fontSize: "17px" }}>Tiết kiệm tới  31%</b>
                         </Link>
                     </p>
                     :
