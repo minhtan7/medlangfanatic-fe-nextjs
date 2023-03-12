@@ -346,6 +346,7 @@ body {
 
 
 
+
 /* mt secondary btn */
 
 .btn-mt-secondary {
@@ -832,4 +833,11 @@ body {
 
 .rtl.react-multiple-carousel__arrow--left::before {
   content: "\e825"
+}
+
+@media only screen and (max-width: 600px) {
+  
+  #header .dropdown-menu.show{
+    transform: translateX(5%);
+  }
 }
